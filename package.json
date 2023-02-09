@@ -1,0 +1,22 @@
+{
+  "name": "youtil",
+  "version": "1.0.0",
+  "description": "Front-ent util",
+  "main": "src/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/sxei/youtil"
+  },
+  "keywords": [
+    "feutil"
+  ],
+  "author": "sxei",
+  "license": "ISC"
+}
