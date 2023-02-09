@@ -1,3 +1,10 @@
+interface IShowLoadingConfig {
+    hasMask?: boolean;
+    maskColor?: string;
+    cancelInline?: boolean;
+    onCancel?: Function;
+    id?: string,
+}
 export default {
     /**
      * 将日期格式化成指定格式的字符串
@@ -5,13 +12,13 @@ export default {
      * @param fmt 目标字符串格式，支持的字符有：y,M,d,q,w,H,h,m,S，默认：yyyy-MM-dd HH:mm:ss
      * @returns 返回格式化后的日期字符串
      */
-    formatDate(date, fmt) {
+    formatDate(date?: Date | number, fmt?: string) {
         if (!date) {
             return '';
         }
         date = typeof date === 'number' ? new Date(date) : date;
         fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
-        const obj = {
+        const obj: any = {
             y: date.getFullYear(), // 年份，注意必须用getFullYear
             M: date.getMonth() + 1, // 月份，注意是从0-11
             d: date.getDate(), // 日期
@@ -23,7 +30,7 @@ export default {
             s: date.getSeconds(), // 秒
             S: date.getMilliseconds(), // 毫秒
         };
-        const week = ['天', '一', '二', '三', '四', '五', '六'];
+        const week: any = ['天', '一', '二', '三', '四', '五', '六'];
         // eslint-disable-next-line guard-for-in
         for (const i in obj) {
             fmt = fmt.replace(new RegExp(`${i}+`, 'g'), function (m) {
@@ -45,9 +52,9 @@ export default {
      * @param fmt 字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S，不支持w和q
      * @returns 解析后的Date类型日期
      */
-    parseDate(str, fmt) {
+    parseDate(str: string, fmt?: string) {
         fmt = fmt || 'yyyy-MM-dd';
-        const obj = { y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0 };
+        const obj: any = { y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0 };
         fmt.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function (m, $1, $2, $3, $4) {
             str = str.replace(new RegExp(`${$1}(\\d{${$2.length}})${$4}`), function (_m, _$1) {
                 obj[$3] = parseInt(_$1);
@@ -68,8 +75,8 @@ export default {
      * @param {*} seconds
      * @param {*} options
      */
-    showLoading(text = '请稍候', seconds = 10, config = {}) {
-        const defaultConfig = {
+    showLoading(text = '请稍候', seconds = 10, config: IShowLoadingConfig = {}) {
+        const defaultConfig: IShowLoadingConfig = {
             hasMask: true,
             maskColor: 'transparent',
             onCancel: null,
@@ -79,8 +86,8 @@ export default {
         config = Object.assign({}, defaultConfig, config);
         const { id } = config;
         const timeoutKey = `_${id}_timeout`;
-        if (window[timeoutKey]) {
-            clearTimeout(window[timeoutKey]);
+        if ((window as any)[timeoutKey]) {
+            clearTimeout((window as any)[timeoutKey]);
         }
         let dom = document.getElementById(id);
         if (!dom) {
@@ -132,7 +139,7 @@ export default {
         }
         dom.style.display = 'block';
         if (seconds > 0) {
-            window[timeoutKey] = setTimeout(() => {
+            (window as any)[timeoutKey] = setTimeout(() => {
                 this.hideLoading();
             }, seconds * 1000);
         }
@@ -154,7 +161,7 @@ export default {
      * @param {*} name 参数名
      * @param {*} url 要获取的URL，默认当前地址
      */
-    getParam(name, url = location.search) {
+    getParam(name: string, url: string = location.search) {
         return (new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g').exec(url) || [])[2];
     },
     /**
@@ -162,7 +169,7 @@ export default {
      * @param {*} name 参数名
      * @param {*} url 要获取的URL，默认当前地址
      */
-    getParamInt(name, url = location.search) {
+    getParamInt(name: string, url: string = location.search) {
         return parseInt(this.getParam(name, url) || '0', 10);
     },
     /**
@@ -173,7 +180,7 @@ export default {
      */
     getParams(url = location.search) {
         const search = ((url || '').split('?').pop() || '').split('#')[0] || '';
-        const params = {};
+        const params: any = {};
         search.split('&').map(item => item.split('=')).forEach(([key, value]) => {
             params[key] = value || '';
         });
@@ -187,7 +194,7 @@ export default {
      * @param {Object} value 参数值
      * @param {Object} url 如果不传默认当前页面URL
      */
-    setParam(name, value, url) {
+    setParam(name: string, value: string | number, url?: string) {
         url = url || `${location.pathname}${location.search}`;
         // 如果参数已经存在，替换之
         if (this.getParam(name, url) !== undefined) {
@@ -205,13 +212,46 @@ export default {
      * @param url 要删除的URL，默认当前页面URL
      * @returns 处理完后的URL
      */
-    delParam(name, url) {
+    delParam(name: string, url: string) {
         url = url || `${location.pathname}${location.search}`;
         return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => $2 === '&' ? $1 : $2);
     },
     /**
-     * 延迟一段时间，单位毫秒
-     * await sleep(200) // 休息200毫秒
+     * 休息一段时间，单位毫秒
+     * 示例：await sleep(200); // 休息200毫秒
+     * @param time 要休息的时间，单位毫秒，不传默认0
+     * @returns 
      */
-    sleep: (sec) => new Promise(resolve => setTimeout(resolve, sec)),
+    sleep: (time?: number) => new Promise(resolve => setTimeout(resolve, time || 0)),
+    /**
+     * 基于JSON的简单深拷贝
+     * @param obj 要复制的对象，非对象格式会直接返回
+     * @returns 
+     */
+    deepCopy: (obj: any) => {
+        if (!obj || typeof obj !== 'object') {
+            return obj;
+        }
+        return JSON.parse(JSON.stringify(obj));
+    },
+    /**
+     * HTML编码，例如将 【"】 变成 【&quot;】
+     * @param {*} html 待编码的原始字符串
+     * @returns 
+     */
+    encodeHtml(html: string) {
+        const div = document.createElement('div');
+        div.innerText = html;
+        return div.innerHTML;
+    },
+    /**
+     * HTML解码，例如将 【&quot;】 变成 【"】
+     * @param {*} html 已经被HTML编码过的字符串
+     * @returns 
+     */
+    decodeHtml(html: string) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        return div.innerText;
+    },
 };

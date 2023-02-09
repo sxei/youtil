@@ -1,22 +1,25 @@
 {
   "name": "youtil",
-  "version": "1.0.0",
-  "description": "Front-ent util",
-  "main": "src/index.js",
+  "version": "1.0.2",
+  "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
+    "jest": "^29.4.2",
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "tsc -d",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "github.com/sxei/youtil"
   },
   "keywords": [
-    "feutil"
+    "youtil"
   ],
   "author": "sxei",
-  "license": "ISC"
+  "license": "MIT"
 }
