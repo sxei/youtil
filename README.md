@@ -18,7 +18,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 ## API
 
-参见[index.d.ts]('./dist/index.d.ts');
+参见[index.d.ts](https://github.com/sxei/youtil/blob/master/dist/index.d.ts);
 
 ## 关于命名
 
