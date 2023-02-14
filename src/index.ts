@@ -124,7 +124,7 @@ export default {
             ${config.hasMask ? `<div class="mask-wrapper" style="background-color: ${config.maskColor}"></div>` : ''}
             <div class="loading-wrapper">
                 <div class="loading-content">
-                    <img src="//img.alicdn.com/tfs/TB1bnUsQBLoK1RjSZFuXXXn0XXa-32-32.svg" alt="加载中">
+                    <img src="https://img.alicdn.com/tfs/TB1bnUsQBLoK1RjSZFuXXXn0XXa-32-32.svg" alt="加载中">
                     <div>${text}${config.cancelInline ? ' ' : '</div>'}
                     ${config.onCancel ? '<a href="javascript:;" class="cancel">取消</a>' : ''}
                     ${config.cancelInline ? '</div>' : ''}
