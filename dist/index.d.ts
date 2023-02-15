@@ -85,15 +85,15 @@ declare const _default: {
     deepCopy: (obj: any) => any;
     /**
      * HTML编码，例如将 【"】 变成 【&quot;】
-     * @param {*} html 待编码的原始字符串
+     * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
      * @returns
      */
-    encodeHtml(html: string): string;
+    encodeHtml(html: string | any): any;
     /**
      * HTML解码，例如将 【&quot;】 变成 【"】
-     * @param {*} html 已经被HTML编码过的字符串
+     * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
      * @returns
      */
-    decodeHtml(html: string): string;
+    decodeHtml(html: string | any): any;
 };
 export default _default;

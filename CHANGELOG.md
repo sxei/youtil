@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.4 (2023-02-15)
+
+* `encodeHtml`、`decodeHtml`支持传入对象；
+
 ## 1.0.2 (2023-02-09)
 
 * 增加`encodeHtml`、`decodeHtml`、`deepCopy`方法；

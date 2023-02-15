@@ -231,22 +231,38 @@ exports.default = {
     },
     /**
      * HTML编码，例如将 【"】 变成 【&quot;】
-     * @param {*} html 待编码的原始字符串
+     * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
      * @returns
      */
     encodeHtml(html) {
-        const div = document.createElement('div');
-        div.innerText = html;
-        return div.innerHTML;
+        if (typeof html === 'string') {
+            const div = document.createElement('div');
+            div.innerText = html;
+            return div.innerHTML;
+        }
+        else if (typeof html === 'object' && html) {
+            for (const i in html) {
+                html[i] = this.encodeHtml(html[i]);
+            }
+        }
+        return html;
     },
     /**
      * HTML解码，例如将 【&quot;】 变成 【"】
-     * @param {*} html 已经被HTML编码过的字符串
+     * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
      * @returns
      */
     decodeHtml(html) {
-        const div = document.createElement('div');
-        div.innerHTML = html;
-        return div.innerText;
+        if (typeof html === 'string') {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            return div.innerText;
+        }
+        else if (typeof html === 'object' && html) {
+            for (const i in html) {
+                html[i] = this.decodeHtml(html[i]);
+            }
+        }
+        return html;
     },
 };

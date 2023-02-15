@@ -1,5 +1,5 @@
 const youtil = require('../dist');
-const { formatDate, getParam } = youtil.default;
+const { formatDate, getParam, encodeHtml } = youtil.default;
 
 test('formatDate', () => {
     expect(formatDate(1675935902379)).toBe('2023-02-09 17:45:02');
@@ -11,4 +11,8 @@ test('getParam', () => {
     expect(getParam('b', '?a=1&b=&c=3&c=33#abc')).toBe('');
     expect(getParam('c', '?a=1&b=&c=3&c=33#abc')).toBe('3');
     expect(getParam('d', '?a=1&b=&c=3&c=33#abc')).toBe(undefined);
+});
+
+test('encodeHtml', () => {
+    expect(encodeHtml('<div>')).toBe('&lt;div&gt;');
 });
