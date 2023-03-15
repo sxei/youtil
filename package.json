@@ -1,25 +1,68 @@
 {
   "name": "youtil",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
-  "main": "dist/index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "jest": "^29.4.2",
-    "typescript": "^4.9.5"
+  "files": [
+    "esm",
+    "es2017",
+    "cjs",
+    "dist"
+  ],
+  "main": "esm/index.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "exports": {
+    ".": {
+      "es2017": {
+        "types": "./es2017/index.d.ts",
+        "default": "./es2017/index.js"
+      },
+      "default": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./*": "./*"
   },
+  "sideEffects": [
+    "dist/*"
+  ],
   "scripts": {
+    "dev": "ice-pkg start",
+    "start": "ice-pkg start",
+    "build": "ice-pkg build",
+    "prepublishOnly": "npm run build",
     "test": "jest",
-    "build": "tsc -d",
-    "prepublishOnly": "npm run build"
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "lint": "npm run eslint && npm run stylelint"
+  },
+  "keywords": [
+    "youtil"
+  ],
+  "dependencies": {
+    "@swc/helpers": "^0.4.14"
+  },
+  "devDependencies": {
+    "@ice/jsx-runtime": "^0.2.0",
+    "@ice/pkg": "^1.0.0",
+    "@ice/pkg-plugin-docusaurus": "^1.4.4",
+    "@iceworks/spec": "^1.0.0",
+    "eslint": "^7.0.0",
+    "jest": "^29.5.0",
+    "react": "^16",
+    "react-dom": "^16",
+    "stylelint": "^13.7.2",
+    "ts-jest": "^29.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "github.com/sxei/youtil"
   },
-  "keywords": [
-    "youtil"
-  ],
   "author": "sxei",
   "license": "MIT"
 }

@@ -1,0 +1,10 @@
+node_modules/
+**/*-min.css
+**/*.min.css
+coverage/
+cjs/
+esm/
+es2017/
+dist/
+build/
+tmp/

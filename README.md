@@ -18,7 +18,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 ## API
 
-参见[index.d.ts](https://github.com/sxei/youtil/blob/master/dist/index.d.ts);
+参见[index.d.ts](https://github.com/sxei/youtil/blob/master/esm/index.d.ts);
 
 ## 关于命名
 
@@ -31,3 +31,18 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 * npm publish
 * git push
 
+## 附录
+
+仓库脚手架来源：
+
+```bash
+npm install -g cnpm --registry=https://registry.npmmirror.com
+cnpm init @ice/pkg youtil # 选择前端类库
+# 默认不支持文档预览，需手动开启
+cnpm i @ice/pkg-plugin-docusaurus react react-dom -D
+# 参考 https://pkg.ice.work/guide/preview 进行 build.config.mts 配置
+cd youtil
+mkdir docs
+vim index.md
+cnpm start
+```

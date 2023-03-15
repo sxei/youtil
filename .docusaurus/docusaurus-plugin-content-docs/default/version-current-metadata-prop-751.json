@@ -1,0 +1,40 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "defaultSidebar": [
+      {
+        "type": "link",
+        "label": "首页",
+        "href": "/index",
+        "docId": "index"
+      },
+      {
+        "type": "link",
+        "label": "这是首页，同时也是标题",
+        "href": "/test",
+        "docId": "test"
+      }
+    ]
+  },
+  "docs": {
+    "index": {
+      "id": "index",
+      "title": "index",
+      "description": "",
+      "sidebar": "defaultSidebar"
+    },
+    "test": {
+      "id": "test",
+      "title": "这是首页，同时也是标题",
+      "description": "",
+      "sidebar": "defaultSidebar"
+    }
+  }
+}

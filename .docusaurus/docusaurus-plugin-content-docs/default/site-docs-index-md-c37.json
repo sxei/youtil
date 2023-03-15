@@ -1,0 +1,21 @@
+{
+  "unversionedId": "index",
+  "id": "index",
+  "title": "index",
+  "description": "",
+  "source": "@site/docs/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "sidebar_label": "首页"
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "这是首页，同时也是标题",
+    "permalink": "/test"
+  }
+}
