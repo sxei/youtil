@@ -4,11 +4,7 @@
 node_modules/
 
 # production
-dist/
 tmp/
-cjs/
-esm/
-es2017/
 
 # misc
 .idea/
