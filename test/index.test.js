@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/indent */
 const youtil = require('../src');
 const { formatDate, getParam, encodeHtml } = youtil.default;
 
 test('formatDate', () => {
-    expect(formatDate(1675935902379)).toBe('2023-02-09 17:45:02');
-    expect(formatDate(1675935902379, 'yyyy-MM-dd')).toBe('2023-02-09');
+    expect(formatDate()).toBe('');
+    expect(formatDate(1675943103348)).toBe('2023-02-09 19:45:03');
+    expect(formatDate('1675943103348')).toBe('2023-02-09 19:45:03');
+    expect(formatDate('2023-02-09T11:45:03Z')).toBe('2023-02-09 19:45:03');
+    expect(formatDate(1675943103348, 'yyyy-MM-dd')).toBe('2023-02-09');
 });
 
 test('getParam', () => {

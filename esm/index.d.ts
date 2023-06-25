@@ -8,11 +8,11 @@ interface IShowLoadingConfig {
 declare const _default: {
     /**
      * 将日期格式化成指定格式的字符串
-     * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳
+     * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
      * @param fmt 目标字符串格式，支持的字符有：y,M,d,q,w,H,h,m,S，默认：yyyy-MM-dd HH:mm:ss
      * @returns 返回格式化后的日期字符串
      */
-    formatDate(date?: Date | number, fmt?: string): string;
+    formatDate(date?: Date | number | string, fmt?: string): string;
     /**
      * 将字符串解析成日期
      * @param str 输入的日期字符串，如'2014-09-13'

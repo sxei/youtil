@@ -12,7 +12,7 @@ var _slicedToArray = require("@swc/helpers/lib/_sliced_to_array.js").default;
 var _default = {
     /**
      * 将日期格式化成指定格式的字符串
-     * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳
+     * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
      * @param fmt 目标字符串格式，支持的字符有：y,M,d,q,w,H,h,m,S，默认：yyyy-MM-dd HH:mm:ss
      * @returns 返回格式化后的日期字符串
      */ formatDate: function formatDate(date, fmt) {
@@ -25,7 +25,15 @@ var _default = {
             });
         };
         if (!date) return "";
-        date = typeof date === "number" ? new Date(date) : date;
+        if (typeof date === "number") // 1687682453445
+        date = new Date(date);
+        else if (typeof date === "string") {
+            if (/^\d{12,13}$/g.test(date)) // '1687682453445'
+            date = new Date(parseInt(date));
+            else if (/^.{10}T.{8,12}Z?$/g.test(date)) // '2019-01-01T00:00:00.000Z'
+            date = new Date(date);
+            else return date;
+        }
         fmt = fmt || "yyyy-MM-dd HH:mm:ss";
         var obj = {
             y: date.getFullYear(),

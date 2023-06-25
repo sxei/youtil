@@ -8,11 +8,6 @@ export default [
     exact: true
   },
   {
-    path: '/demos/IcePkgDemo_dad9cf',
-    component: ComponentCreator('/demos/IcePkgDemo_dad9cf', '25e'),
-    exact: true
-  },
-  {
     path: '/',
     component: ComponentCreator('/', '780'),
     routes: [
