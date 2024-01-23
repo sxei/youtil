@@ -16,7 +16,7 @@
   },
   "sidebar": "defaultSidebar",
   "next": {
-    "title": "这是首页，同时也是标题",
+    "title": "日期格式化",
     "permalink": "/test"
   }
 }

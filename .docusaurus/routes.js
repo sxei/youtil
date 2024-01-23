@@ -3,8 +3,8 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/demos/IcePkgDemo_a77ab2',
-    component: ComponentCreator('/demos/IcePkgDemo_a77ab2', 'cd4'),
+    path: '/demos/IcePkgDemo_docs_02_test_0',
+    component: ComponentCreator('/demos/IcePkgDemo_docs_02_test_0', '59a'),
     exact: true
   },
   {

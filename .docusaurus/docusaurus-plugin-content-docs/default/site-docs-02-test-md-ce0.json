@@ -1,7 +1,7 @@
 {
   "unversionedId": "test",
   "id": "test",
-  "title": "这是首页，同时也是标题",
+  "title": "日期格式化",
   "description": "",
   "source": "@site/docs/02-test.md",
   "sourceDirName": ".",

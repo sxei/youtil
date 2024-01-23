@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/indent */
-const youtil = require('../src');
-const { formatDate, getParam, encodeHtml } = youtil.default;
+import youtil from '../src';
+const { formatDate, getParam, encodeHtml } = youtil;
 
 test('formatDate', () => {
     expect(formatDate()).toBe('');

@@ -17,7 +17,7 @@
       },
       {
         "type": "link",
-        "label": "这是首页，同时也是标题",
+        "label": "日期格式化",
         "href": "/test",
         "docId": "test"
       }
@@ -32,7 +32,7 @@
     },
     "test": {
       "id": "test",
-      "title": "这是首页，同时也是标题",
+      "title": "日期格式化",
       "description": "",
       "sidebar": "defaultSidebar"
     }

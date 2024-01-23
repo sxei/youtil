@@ -1,8 +1,9 @@
 # youtil
 
-`youtil`，发音同`util`，中文可以叫做`油梯`，一个与框架（Vue、React等）、环境（Nodejs、Web等）无关的小巧、精简、实用、不依赖任何第三方库的`JavaScript`工具库。
+`youtil`，发音同`util`，中文可以叫做`油梯`，一个与框架（`Vue`、`React`等）、环境（`Nodejs`、`Browser`等）无关的小巧、精简、实用、不依赖任何第三方库的`JavaScript`工具库。
 
-> 代码还在不断扩充，敬请期待！
+> 1. 代码还在不断补充完善，敬请期待！
+> 2. 少数方法可能依赖DOM，例如`showLoading`；
 
 ## 如何使用
 
@@ -24,14 +25,27 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 之前想了很多名字，包括`autil`、`zutil`、`feutil`等，从a-z试下来只有几个没有被注册，但是不好记，最后才取了这个名字，因为比较好记。
 
-## 代码提交顺序
+## 模块开发
 
-* 修改代码；
-* 更新changelog和package.json
-* npm publish
-* git push
+cnpm run dev
 
-## 附录
+### 目录结构介绍
+
+* src： 源文件；
+* docs： 文档；
+* test：测试用例；
+* dist：供浏览器直接使用的bundle模式产物；
+* esm：供其他项目引入；
+* build：文档之类的构建产物；
+
+### 代码提交顺序
+
+* 更新代码；
+* 更新`package.json`和`changelog`；
+* `npm publish`；
+* `git push`；
+
+### 附录
 
 仓库脚手架来源：
 

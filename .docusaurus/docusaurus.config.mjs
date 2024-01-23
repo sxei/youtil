@@ -19,20 +19,10 @@ export default {
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "https://img.alicdn.com/imgextra/i2/O1CN01jUf9ZP1aKwVvEc58W_!!6000000003312-73-tps-160-160.ico",
-  "staticDirectories": [],
   "plugins": [
-    "/Users/lxa/workspaces/github/youtil/node_modules/_docusaurus-plugin-sass@0.2.3@docusaurus-plugin-sass/docusaurus-plugin-sass.js",
+    "/Users/lxa/workspaces/github/youtil/node_modules/_@ice_pkg-plugin-docusaurus@1.4.18@@ice/pkg-plugin-docusaurus/es2017/plugin.js",
     [
-      "/Users/lxa/workspaces/github/youtil/node_modules/_docusaurus-plugin-less@2.0.2@docusaurus-plugin-less/index.js",
-      {
-        "lessOptions": {
-          "javascriptEnabled": true
-        }
-      }
-    ],
-    "/Users/lxa/workspaces/github/youtil/node_modules/_@ice_pkg-plugin-docusaurus@1.4.4@@ice/pkg-plugin-docusaurus/es2017/plugin.js",
-    [
-      "/Users/lxa/workspaces/github/youtil/node_modules/_@docusaurus_plugin-content-pages@2.3.1@@docusaurus/plugin-content-pages/lib/index.js",
+      "/Users/lxa/workspaces/github/youtil/node_modules/_@docusaurus_plugin-content-pages@2.4.3@@docusaurus/plugin-content-pages/lib/index.js",
       {
         "path": "pages",
         "routeBasePath": "/pages"
@@ -41,7 +31,7 @@ export default {
   ],
   "presets": [
     [
-      "/Users/lxa/workspaces/github/youtil/node_modules/_@docusaurus_preset-classic@2.3.1@@docusaurus/preset-classic/lib/index.js",
+      "/Users/lxa/workspaces/github/youtil/node_modules/_@docusaurus_preset-classic@2.4.3@@docusaurus/preset-classic/lib/index.js",
       {
         "docs": {
           "path": "docs",
@@ -50,7 +40,8 @@ export default {
               null,
               {
                 "mobilePreview": false,
-                "baseUrl": "/"
+                "baseUrl": "/",
+                "mobilePreviewUrlParams": ""
               }
             ]
           ],
@@ -63,7 +54,7 @@ export default {
           "routeBasePath": "/"
         },
         "theme": {
-          "customCss": "/Users/lxa/workspaces/github/youtil/node_modules/_@ice_pkg-plugin-docusaurus@1.4.4@@ice/pkg-plugin-docusaurus/es2017/css/custom.css"
+          "customCss": "/Users/lxa/workspaces/github/youtil/node_modules/_@ice_pkg-plugin-docusaurus@1.4.18@@ice/pkg-plugin-docusaurus/es2017/css/custom.css"
         },
         "pages": {
           "path": ".docusaurus/demo-pages",
@@ -75,9 +66,9 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "ICE PKG",
+      "title": "youtil (油梯)",
       "logo": {
-        "src": "https://img.alicdn.com/imgextra/i1/O1CN01lZTSIX1j7xpjIQ3fJ_!!6000000004502-2-tps-160-160.png"
+        "src": "static/1.jpg"
       },
       "hideOnScroll": false,
       "items": []
@@ -306,6 +297,9 @@ export default {
   },
   "baseUrlIssueBanner": true,
   "onDuplicateRoutes": "warn",
+  "staticDirectories": [
+    "static"
+  ],
   "customFields": {},
   "themes": [],
   "scripts": [],

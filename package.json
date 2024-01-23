@@ -1,6 +1,6 @@
 {
   "name": "youtil",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
   "files": [
     "esm",
@@ -42,11 +42,11 @@
     "youtil"
   ],
   "dependencies": {
-    "@swc/helpers": "^0.4.14"
+    "@swc/helpers": "^0.5.3"
   },
   "devDependencies": {
     "@ice/jsx-runtime": "^0.2.0",
-    "@ice/pkg": "^1.0.0",
+    "@ice/pkg": "^1.5.17",
     "@ice/pkg-plugin-docusaurus": "^1.4.4",
     "@iceworks/spec": "^1.0.0",
     "eslint": "^7.0.0",
