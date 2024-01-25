@@ -4,7 +4,7 @@ import { defineConfig } from '@ice/pkg';
 export default defineConfig({
   // 供项目中引入使用的构建产物，输出在 esm 文件夹
   transform: {
-    formats: ['esm'],
+    formats: ['esm', 'cjs'],
   },
   // 供浏览器使用的dist输出配置
   bundle: {

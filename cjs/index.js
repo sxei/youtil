@@ -1,6 +1,16 @@
-import _instanceof from "@swc/helpers/src/_instanceof.mjs";
-import _sliced_to_array from "@swc/helpers/src/_sliced_to_array.mjs";
-export default {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+var _instanceof = require("@swc/helpers/lib/_instanceof.js").default;
+var _slicedToArray = require("@swc/helpers/lib/_sliced_to_array.js").default;
+var _default = {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
@@ -166,7 +176,7 @@ export default {
         search.split("&").map(function(item) {
             return item.split("=");
         }).forEach(function(param) {
-            var _param = _sliced_to_array(param, 2), key = _param[0], value = _param[1];
+            var _param = _slicedToArray(param, 2), key = _param[0], value = _param[1];
             params[key] = value || "";
         });
         return params;
@@ -182,7 +192,7 @@ export default {
         url = url || "".concat(location.pathname).concat(location.search);
         // 如果参数已经存在，替换之
         if (this.getParam(name, url) !== undefined) return url.replace(new RegExp("(^|\\?|&)".concat(name, "=(.*?)(?=&|#|$)"), "g"), "$1".concat(name, "=").concat(value));
-        var _url_split = _sliced_to_array(url.split("#"), 2), pathname = _url_split[0], hash = _url_split[1]; // 处理存在hash的情况
+        var _url_split = _slicedToArray(url.split("#"), 2), pathname = _url_split[0], hash = _url_split[1]; // 处理存在hash的情况
         return "".concat(pathname).concat(pathname.indexOf("?") < 0 ? "?" : "&").concat(name, "=").concat(value).concat(hash ? "#" : "").concat(hash || "");
     },
     /**

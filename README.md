@@ -45,6 +45,8 @@ cnpm run dev
 * `npm publish`；
 * `git push`；
 
+注意：@ice/pkg和@swc/helpers 升级到0.5.0以上版本时其他业务可能报错，非常坑！目前写死版本
+
 ### 附录
 
 仓库脚手架来源：

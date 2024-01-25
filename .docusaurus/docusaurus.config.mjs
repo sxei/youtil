@@ -19,6 +19,7 @@ export default {
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "https://img.alicdn.com/imgextra/i2/O1CN01jUf9ZP1aKwVvEc58W_!!6000000003312-73-tps-160-160.ico",
+  "staticDirectories": [],
   "plugins": [
     "/Users/lxa/workspaces/github/youtil/node_modules/_@ice_pkg-plugin-docusaurus@1.4.18@@ice/pkg-plugin-docusaurus/es2017/plugin.js",
     [
@@ -297,9 +298,6 @@ export default {
   },
   "baseUrlIssueBanner": true,
   "onDuplicateRoutes": "warn",
-  "staticDirectories": [
-    "static"
-  ],
   "customFields": {},
   "themes": [],
   "scripts": [],

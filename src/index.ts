@@ -5,6 +5,7 @@ interface IShowLoadingConfig {
     onCancel?: Function;
     id?: string,
 }
+
 export default {
     /**
      * 将日期格式化成指定格式的字符串
@@ -29,6 +30,12 @@ export default {
             } else {
                 return date;
             }
+        }
+        if (!(date instanceof Date)) {
+            throw new Error('formatDate error: not date.');
+        }
+        if (isNaN(date?.getFullYear())) {
+            throw new Error('formatDate error: invalid date.');
         }
         fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
         const obj: any = {
@@ -280,5 +287,19 @@ export default {
             }
         }
         return html;
+    },
+    /**
+     * 将一个普通对象转为 a=1&b=2 的URL格式，会自动过滤undefined的值
+     * @param data 一个普通对象，如果对象嵌对象则会被自动转为JSON
+     * @returns 返回类似 a=1&b=2 的字符串
+     */
+    toUrlParams(data: any) {
+        return Object.keys(data || {})
+            .filter(key => data[key] !== undefined)
+            .map((key) => {
+                const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
+                return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+            })
+            .join('&');
     },
 };
