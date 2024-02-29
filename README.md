@@ -27,7 +27,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 ## 模块开发
 
-cnpm run dev
+依赖`node@16`环境，执行`cnpm run dev`将自动打开本地预览。
 
 ### 目录结构介绍
 
@@ -46,6 +46,20 @@ cnpm run dev
 * `git push`；
 
 注意：@ice/pkg和@swc/helpers 升级到0.5.0以上版本时其他业务可能报错，非常坑！目前写死版本
+
+### 关于@swc/helper的版本
+
+`@swc/helper`在升级到0.5.0之后有一些兼容性问题，一些老工程（如node14+webpack4）构建会失败。
+
+目前没有问题的版本：
+
+* `@swc/helper`写死`0.4.14`（部分构建产物：`import _instanceof from "@swc/helpers/src/_instanceof.mjs"`）；
+* `@ice/pkg`写死`1.5.5`；
+
+有问题的版本：
+
+* `@swc/helper`写死`^0.5.0`（部分构建产物：`import { _ as _instanceof } from "@swc/helpers/_/_instanceof"`）；
+* `@ice/pkg`写死`^1.5.5`；
 
 ### 附录
 

@@ -1,6 +1,6 @@
-import { _ as _instanceof } from "@swc/helpers/_/_instanceof";
-import { _ as _sliced_to_array } from "@swc/helpers/_/_sliced_to_array";
-export default {
+import _instanceof from "@swc/helpers/src/_instanceof.mjs";
+import _sliced_to_array from "@swc/helpers/src/_sliced_to_array.mjs";
+var youtil = {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
@@ -10,38 +10,23 @@ export default {
         var _loop = function(i) {
             fmt = fmt.replace(new RegExp("".concat(i, "+"), "g"), function(m) {
                 var val = "".concat(obj[i]);
-                if (i === "w") {
-                    return (m.length > 2 ? "星期" : "周") + week[val];
-                }
-                for(var j = 0, len = val.length; j < m.length - len; j++){
-                    val = "0".concat(val);
-                }
+                if (i === "w") return (m.length > 2 ? "星期" : "周") + week[val];
+                for(var j = 0, len = val.length; j < m.length - len; j++)val = "0".concat(val);
                 return m.length === 1 ? val : val.substring(val.length - m.length);
             });
         };
-        if (!date) {
-            return "";
-        }
-        if (typeof date === "number") {
-            // 1687682453445
+        if (!date) return "";
+        if (typeof date === "number") // 1687682453445
+        date = new Date(date);
+        else if (typeof date === "string") {
+            if (/^\d{12,13}$/g.test(date)) // '1687682453445'
+            date = new Date(parseInt(date));
+            else if (/^.{10}T.{8,12}Z?$/g.test(date)) // '2019-01-01T00:00:00.000Z'
             date = new Date(date);
-        } else if (typeof date === "string") {
-            if (/^\d{12,13}$/g.test(date)) {
-                // '1687682453445'
-                date = new Date(parseInt(date));
-            } else if (/^.{10}T.{8,12}Z?$/g.test(date)) {
-                // '2019-01-01T00:00:00.000Z'
-                date = new Date(date);
-            } else {
-                return date;
-            }
+            else return date;
         }
-        if (!_instanceof(date, Date)) {
-            throw new Error("formatDate error: not date.");
-        }
-        if (isNaN(date === null || date === void 0 ? void 0 : date.getFullYear())) {
-            throw new Error("formatDate error: invalid date.");
-        }
+        if (!_instanceof(date, Date)) throw new Error("formatDate error: not date.");
+        if (isNaN(date === null || date === void 0 ? void 0 : date.getFullYear())) throw new Error("formatDate error: invalid date.");
         fmt = fmt || "yyyy-MM-dd HH:mm:ss";
         var obj = {
             y: date.getFullYear(),
@@ -94,9 +79,7 @@ export default {
         });
         obj.M--; // 月份是从0开始的，所以要减去1
         var date = new Date(obj.y, obj.M, obj.d, obj.H, obj.m, obj.s);
-        if (obj.S !== 0) {
-            date.setMilliseconds(obj.S); // 如果设置了毫秒
-        }
+        if (obj.S !== 0) date.setMilliseconds(obj.S); // 如果设置了毫秒
         return date;
     },
     /**
@@ -106,7 +89,6 @@ export default {
      * @param {*} options
      */ showLoading: function showLoading() {
         var text = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "请稍候", seconds = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 10, config = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-        var _this = this;
         var defaultConfig = {
             hasMask: true,
             maskColor: "transparent",
@@ -117,9 +99,7 @@ export default {
         config = Object.assign({}, defaultConfig, config);
         var id = config.id;
         var timeoutKey = "_".concat(id, "_timeout");
-        if (window[timeoutKey]) {
-            clearTimeout(window[timeoutKey]);
-        }
+        if (window[timeoutKey]) clearTimeout(window[timeoutKey]);
         var dom = document.getElementById(id);
         if (!dom) {
             dom = document.createElement("div");
@@ -138,24 +118,20 @@ export default {
         if (config.onCancel) {
             var btn = dom.querySelector(".cancel");
             btn && btn.addEventListener("click", function() {
-                _this.hideLoading();
+                youtil.hideLoading();
                 config.onCancel();
             });
         }
         dom.style.display = "block";
-        if (seconds > 0) {
-            window[timeoutKey] = setTimeout(function() {
-                _this.hideLoading();
-            }, seconds * 1000);
-        }
+        if (seconds > 0) window[timeoutKey] = setTimeout(function() {
+            youtil.hideLoading();
+        }, seconds * 1000);
     },
     // 隐藏全局loading
     hideLoading: function hideLoading() {
         var id = "com_global_page_loading";
         var loading = document.getElementById(id);
-        if (loading) {
-            loading.style.display = "none";
-        }
+        if (loading) loading.style.display = "none";
     },
     /**
      * 从URL中获取某个参数，如果不存在返回 undefined ，如果存在多个同名参数，返回第一个匹配值
@@ -175,7 +151,7 @@ export default {
      * @param {*} url 要获取的URL，默认当前地址
      */ getParamInt: function getParamInt(name) {
         var url = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : location.search;
-        return parseInt(this.getParam(name, url) || "0", 10);
+        return parseInt(youtil.getParam(name, url) || "0", 10);
     },
     /**
      * 获取某个URL的全部参数
@@ -204,9 +180,7 @@ export default {
      */ setParam: function setParam(name, value, url) {
         url = url || "".concat(location.pathname).concat(location.search);
         // 如果参数已经存在，替换之
-        if (this.getParam(name, url) !== undefined) {
-            return url.replace(new RegExp("(^|\\?|&)".concat(name, "=(.*?)(?=&|#|$)"), "g"), "$1".concat(name, "=").concat(value));
-        }
+        if (youtil.getParam(name, url) !== undefined) return url.replace(new RegExp("(^|\\?|&)".concat(name, "=(.*?)(?=&|#|$)"), "g"), "$1".concat(name, "=").concat(value));
         var _url_split = _sliced_to_array(url.split("#"), 2), pathname = _url_split[0], hash = _url_split[1]; // 处理存在hash的情况
         return "".concat(pathname).concat(pathname.indexOf("?") < 0 ? "?" : "&").concat(name, "=").concat(value).concat(hash ? "#" : "").concat(hash || "");
     },
@@ -239,9 +213,7 @@ export default {
      * @param obj 要复制的对象，非对象格式会直接返回
      * @returns 
      */ deepCopy: function(obj) {
-        if (!obj || typeof obj !== "object") {
-            return obj;
-        }
+        if (!obj || typeof obj !== "object") return obj;
         return JSON.parse(JSON.stringify(obj));
     },
     /**
@@ -253,11 +225,7 @@ export default {
             var div = document.createElement("div");
             div.innerText = html;
             return div.innerHTML;
-        } else if (typeof html === "object" && html) {
-            for(var i in html){
-                html[i] = this.encodeHtml(html[i]);
-            }
-        }
+        } else if (typeof html === "object" && html) for(var i in html)html[i] = youtil.encodeHtml(html[i]);
         return html;
     },
     /**
@@ -269,11 +237,7 @@ export default {
             var div = document.createElement("div");
             div.innerHTML = html;
             return div.innerText;
-        } else if (typeof html === "object" && html) {
-            for(var i in html){
-                html[i] = this.decodeHtml(html[i]);
-            }
-        }
+        } else if (typeof html === "object" && html) for(var i in html)html[i] = youtil.decodeHtml(html[i]);
         return html;
     },
     /**
@@ -300,15 +264,13 @@ export default {
         cb = cb || function(success, message) {
             return console[success ? "log" : "error"]("复制到剪贴板".concat(success ? "成功！" : "失败：".concat(message)));
         };
-        if (navigator.clipboard && !supportSilent) {
-            // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
-            return navigator.clipboard.writeText(text).then(function() {
-                cb(true);
-            }).catch(function(e) {
-                cb(false, e.message);
-                throw e;
-            });
-        }
+        if (navigator.clipboard && !supportSilent) // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
+        return navigator.clipboard.writeText(text).then(function() {
+            cb(true);
+        }).catch(function(e) {
+            cb(false, e.message);
+            throw e;
+        });
         var input = document.createElement("input");
         input.value = text;
         input.style.cssText = "position:fixed;left:0;top:0;opacity:0;";
@@ -323,5 +285,4 @@ export default {
         document.body.removeChild(input);
     }
 };
-
- //# sourceMappingURL=index.js.map
+export default youtil;

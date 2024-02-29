@@ -1,5 +1,10 @@
 # 变更历史
 
+## 1.0.12 (2024-02-29)
+
+* bugfix: 修复上个版本因将`@swc/helper`升级至`^0.5.0`后不兼容老工程的问题；
+* feature: 所有`this`全部替换成`youtil`，避免不必要的问题出现；
+
 ## 1.0.11 (2024-02-29)
 
 * feature: 新增`copyTextToClipboard`方法；

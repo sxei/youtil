@@ -7,7 +7,7 @@ interface IShowLoadingConfig {
 }
 type CopyTextToClipboardCallback = (success: boolean, message?: string) => Promise<void> | void;
 
-export default {
+const youtil = {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
@@ -154,14 +154,14 @@ export default {
         if (config.onCancel) {
             const btn = dom.querySelector('.cancel');
             btn && btn.addEventListener('click', () => {
-                this.hideLoading();
+                youtil.hideLoading();
                 config.onCancel();
             });
         }
         dom.style.display = 'block';
         if (seconds > 0) {
             (window as any)[timeoutKey] = setTimeout(() => {
-                this.hideLoading();
+                youtil.hideLoading();
             }, seconds * 1000);
         }
     },
@@ -191,7 +191,7 @@ export default {
      * @param {*} url 要获取的URL，默认当前地址
      */
     getParamInt(name: string, url: string = location.search) {
-        return parseInt(this.getParam(name, url) || '0', 10);
+        return parseInt(youtil.getParam(name, url) || '0', 10);
     },
     /**
      * 获取某个URL的全部参数
@@ -218,7 +218,7 @@ export default {
     setParam(name: string, value: string | number, url?: string) {
         url = url || `${location.pathname}${location.search}`;
         // 如果参数已经存在，替换之
-        if (this.getParam(name, url) !== undefined) {
+        if (youtil.getParam(name, url) !== undefined) {
             return url.replace(new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g'), `$1${name}=${value}`);
         }
         const [pathname, hash] = url.split('#'); // 处理存在hash的情况
@@ -267,7 +267,7 @@ export default {
             return div.innerHTML;
         } else if (typeof html === 'object' && html) {
             for (const i in html) {
-                html[i] = this.encodeHtml(html[i]);
+                html[i] = youtil.encodeHtml(html[i]);
             }
         }
         return html;
@@ -284,7 +284,7 @@ export default {
             return div.innerText;
         } else if (typeof html === 'object' && html) {
             for (const i in html) {
-                html[i] = this.decodeHtml(html[i]);
+                html[i] = youtil.decodeHtml(html[i]);
             }
         }
         return html;
@@ -337,3 +337,5 @@ export default {
         document.body.removeChild(input);
     },
 };
+
+export default youtil;

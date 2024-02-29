@@ -6,7 +6,7 @@ interface IShowLoadingConfig {
     id?: string;
 }
 type CopyTextToClipboardCallback = (success: boolean, message?: string) => Promise<void> | void;
-declare const _default: {
+declare const youtil: {
     /**
      * 将日期格式化成指定格式的字符串
      * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
@@ -113,4 +113,4 @@ declare const _default: {
      */
     copyTextToClipboard(text: string, cb: CopyTextToClipboardCallback, supportSilent: boolean): Promise<void> | void;
 };
-export default _default;
+export default youtil;
