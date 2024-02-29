@@ -12,6 +12,9 @@ tmp/
 .DS_Store
 *.swp
 *.dia~
+.eslintcache
+.docusaurus
+.vscode
 
 npm-debug.log*
 yarn-debug.log*

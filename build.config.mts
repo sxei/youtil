@@ -2,13 +2,14 @@ import { defineConfig } from '@ice/pkg';
 
 // https://pkg.ice.work/reference/config
 export default defineConfig({
-  // 供项目中引入使用的构建产物，输出在 esm 文件夹
   transform: {
-    formats: ['esm', 'cjs'],
+    // 供项目中引入使用的构建产物，输出在 esm 文件夹
+    formats: ['esm'],
   },
-  // 供浏览器使用的dist输出配置
   bundle: {
+    // 供浏览器消费的构建产物，输出在 dist 文件夹
     formats: ['esm', 'umd'],
+    // 不关闭此配置的话导出的JS会比较冗余
     polyfill: false,
   },
   plugins: [

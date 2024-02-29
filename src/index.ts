@@ -5,6 +5,7 @@ interface IShowLoadingConfig {
     onCancel?: Function;
     id?: string,
 }
+type CopyTextToClipboardCallback = (success: boolean, message?: string) => Promise<void> | void;
 
 export default {
     /**
@@ -301,5 +302,38 @@ export default {
                 return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
             })
             .join('&');
+    },
+    /**
+     * 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
+     * await copyTextToClipboard('要复制的文本', success => alert(`复制${success ? '成功' : '失败'}`));
+     * console.log('只有复制成功才会继续执行的后续代码');
+     * @param {*} text 要复制的文本
+     * @param {*} cb 回调函数: cb(success, message)
+     * @param {*} supportSilent 是否支持后台静默复制，如果是则优先采用 execCommand
+     * @returns
+     */
+    copyTextToClipboard(text: string, cb: CopyTextToClipboardCallback, supportSilent: boolean): Promise<void> | void {
+        cb = cb || ((success, message) => console[success ? 'log' : 'error'](`复制到剪贴板${success ? '成功！' : `失败：${message}`}`));
+        if (navigator.clipboard && !supportSilent) {
+            // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
+            return navigator.clipboard.writeText(text).then(() => {
+                cb(true);
+            }).catch(e => {
+                cb(false, e.message);
+                throw e;
+            });
+        }
+        const input = document.createElement('input');
+        input.value = text;
+        input.style.cssText = 'position:fixed;left:0;top:0;opacity:0;';
+        document.body.appendChild(input);
+        input.select();
+        try {
+            cb(document.execCommand('copy'));
+        } catch (e) {
+            cb(false, e.message);
+            throw e;
+        }
+        document.body.removeChild(input);
     },
 };
