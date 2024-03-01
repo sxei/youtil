@@ -1,5 +1,9 @@
 # 变更历史
 
+## 1.0.13 (2024-03-01)
+
+* feature: `copyTextToClipboard`改名`copyToClipboard`并优化内部实现，不向下兼容；
+
 ## 1.0.12 (2024-02-29)
 
 * bugfix: 修复上个版本因将`@swc/helper`升级至`^0.5.0`后不兼容老工程的问题；

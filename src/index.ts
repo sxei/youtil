@@ -305,37 +305,49 @@ const youtil = {
     },
     /**
      * 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
-     * await copyTextToClipboard('要复制的文本', success => alert(`复制${success ? '成功' : '失败'}`));
-     * console.log('只有复制成功才会继续执行的后续代码');
+     * await copyTextToClipboard('要复制的文本', message => alert(`复制到剪贴板失败：${message}`));
+     * alert('复制到剪贴板成功！');
      * @param {*} text 要复制的文本
-     * @param {*} cb 回调函数: cb(success, message)
+     * @param {*} onFailure 失败回调，接受一个 message 参数
      * @param {*} supportSilent 是否支持后台静默复制，如果是则优先采用 execCommand
      * @returns
      */
-    copyTextToClipboard(text: string, cb: CopyTextToClipboardCallback, supportSilent: boolean): Promise<void> | void {
-        cb = cb || ((success, message) => console[success ? 'log' : 'error'](`复制到剪贴板${success ? '成功！' : `失败：${message}`}`));
+    copyToClipboard(text: string, onFailure: (message: string) => void, supportSilent: boolean) {
+        if (!text) {
+            throw new Error('text can not be empty.');
+        }
+        onFailure = onFailure || (msg => console.error(`复制到剪贴板失败：${msg || ''}`));
+        // 优先采用现代化API
         if (navigator.clipboard && !supportSilent) {
             // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
-            return navigator.clipboard.writeText(text).then(() => {
-                cb(true);
-            }).catch(e => {
-                cb(false, e.message);
+            return navigator.clipboard.writeText(text).catch(e => {
+                onFailure(e.message);
                 throw e;
             });
         }
-        const input = document.createElement('input');
-        input.value = text;
-        input.style.cssText = 'position:fixed;left:0;top:0;opacity:0;';
-        document.body.appendChild(input);
-        input.select();
-        try {
-            cb(document.execCommand('copy'));
-        } catch (e) {
-            cb(false, e.message);
-            throw e;
-        }
-        document.body.removeChild(input);
-    },
+        // execCommand 原本是一个同步API，这里为了和 writeText 保持一致统一包成proimse
+        return new Promise<void>((resolve, reject) => {
+            const input = document.createElement('input');
+            input.value = text;
+            input.style.cssText = 'position:fixed;left:0;top:0;opacity:0;';
+            document.body.appendChild(input);
+            input.select();
+            try {
+                if (document.execCommand('copy')) {
+                    resolve();
+                } else {
+                    const message = "Failed to execute 'document.execCommand'.";
+                    onFailure(message);
+                    reject(new Error(message));
+                }
+            } catch (e) {
+                onFailure(e.message);
+                reject(e);
+            } finally {
+                document.body.removeChild(input);
+            }
+        });
+    }
 };
 
 export default youtil;

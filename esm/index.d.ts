@@ -5,7 +5,6 @@ interface IShowLoadingConfig {
     onCancel?: Function;
     id?: string;
 }
-type CopyTextToClipboardCallback = (success: boolean, message?: string) => Promise<void> | void;
 declare const youtil: {
     /**
      * 将日期格式化成指定格式的字符串
@@ -104,13 +103,13 @@ declare const youtil: {
     toUrlParams(data: any): string;
     /**
      * 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
-     * await copyTextToClipboard('要复制的文本', success => alert(`复制${success ? '成功' : '失败'}`));
-     * console.log('只有复制成功才会继续执行的后续代码');
+     * await copyTextToClipboard('要复制的文本', message => alert(`复制到剪贴板失败：${message}`));
+     * alert('复制到剪贴板成功！');
      * @param {*} text 要复制的文本
-     * @param {*} cb 回调函数: cb(success, message)
+     * @param {*} onFailure 失败回调，接受一个 message 参数
      * @param {*} supportSilent 是否支持后台静默复制，如果是则优先采用 execCommand
      * @returns
      */
-    copyTextToClipboard(text: string, cb: CopyTextToClipboardCallback, supportSilent: boolean): Promise<void> | void;
+    copyToClipboard(text: string, onFailure: (message: string) => void, supportSilent: boolean): Promise<void>;
 };
 export default youtil;
