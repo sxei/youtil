@@ -114,8 +114,13 @@ import { toUrlParams } from "./param";
 }();
 /**
  * 支持实例化一个新的request方法，覆盖默认的部分配置项
- */ export var Request = function Request(overrideDefaultOptions, req) {
+ */ export var Request = function Request(req, overrideOptions) {
+    var overrideDefaultOptions = overrideOptions;
+    if (!overrideOptions) {
+        overrideDefaultOptions = req;
+        req = request;
+    }
     return function(url, options) {
-        return (req || request)(url, _object_spread({}, overrideDefaultOptions || {}, options || {}));
+        return req(url, _object_spread({}, overrideDefaultOptions || {}, options || {}));
     };
 };

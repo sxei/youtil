@@ -115,16 +115,23 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
     }
 };
 
+type IRequest = typeof request;
 interface RequestConstructor {
-    new (overrideDefaultOptions: IRequestOptions): typeof request;
+    new (overrideOptions: IRequestOptions): IRequest;
+    new (req: IRequest, overrideOptions: IRequestOptions): IRequest;
 }
 
 /**
  * 支持实例化一个新的request方法，覆盖默认的部分配置项
  */
-export const Request: RequestConstructor = function (this: typeof request, overrideDefaultOptions: IRequestOptions, req?: typeof request) {
+export const Request: RequestConstructor = function (this: IRequest, req: IRequest | IRequestOptions, overrideOptions: IRequestOptions) {
+    let overrideDefaultOptions = overrideOptions;
+    if (!overrideOptions) {
+        overrideDefaultOptions = req as IRequestOptions;
+        req = request;
+    }
     return <T>(url: string, options?: IRequestOptions) => {
-        return (req || request)<T>(url, {
+        return (req as IRequest)<T>(url, {
             ...(overrideDefaultOptions || {}),
             ...(options || {}),
         });
