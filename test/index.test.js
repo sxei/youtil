@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/indent */
-import youtil from '../src';
+import * as youtil from '../src';
+
 const { formatDate, getParam, encodeHtml } = youtil;
 
 test('formatDate', () => {

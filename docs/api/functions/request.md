@@ -6,9 +6,9 @@
 
 # Function: request()
 
-> **request**\<`T`\>(`url`, `options`?): `Promise`\<`void` \| `T`\>
+> **request**\<`T`\>(`url`, `options`?): `Promise`\<`T`\>
 
-Defined in: request.ts:41
+Defined in: [request.ts:41](https://github.com/sxei/youtil/blob/3146baa9248aadc2248b590938f928a27e5699a2/src/request.ts#L41)
 
 通用的API请求方法
 
@@ -16,7 +16,7 @@ Defined in: request.ts:41
 
 ### T
 
-`T`
+`T` = `any`
 
 ## Parameters
 
@@ -30,4 +30,4 @@ Defined in: request.ts:41
 
 ## Returns
 
-`Promise`\<`void` \| `T`\>
+`Promise`\<`T`\>

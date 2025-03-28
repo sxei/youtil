@@ -20,12 +20,23 @@ const data = await requestAPI(url, requestOptions);
 
 使用`requestAPI`封装的方法后：
 
-```js
-setLoading(true);
-const afterRequest = () => setLoading(false);
-const data = await doGetVideoHBCW({ activitySource: 1 }, { afterRequest });
-// 默认已经进行了异常兜底处理，此处的data直接指向 resp.data
-setData(data);
+```jsx preview
+import { request, Request } from 'youtil';
+import { useEffect } from 'react';
+
+var request2 = new Request({ errorMessage: '我是222' });
+var request3 = new Request({ baseUrl: '/api/' }, request2);
+export default () => {
+  const test = async () => {
+    debugger;
+    request3('ff');
+  }
+  return <div>
+    <a href="javascript:;" onClick={test}>点击请求</a>
+  </div>;
+}
+
+
 ```
 
 ## 自定义异常兜底文案

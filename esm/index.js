@@ -5,7 +5,7 @@ export * from "./time";
 /**
  * 基于JSON的简单深拷贝
  * @param obj 要复制的对象，非对象格式会直接返回
- * @returns 
+ * @returns
  */ export var deepCopy = function(obj) {
     if (!obj || typeof obj !== "object") return obj;
     return JSON.parse(JSON.stringify(obj));
@@ -13,7 +13,7 @@ export * from "./time";
 /**
  * HTML编码，例如将 【"】 变成 【&quot;】
  * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
- * @returns 
+ * @returns
  */ export var encodeHtml = function(html) {
     if (typeof html === "string") {
         var div = document.createElement("div");
@@ -25,7 +25,7 @@ export * from "./time";
 /**
  * HTML解码，例如将 【&quot;】 变成 【"】
  * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
- * @returns 
+ * @returns
  */ export var decodeHtml = function(html) {
     if (typeof html === "string") {
         var div = document.createElement("div");

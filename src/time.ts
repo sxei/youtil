@@ -15,7 +15,7 @@ export const formatDate = (date?: Date | number | string, fmt?: string) => {
     } else if (typeof date === 'string') {
         if (/^\d{12,13}$/g.test(date)) {
             // '1687682453445'
-            date = new Date(parseInt(date));
+            date = new Date(parseInt(date, 10));
         } else if (/^.{10}T.{8,12}Z?$/g.test(date)) {
             // '2019-01-01T00:00:00.000Z'
             date = new Date(date);
@@ -90,4 +90,3 @@ export const parseDate = (str: string, fmt?: string) => {
  * @returns 
  */
 export const sleep = (ms?: number) => new Promise(resolve => setTimeout(resolve, ms || 0));
-    

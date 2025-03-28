@@ -6,7 +6,7 @@ export * from './time';
 /**
  * 基于JSON的简单深拷贝
  * @param obj 要复制的对象，非对象格式会直接返回
- * @returns 
+ * @returns
  */
 export const deepCopy = (obj: any) => {
     if (!obj || typeof obj !== 'object') {
@@ -18,7 +18,7 @@ export const deepCopy = (obj: any) => {
 /**
  * HTML编码，例如将 【"】 变成 【&quot;】
  * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
- * @returns 
+ * @returns
  */
 export const encodeHtml = (html: string|any) => {
     if (typeof html === 'string') {
@@ -36,7 +36,7 @@ export const encodeHtml = (html: string|any) => {
 /**
  * HTML解码，例如将 【&quot;】 变成 【"】
  * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
- * @returns 
+ * @returns
  */
 export const decodeHtml = (html: string|any) => {
     if (typeof html === 'string') {

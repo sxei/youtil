@@ -4,7 +4,7 @@ export interface IShowLoadingConfig {
     maskColor?: string;
     cancelInline?: boolean;
     onCancel?: Function;
-    id?: string,
+    id?: string;
 }
 
 /**
