@@ -1,353 +1,99 @@
-interface IShowLoadingConfig {
-    hasMask?: boolean;
-    maskColor?: string;
-    cancelInline?: boolean;
-    onCancel?: Function;
-    id?: string,
-}
-type CopyTextToClipboardCallback = (success: boolean, message?: string) => Promise<void> | void;
+export * from './loading';
+export * from './param';
+export * from './request';
+export * from './time';
 
-const youtil = {
-    /**
-     * 将日期格式化成指定格式的字符串
-     * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
-     * @param fmt 目标字符串格式，支持的字符有：y,M,d,q,w,H,h,m,S，默认：yyyy-MM-dd HH:mm:ss
-     * @returns 返回格式化后的日期字符串
-     */
-    formatDate(date?: Date | number | string, fmt?: string) {
-        if (!date) {
-            return '';
-        }
-        if (typeof date === 'number') {
-            // 1687682453445
-            date = new Date(date);
-        } else if (typeof date === 'string') {
-            if (/^\d{12,13}$/g.test(date)) {
-                // '1687682453445'
-                date = new Date(parseInt(date));
-            } else if (/^.{10}T.{8,12}Z?$/g.test(date)) {
-                // '2019-01-01T00:00:00.000Z'
-                date = new Date(date);
-            } else {
-                return date;
-            }
-        }
-        if (!(date instanceof Date)) {
-            throw new Error('formatDate error: not date.');
-        }
-        if (isNaN(date?.getFullYear())) {
-            throw new Error('formatDate error: invalid date.');
-        }
-        fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
-        const obj: any = {
-            y: date.getFullYear(), // 年份，注意必须用getFullYear
-            M: date.getMonth() + 1, // 月份，注意是从0-11
-            d: date.getDate(), // 日期
-            q: Math.floor((date.getMonth() + 3) / 3), // 季度
-            w: date.getDay(), // 星期，注意是0-6
-            H: date.getHours(), // 24小时制
-            h: date.getHours() % 12 === 0 ? 12 : date.getHours() % 12, // 12小时制
-            m: date.getMinutes(), // 分钟
-            s: date.getSeconds(), // 秒
-            S: date.getMilliseconds(), // 毫秒
-        };
-        const week: any = ['天', '一', '二', '三', '四', '五', '六'];
-        // eslint-disable-next-line guard-for-in
-        for (const i in obj) {
-            fmt = fmt.replace(new RegExp(`${i}+`, 'g'), function (m) {
-                let val = `${obj[i]}`;
-                if (i === 'w') {
-                    return (m.length > 2 ? '星期' : '周') + week[val];
-                }
-                for (let j = 0, len = val.length; j < m.length - len; j++) {
-                    val = `0${val}`;
-                }
-                return m.length === 1 ? val : val.substring(val.length - m.length);
-            });
-        }
-        return fmt;
-    },
-    /**
-     * 将字符串解析成日期
-     * @param str 输入的日期字符串，如'2014-09-13'
-     * @param fmt 字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S，不支持w和q
-     * @returns 解析后的Date类型日期
-     */
-    parseDate(str: string, fmt?: string) {
-        fmt = fmt || 'yyyy-MM-dd';
-        const obj: any = { y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0 };
-        fmt.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function (m, $1, $2, $3, $4) {
-            str = str.replace(new RegExp(`${$1}(\\d{${$2.length}})${$4}`), function (_m, _$1) {
-                obj[$3] = parseInt(_$1);
-                return '';
-            });
-            return '';
-        });
-        obj.M--; // 月份是从0开始的，所以要减去1
-        const date = new Date(obj.y, obj.M, obj.d, obj.H, obj.m, obj.s);
-        if (obj.S !== 0) {
-            date.setMilliseconds(obj.S); // 如果设置了毫秒
-        }
-        return date;
-    },
-    /**
-     * 显示全局loading
-     * @param {*} text
-     * @param {*} seconds
-     * @param {*} options
-     */
-    showLoading(text = '请稍候', seconds = 10, config: IShowLoadingConfig = {}) {
-        const defaultConfig: IShowLoadingConfig = {
-            hasMask: true,
-            maskColor: 'transparent',
-            onCancel: null,
-            cancelInline: false,
-            id: 'com_global_page_loading',
-        };
-        config = Object.assign({}, defaultConfig, config);
-        const { id } = config;
-        const timeoutKey = `_${id}_timeout`;
-        if ((window as any)[timeoutKey]) {
-            clearTimeout((window as any)[timeoutKey]);
-        }
-        let dom = document.getElementById(id);
-        if (!dom) {
-            dom = document.createElement('div');
-            dom.id = id;
-            dom.className = id;
-            document.body.append(dom);
-        }
-        const styleId = `${id}_style`;
-        if (!document.getElementById(styleId)) {
-            const style = document.createElement('style');
-            style.id = styleId;
-            style.innerHTML = `
-            .${id} {
-                position: fixed;
-                top: calc(50vh - 60px);
-                left: calc(50vw - 60px);
-                width: 120px;
-                height: 120px;
-                z-index: 8000;
-                background: rgba(0, 0, 0, 0.6);
-                border-radius: 8px;
-                text-align: center;
-                color: white;
-                padding-top: 20px;
-            }
-            .${id} img {
-                width: 50px;
-                margin-bottom: 10px;
-            }`;
-            document.head.appendChild(style);
-        }
-        dom.innerHTML = `
-            ${config.hasMask ? `<div class="mask-wrapper" style="background-color: ${config.maskColor}"></div>` : ''}
-            <div class="loading-wrapper">
-                <div class="loading-content">
-                    <img src="https://img.alicdn.com/tfs/TB1bnUsQBLoK1RjSZFuXXXn0XXa-32-32.svg" alt="加载中">
-                    <div>${text}${config.cancelInline ? ' ' : '</div>'}
-                    ${config.onCancel ? '<a href="javascript:;" class="cancel">取消</a>' : ''}
-                    ${config.cancelInline ? '</div>' : ''}
-                </div>
-            </div>`;
-        if (config.onCancel) {
-            const btn = dom.querySelector('.cancel');
-            btn && btn.addEventListener('click', () => {
-                youtil.hideLoading();
-                config.onCancel();
-            });
-        }
-        dom.style.display = 'block';
-        if (seconds > 0) {
-            (window as any)[timeoutKey] = setTimeout(() => {
-                youtil.hideLoading();
-            }, seconds * 1000);
-        }
-    },
-    // 隐藏全局loading
-    hideLoading() {
-        const id = 'com_global_page_loading';
-        const loading = document.getElementById(id);
-        if (loading) {
-            loading.style.display = 'none';
-        }
-    },
-    /**
-     * 从URL中获取某个参数，如果不存在返回 undefined ，如果存在多个同名参数，返回第一个匹配值
-     * getParam('a', '?a=1&b=&c=3&c=33#abc') // '1'
-     * getParam('b', '?a=1&b=&c=3&c=33#abc') // ''
-     * getParam('c', '?a=1&b=&c=3&c=33#abc') // 3
-     * getParam('d', '?a=1&b=&c=3&c=33#abc') // undefined
-     * @param {*} name 参数名
-     * @param {*} url 要获取的URL，默认当前地址
-     */
-    getParam(name: string, url: string = location.search) {
-        return (new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g').exec(url) || [])[2];
-    },
-    /**
-     * 从URL中获取int参数
-     * @param {*} name 参数名
-     * @param {*} url 要获取的URL，默认当前地址
-     */
-    getParamInt(name: string, url: string = location.search) {
-        return parseInt(youtil.getParam(name, url) || '0', 10);
-    },
-    /**
-     * 获取某个URL的全部参数
-     * getParams('?a=1&b=2#cc') // {a: '1', b: '2'}
-     * @param url 
-     * @returns 参数对象
-     */
-    getParams(url = location.search) {
-        const search = ((url || '').split('?').pop() || '').split('#')[0] || '';
-        const params: any = {};
-        search.split('&').map(item => item.split('=')).forEach(([key, value]) => {
-            params[key] = value || '';
-        });
-        return params;
-    },
-    /**
-     * 给URL设置参数，如果已经存在，替换之，兼容hash存在的情况
-     * setParam('a', '123', '?a=1&b=2&a=3#d') // '?a=123&b=2&a=123#d'
-     * setParam('d', '444', '?a=1&b=2&a=3#d') // '?a=1&b=2&a=3&d=444#d'
-     * @param {Object} name 参数名
-     * @param {Object} value 参数值
-     * @param {Object} url 如果不传默认当前页面URL
-     */
-    setParam(name: string, value: string | number, url?: string) {
-        url = url || `${location.pathname}${location.search}`;
-        // 如果参数已经存在，替换之
-        if (youtil.getParam(name, url) !== undefined) {
-            return url.replace(new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g'), `$1${name}=${value}`);
-        }
-        const [pathname, hash] = url.split('#'); // 处理存在hash的情况
-        return `${pathname}${pathname.indexOf('?') < 0 ? '?' : '&'}${name}=${value}${hash ? '#' : ''}${hash || ''}`;
-    },
-    /**
-     * 删除URL中某个参数
-     * delParam('a', '?a=1&b=2&a=3#d') // '?b=2#d'
-     * delParam('b', '?a=1&b=2&a=3#d') // '?a=1&a=3#d'
-     * delParam('a', '?a=1#d') // '#d'
-     * @param name 参数名
-     * @param url 要删除的URL，默认当前页面URL
-     * @returns 处理完后的URL
-     */
-    delParam(name: string, url: string) {
-        url = url || `${location.pathname}${location.search}`;
-        return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => $2 === '&' ? $1 : $2);
-    },
-    /**
-     * 休息一段时间，单位毫秒
-     * 示例：await sleep(200); // 休息200毫秒
-     * @param time 要休息的时间，单位毫秒，不传默认0
-     * @returns 
-     */
-    sleep: (time?: number) => new Promise(resolve => setTimeout(resolve, time || 0)),
-    /**
-     * 基于JSON的简单深拷贝
-     * @param obj 要复制的对象，非对象格式会直接返回
-     * @returns 
-     */
-    deepCopy: (obj: any) => {
-        if (!obj || typeof obj !== 'object') {
-            return obj;
-        }
-        return JSON.parse(JSON.stringify(obj));
-    },
-    /**
-     * HTML编码，例如将 【"】 变成 【&quot;】
-     * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
-     * @returns 
-     */
-    encodeHtml(html: string|any) {
-        if (typeof html === 'string') {
-            const div = document.createElement('div');
-            div.innerText = html;
-            return div.innerHTML;
-        } else if (typeof html === 'object' && html) {
-            for (const i in html) {
-                html[i] = youtil.encodeHtml(html[i]);
-            }
-        }
-        return html;
-    },
-    /**
-     * HTML解码，例如将 【&quot;】 变成 【"】
-     * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
-     * @returns 
-     */
-    decodeHtml(html: string|any) {
-        if (typeof html === 'string') {
-            const div = document.createElement('div');
-            div.innerHTML = html;
-            return div.innerText;
-        } else if (typeof html === 'object' && html) {
-            for (const i in html) {
-                html[i] = youtil.decodeHtml(html[i]);
-            }
-        }
-        return html;
-    },
-    /**
-     * 将一个普通对象转为 a=1&b=2 的URL格式，会自动过滤undefined的值
-     * @param data 一个普通对象，如果对象嵌对象则会被自动转为JSON
-     * @returns 返回类似 a=1&b=2 的字符串
-     */
-    toUrlParams(data: any) {
-        return Object.keys(data || {})
-            .filter(key => data[key] !== undefined)
-            .map((key) => {
-                const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
-                return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-            })
-            .join('&');
-    },
-    /**
-     * 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
-     * await copyTextToClipboard('要复制的文本', message => alert(`复制到剪贴板失败：${message}`));
-     * alert('复制到剪贴板成功！');
-     * @param {*} text 要复制的文本
-     * @param {*} onFailure 失败回调，接受一个 message 参数
-     * @param {*} supportSilent 是否支持后台静默复制，如果是则优先采用 execCommand
-     * @returns
-     */
-    copyToClipboard(text: string, onFailure: (message: string) => void, supportSilent: boolean) {
-        if (!text) {
-            throw new Error('text can not be empty.');
-        }
-        onFailure = onFailure || (msg => console.error(`复制到剪贴板失败：${msg || ''}`));
-        // 优先采用现代化API
-        if (navigator.clipboard && !supportSilent) {
-            // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
-            return navigator.clipboard.writeText(text).catch(e => {
-                onFailure(e.message);
-                throw e;
-            });
-        }
-        // execCommand 原本是一个同步API，这里为了和 writeText 保持一致统一包成proimse
-        return new Promise<void>((resolve, reject) => {
-            const input = document.createElement('input');
-            input.value = text;
-            input.style.cssText = 'position:fixed;left:0;top:0;opacity:0;';
-            document.body.appendChild(input);
-            input.select();
-            try {
-                if (document.execCommand('copy')) {
-                    resolve();
-                } else {
-                    const message = "Failed to execute 'document.execCommand'.";
-                    onFailure(message);
-                    reject(new Error(message));
-                }
-            } catch (e) {
-                onFailure(e.message);
-                reject(e);
-            } finally {
-                document.body.removeChild(input);
-            }
-        });
+/**
+ * 基于JSON的简单深拷贝
+ * @param obj 要复制的对象，非对象格式会直接返回
+ * @returns 
+ */
+export const deepCopy = (obj: any) => {
+    if (!obj || typeof obj !== 'object') {
+        return obj;
     }
+    return JSON.parse(JSON.stringify(obj));
 };
 
-export default youtil;
+/**
+ * HTML编码，例如将 【"】 变成 【&quot;】
+ * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
+ * @returns 
+ */
+export const encodeHtml = (html: string|any) => {
+    if (typeof html === 'string') {
+        const div = document.createElement('div');
+        div.innerText = html;
+        return div.innerHTML;
+    } else if (typeof html === 'object' && html) {
+        for (const i in html) {
+            html[i] = encodeHtml(html[i]);
+        }
+    }
+    return html;
+};
+
+/**
+ * HTML解码，例如将 【&quot;】 变成 【"】
+ * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
+ * @returns 
+ */
+export const decodeHtml = (html: string|any) => {
+    if (typeof html === 'string') {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        return div.innerText;
+    } else if (typeof html === 'object' && html) {
+        for (const i in html) {
+            html[i] = decodeHtml(html[i]);
+        }
+    }
+    return html;
+};
+
+/**
+ * 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
+ * await copyTextToClipboard('要复制的文本', message => alert(`复制到剪贴板失败：${message}`));
+ * alert('复制到剪贴板成功！');
+ * @param {*} text 要复制的文本
+ * @param {*} onFailure 失败回调，接受一个 message 参数
+ * @param {*} supportSilent 是否支持后台静默复制，如果是则优先采用 execCommand
+ * @returns
+ */
+export const copyToClipboard = (text: string, onFailure: (message: string) => void, supportSilent: boolean) => {
+    if (!text) {
+        throw new Error('text can not be empty.');
+    }
+    onFailure = onFailure || (msg => console.error(`复制到剪贴板失败：${msg || ''}`));
+    // 优先采用现代化API
+    if (navigator.clipboard && !supportSilent) {
+        // 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
+        return navigator.clipboard.writeText(text).catch(e => {
+            onFailure(e.message);
+            throw e;
+        });
+    }
+    // execCommand 原本是一个同步API，这里为了和 writeText 保持一致统一包成proimse
+    return new Promise<void>((resolve, reject) => {
+        const input = document.createElement('input');
+        input.value = text;
+        input.style.cssText = 'position:fixed;left:0;top:0;opacity:0;';
+        document.body.appendChild(input);
+        input.select();
+        try {
+            if (document.execCommand('copy')) {
+                resolve();
+            } else {
+                const message = "Failed to execute 'document.execCommand'.";
+                onFailure(message);
+                reject(new Error(message));
+            }
+        } catch (e) {
+            onFailure(e.message);
+            reject(e);
+        } finally {
+            document.body.removeChild(input);
+        }
+    });
+};
+

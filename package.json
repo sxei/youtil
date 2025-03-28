@@ -1,10 +1,9 @@
 {
   "name": "youtil",
-  "version": "1.0.13",
+  "version": "2.0.0",
   "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
   "files": [
     "esm",
-    "es2017",
     "cjs",
     "dist"
   ],
@@ -13,10 +12,6 @@
   "types": "esm/index.d.ts",
   "exports": {
     ".": {
-      "es2017": {
-        "types": "./es2017/index.d.ts",
-        "default": "./es2017/index.js"
-      },
       "default": {
         "types": "./esm/index.d.ts",
         "default": "./esm/index.js"
@@ -28,9 +23,8 @@
     "dist/*"
   ],
   "scripts": {
-    "dev": "ice-pkg start",
-    "start": "ice-pkg start",
-    "build": "ice-pkg build",
+    "dev": "concurrently \"typedoc --watch\" \"ice-pkg start\"",
+    "build": "typedoc && ice-pkg build",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
@@ -42,7 +36,8 @@
     "youtil"
   ],
   "dependencies": {
-    "@swc/helpers": "0.4.14"
+    "@swc/helpers": "0.4.14",
+    "concurrently": "^9.1.2"
   },
   "devDependencies": {
     "@ice/jsx-runtime": "^0.2.0",
@@ -54,7 +49,9 @@
     "react": "^16",
     "react-dom": "^16",
     "stylelint": "^13.7.2",
-    "ts-jest": "^29.0.5"
+    "ts-jest": "^29.0.5",
+    "typedoc": "^0.28.1",
+    "typedoc-plugin-markdown": "^4.6.0"
   },
   "publishConfig": {
     "access": "public"

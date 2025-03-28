@@ -1,5 +1,9 @@
 # 变更历史
 
+## 2.0.0 (2025-03-28)
+
+* 全新版本，支持`tree-shaking`，新增`request`；
+
 ## 1.0.13 (2024-03-01)
 
 * feature: `copyTextToClipboard`改名`copyToClipboard`并优化内部实现，不向下兼容；
