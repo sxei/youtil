@@ -1,23 +1,26 @@
 {
   "name": "youtil",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
   "files": [
     "esm",
     "cjs",
     "dist"
   ],
-  "main": "esm/index.js",
+  "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "exports": {
     ".": {
-      "default": {
-        "types": "./esm/index.d.ts",
-        "default": "./esm/index.js"
-      }
+      "require": "./cjs/index.js",
+      "import": "./esm/index.js",
+      "types": "./esm/index.d.ts"
     },
-    "./*": "./*"
+    "./*": {
+      "require": "./cjs/*.js",
+      "import": "./esm/*.js",
+      "types": "./esm/*.d.ts" 
+    }
   },
   "sideEffects": [
     "dist/*"
