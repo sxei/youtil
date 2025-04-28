@@ -58,6 +58,8 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
         toastHandler: (msg: string) => console.error(`[您还没有配置toastHandler，请根据您的UI组件库配置合适的提示方法] ${msg || ''}`),
     };
     options = Object.assign({}, defaultOptions, options || {});
+    // 防止对象引用产生严重bug
+    options.fetchOptions = { ...(options.fetchOptions || {}) };
     const {
         params,
         data,
@@ -72,9 +74,11 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
         errorMessage,
         responseConverter,
     } = options || {};
+    // headers 优先级高于 fetchOptions里面的headers
+    fetchOptions.headers = { ...(fetchOptions.headers || {}), ...(headers || {}) };
     if (params) {
         fetchOptions.method = method || 'GET';
-        url = `${url}?${toUrlParams(params)}`;
+        url = `${url}${url.indexOf('?') >= 0 ? '&' : '?'}${toUrlParams(params)}`;
     }
     if (data) {
         Object.assign(fetchOptions, {
@@ -82,7 +86,7 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
             body: toUrlParams(data),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-                ...(headers || {}),
+                ...(fetchOptions.headers || {}),
             },
         });
     } else if (json) {
@@ -91,7 +95,7 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
             body: JSON.stringify(json),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                ...(headers || {}),
+                ...(fetchOptions.headers || {}),
             },
         });
     }

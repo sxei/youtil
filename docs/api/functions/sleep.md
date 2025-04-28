@@ -8,7 +8,7 @@
 
 > **sleep**(`ms`?): `Promise`\<`unknown`\>
 
-Defined in: [time.ts:92](https://github.com/sxei/youtil/blob/d9060d657627a7649d5f5235a6f4783a1d5487be/src/time.ts#L92)
+Defined in: [time.ts:92](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/time.ts#L92)
 
 休息一段时间，单位毫秒
 示例：await sleep(200); // 休息200毫秒

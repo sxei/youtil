@@ -48,24 +48,28 @@ var request = function() {
                         }
                     };
                     options = Object.assign({}, defaultOptions, options || {});
+                    // 防止对象引用产生严重bug
+                    options.fetchOptions = _objectSpread({}, options.fetchOptions || {});
                     _ref = options || {}, params = _ref.params, data = _ref.data, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter;
+                    // headers 优先级高于 fetchOptions里面的headers
+                    fetchOptions.headers = _objectSpread({}, fetchOptions.headers || {}, headers || {});
                     if (params) {
                         fetchOptions.method = method || "GET";
-                        url = "".concat(url, "?").concat((0, _param.toUrlParams)(params));
+                        url = "".concat(url).concat(url.indexOf("?") >= 0 ? "&" : "?").concat((0, _param.toUrlParams)(params));
                     }
                     if (data) Object.assign(fetchOptions, {
                         method: method || "POST",
                         body: (0, _param.toUrlParams)(data),
                         headers: _objectSpread({
                             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-                        }, headers || {})
+                        }, fetchOptions.headers || {})
                     });
                     else if (json) Object.assign(fetchOptions, {
                         method: method || "POST",
                         body: JSON.stringify(json),
                         headers: _objectSpread({
                             "Content-Type": "application/json;charset=utf-8"
-                        }, headers || {})
+                        }, fetchOptions.headers || {})
                     });
                     resp = null;
                     _state.label = 1;

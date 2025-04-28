@@ -24,19 +24,21 @@ const data = await requestAPI(url, requestOptions);
 import { request, Request } from 'youtil';
 import { useEffect } from 'react';
 
-var request2 = new Request({ errorMessage: '我是222' });
+var request2 = new Request({ errorMessage: '我是222', fetchOptions: {} });
 var request3 = new Request({ baseUrl: '/api/' }, request2);
 export default () => {
   const test = async () => {
-    debugger;
-    request3('ff');
+    request2('test-post', { data: {a: 1} });
   }
+  const test2 = async () => {
+    request2('test-get');
+  }
+
   return <div>
     <a href="javascript:;" onClick={test}>点击请求</a>
+    <a href="javascript:;" onClick={test2}>点击请求</a>
   </div>;
 }
-
-
 ```
 
 ## 自定义异常兜底文案
