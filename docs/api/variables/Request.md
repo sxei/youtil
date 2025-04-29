@@ -8,6 +8,6 @@
 
 > `const` **Request**: `RequestConstructor`
 
-Defined in: [request.ts:163](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L163)
+Defined in: [request.ts:164](https://github.com/sxei/youtil/blob/f5dc221b993abf7457adce16980faa2f15738fd6/src/request.ts#L164)
 
 支持实例化一个新的request方法，覆盖默认的部分配置项

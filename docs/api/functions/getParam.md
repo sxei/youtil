@@ -8,7 +8,7 @@
 
 > **getParam**(`name`, `url`): `string`
 
-Defined in: [param.ts:10](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/param.ts#L10)
+Defined in: [param.ts:10](https://github.com/sxei/youtil/blob/f5dc221b993abf7457adce16980faa2f15738fd6/src/param.ts#L10)
 
 从URL中获取某个参数，如果不存在返回 undefined ，如果存在多个同名参数，返回第一个匹配值
 getParam('a', '?a=1&b=&c=3&c=33#abc') // '1'

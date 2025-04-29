@@ -65,6 +65,7 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
             }
             const errorResponse = {
                 code: response.status,
+                status: response.status,
                 message: response.statusText,
                 headers: response.headers,
                 // 返回整个response备用，但是一般不推荐用户直接使用

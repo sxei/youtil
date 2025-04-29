@@ -38,6 +38,7 @@ import { toUrlParams } from "./param";
                             if (response.status === 200) return response.json();
                             var errorResponse = {
                                 code: response.status,
+                                status: response.status,
                                 message: response.statusText,
                                 headers: response.headers,
                                 // 返回整个response备用，但是一般不推荐用户直接使用
