@@ -18,8 +18,6 @@ const data = await requestAPI(url, requestOptions);
 
 ## 典型示例
 
-使用`requestAPI`封装的方法后：
-
 ```jsx preview
 import { request, Request } from 'youtil';
 import { useEffect } from 'react';
@@ -28,15 +26,12 @@ var request2 = new Request({ errorMessage: '我是222', fetchOptions: {} });
 var request3 = new Request({ baseUrl: '/api/' }, request2);
 export default () => {
   const test = async () => {
-    request2('test-post', { data: {a: 1} });
+    const a = await request2('test-post', { data: {a: 1}, onFetchResponse: resp => ({ code: 0, data: resp.headers }) });
+    console.log(a, Object.fromEntries(a.entries()));
+    
   }
-  const test2 = async () => {
-    request2('test-get');
-  }
-
   return <div>
     <a href="javascript:;" onClick={test}>点击请求</a>
-    <a href="javascript:;" onClick={test2}>点击请求</a>
   </div>;
 }
 ```
@@ -161,6 +156,18 @@ await requestAPI('xxx', { params });
 ```js
 const data = {};
 await requestAPI('xxx', { data });
+```
+
+
+## formData模式
+
+传入`formData`参数：
+
+```js
+const formData = {
+  file: SomeFile,
+};
+await requestAPI('xxx', { formData });
 ```
 
 ## PostJson请求

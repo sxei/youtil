@@ -6,7 +6,7 @@
 
 # Interface: IRequestOptions
 
-Defined in: [request.ts:4](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L4)
+Defined in: [request.ts:3](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L3)
 
 requestAPI的第二个参数类型
 
@@ -16,7 +16,7 @@ requestAPI的第二个参数类型
 
 > `optional` **afterRequest**: (`success`, `resp`?) => `void`
 
-Defined in: [request.ts:20](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L20)
+Defined in: [request.ts:21](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L21)
 
 请求完成之后触发的钩子，无论成功与否均会触发
 
@@ -40,7 +40,7 @@ Defined in: [request.ts:20](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **baseUrl**: `string`
 
-Defined in: [request.ts:12](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L12)
+Defined in: [request.ts:13](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L13)
 
 API前缀，不传默认为空
 
@@ -50,7 +50,7 @@ API前缀，不传默认为空
 
 > `optional` **checkSuccess**: (`resp`) => `boolean`
 
-Defined in: [request.ts:30](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L30)
+Defined in: [request.ts:23](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L23)
 
 判断接口是否调用成功，默认规则 resp => resp.code == 0 || resp.code == 200
 
@@ -70,7 +70,7 @@ Defined in: [request.ts:30](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **data**: `Record`\<`string`, `any`\>
 
-Defined in: [request.ts:8](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L8)
+Defined in: [request.ts:7](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L7)
 
 POST请求时传递的参数
 
@@ -80,7 +80,7 @@ POST请求时传递的参数
 
 > `optional` **errorHandler**: (`message`, `resp`?) => `void`
 
-Defined in: [request.ts:26](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L26)
+Defined in: [request.ts:29](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L29)
 
 发生异常时的处理方法，一般不太建议重写此方法
 
@@ -104,9 +104,9 @@ Defined in: [request.ts:26](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **errorMessage**: `string`
 
-Defined in: [request.ts:24](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L24)
+Defined in: [request.ts:27](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L27)
 
-后端未返回 message 时的默认异常文案
+后端未返回 message 时的兜底异常文案
 
 ***
 
@@ -114,9 +114,19 @@ Defined in: [request.ts:24](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **fetchOptions**: `RequestInit`
 
-Defined in: [request.ts:18](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L18)
+Defined in: [request.ts:19](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L19)
 
-其它自定义fetchOptions
+其它自定义fetchOptions，优先级高于上面所有参数
+
+***
+
+### formData?
+
+> `optional` **formData**: `Record`\<`string`, `any`\>
+
+Defined in: [request.ts:9](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L9)
+
+采用formData模式请求，可以传入普通的对象，也可以传入标准的formData
 
 ***
 
@@ -124,7 +134,7 @@ Defined in: [request.ts:18](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **headers**: `Record`\<`string`, `any`\>
 
-Defined in: [request.ts:16](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L16)
+Defined in: [request.ts:17](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L17)
 
 headers
 
@@ -134,7 +144,7 @@ headers
 
 > `optional` **json**: `Record`\<`string`, `any`\>
 
-Defined in: [request.ts:10](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L10)
+Defined in: [request.ts:11](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L11)
 
 postJson请求时传递的参数
 
@@ -144,9 +154,29 @@ postJson请求时传递的参数
 
 > `optional` **method**: `string`
 
-Defined in: [request.ts:14](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L14)
+Defined in: [request.ts:15](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L15)
 
-请求方法，一般情况下会自动处理无需手动传
+请求方法，绝大部分情况无需手动指定
+
+***
+
+### onFetchResponse()?
+
+> `optional` **onFetchResponse**: (`response`) => `any`
+
+Defined in: [request.ts:35](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L35)
+
+自定义 fetch.then() ，非常底层的一个方法，非必要请勿使用
+
+#### Parameters
+
+##### response
+
+`Response`
+
+#### Returns
+
+`any`
 
 ***
 
@@ -154,7 +184,7 @@ Defined in: [request.ts:14](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **params**: `Record`\<`string`, `any`\>
 
-Defined in: [request.ts:6](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L6)
+Defined in: [request.ts:5](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L5)
 
 GET请求时传递的参数
 
@@ -164,9 +194,9 @@ GET请求时传递的参数
 
 > `optional` **responseConverter**: (`resp`) => `any`
 
-Defined in: [request.ts:22](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L22)
+Defined in: [request.ts:25](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L25)
 
-对响应进行自定义格式化处理
+对响应进行自定义格式化处理，包含 checkSuccess 全部能力
 
 #### Parameters
 
@@ -184,7 +214,7 @@ Defined in: [request.ts:22](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **silent**: `boolean`
 
-Defined in: [request.ts:32](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L32)
+Defined in: [request.ts:33](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L33)
 
 是否关闭默认的异常toast
 
@@ -194,7 +224,7 @@ Defined in: [request.ts:32](https://github.com/sxei/youtil/blob/d651a480a1571409
 
 > `optional` **toastHandler**: (`message`) => `void`
 
-Defined in: [request.ts:28](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L28)
+Defined in: [request.ts:31](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L31)
 
 自定义toast实现，为了和UI解耦，方法默认不包含UI处理代码
 

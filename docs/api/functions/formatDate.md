@@ -8,7 +8,7 @@
 
 > **formatDate**(`date`?, `fmt`?): `string`
 
-Defined in: [time.ts:8](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/time.ts#L8)
+Defined in: [time.ts:8](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/time.ts#L8)
 
 将日期格式化成指定格式的字符串
 

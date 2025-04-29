@@ -8,7 +8,7 @@
 
 > **showLoading**(`text`, `seconds`, `config`): `void`
 
-Defined in: [loading.ts:16](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/loading.ts#L16)
+Defined in: [loading.ts:16](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/loading.ts#L16)
 
 显示全局loading，不依赖任何框架
 

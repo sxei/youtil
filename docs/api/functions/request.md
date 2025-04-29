@@ -8,7 +8,7 @@
 
 > **request**\<`T`\>(`url`, `options`?): `Promise`\<`T`\>
 
-Defined in: [request.ts:41](https://github.com/sxei/youtil/blob/d651a480a157140911b201985e6146ba23662439/src/request.ts#L41)
+Defined in: [request.ts:44](https://github.com/sxei/youtil/blob/e7c4fd83b462ab99891fc0ce3eae8b65b3d2c8a4/src/request.ts#L44)
 
 通用的API请求方法
 

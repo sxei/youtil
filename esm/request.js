@@ -1,4 +1,5 @@
 import _async_to_generator from "@swc/helpers/src/_async_to_generator.mjs";
+import _instanceof from "@swc/helpers/src/_instanceof.mjs";
 import _object_spread from "@swc/helpers/src/_object_spread.mjs";
 import _ts_generator from "@swc/helpers/src/_ts_generator.mjs";
 import { toUrlParams } from "./param";
@@ -9,7 +10,7 @@ import { toUrlParams } from "./param";
  * @returns
  */ export var request = function() {
     var _ref = _async_to_generator(function(url, options) {
-        var defaultOptions, _ref, params, data, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, resp, e;
+        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, e, _e_response;
         return _ts_generator(this, function(_state) {
             switch(_state.label){
                 case 0:
@@ -32,14 +33,27 @@ import { toUrlParams } from "./param";
                         },
                         toastHandler: function(msg) {
                             return console.error("[您还没有配置toastHandler，请根据您的UI组件库配置合适的提示方法] ".concat(msg || ""));
+                        },
+                        onFetchResponse: function(response) {
+                            if (response.status === 200) return response.json();
+                            var errorResponse = {
+                                code: response.status,
+                                message: response.statusText,
+                                headers: response.headers,
+                                // 返回整个response备用，但是一般不推荐用户直接使用
+                                _response: response
+                            };
+                            var error = new Error(errorResponse.message);
+                            error.response = errorResponse;
+                            throw error;
                         }
                     };
                     options = Object.assign({}, defaultOptions, options || {});
                     // 防止对象引用产生严重bug
                     options.fetchOptions = _object_spread({}, options.fetchOptions || {});
-                    _ref = options || {}, params = _ref.params, data = _ref.data, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter;
-                    // headers 优先级高于 fetchOptions里面的headers
-                    fetchOptions.headers = _object_spread({}, fetchOptions.headers || {}, headers || {});
+                    _ref = options || {}, params = _ref.params, data = _ref.data, formData = _ref.formData, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter, onFetchResponse = _ref.onFetchResponse;
+                    // fetchOptions 里面的 headers 优先级高于外部的 headers
+                    fetchOptions.headers = _object_spread({}, headers || {}, fetchOptions.headers || {});
                     if (params) {
                         fetchOptions.method = method || "GET";
                         url = "".concat(url).concat(url.indexOf("?") >= 0 ? "&" : "?").concat(toUrlParams(params));
@@ -51,7 +65,17 @@ import { toUrlParams } from "./param";
                             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
                         }, fetchOptions.headers || {})
                     });
-                    else if (json) Object.assign(fetchOptions, {
+                    else if (formData) {
+                        body = formData;
+                        if (!_instanceof(formData, FormData)) {
+                            body = new FormData();
+                            for(var key in formData)body.append(key, formData[key]);
+                        }
+                        Object.assign(fetchOptions, {
+                            method: method || "POST",
+                            body: body
+                        });
+                    } else if (json) Object.assign(fetchOptions, {
                         method: method || "POST",
                         body: JSON.stringify(json),
                         headers: _object_spread({
@@ -69,9 +93,7 @@ import { toUrlParams } from "./param";
                     ]);
                     return [
                         4,
-                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(function(res) {
-                            return res.json();
-                        })
+                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
                     ];
                 case 2:
                     resp = _state.sent();
@@ -85,7 +107,7 @@ import { toUrlParams } from "./param";
                     afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(false, {
                         message: e === null || e === void 0 ? void 0 : e.message
                     });
-                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(errorMessage || "");
+                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(((_e_response = e.response) === null || _e_response === void 0 ? void 0 : _e_response.message) || errorMessage || "", e.response);
                     return [
                         2,
                         undefined

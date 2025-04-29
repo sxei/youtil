@@ -1,5 +1,17 @@
 # 变更历史
 
+## 2.1.0 (2025-04-29)
+
+`request`破坏更新：
+
+* 新增`onFetchResponse`配置，且默认逻辑改为仅`status==200`的时候才返回`resp.json()`，其它直接抛出异常；
+* catch情况下`errorHandler`的第二个参数修改为`e.response`；
+
+其它普通更新：
+
+* `feature`: 新增`formData`参数；
+
+
 ## 2.0.5 (2025-04-28)
 
 * `bugfix`: 修复`fetchOptions`由于引用类型导致的严重bug；

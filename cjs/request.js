@@ -17,12 +17,13 @@ _export(exports, {
     }
 });
 var _asyncToGenerator = require("@swc/helpers/lib/_async_to_generator.js").default;
+var _instanceof = require("@swc/helpers/lib/_instanceof.js").default;
 var _objectSpread = require("@swc/helpers/lib/_object_spread.js").default;
 var _tsGenerator = require("@swc/helpers/lib/_ts_generator.js").default;
 var _param = require("./param");
 var request = function() {
     var _ref = _asyncToGenerator(function(url, options) {
-        var defaultOptions, _ref, params, data, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, resp, e;
+        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, e, _e_response;
         return _tsGenerator(this, function(_state) {
             switch(_state.label){
                 case 0:
@@ -45,14 +46,27 @@ var request = function() {
                         },
                         toastHandler: function(msg) {
                             return console.error("[您还没有配置toastHandler，请根据您的UI组件库配置合适的提示方法] ".concat(msg || ""));
+                        },
+                        onFetchResponse: function(response) {
+                            if (response.status === 200) return response.json();
+                            var errorResponse = {
+                                code: response.status,
+                                message: response.statusText,
+                                headers: response.headers,
+                                // 返回整个response备用，但是一般不推荐用户直接使用
+                                _response: response
+                            };
+                            var error = new Error(errorResponse.message);
+                            error.response = errorResponse;
+                            throw error;
                         }
                     };
                     options = Object.assign({}, defaultOptions, options || {});
                     // 防止对象引用产生严重bug
                     options.fetchOptions = _objectSpread({}, options.fetchOptions || {});
-                    _ref = options || {}, params = _ref.params, data = _ref.data, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter;
-                    // headers 优先级高于 fetchOptions里面的headers
-                    fetchOptions.headers = _objectSpread({}, fetchOptions.headers || {}, headers || {});
+                    _ref = options || {}, params = _ref.params, data = _ref.data, formData = _ref.formData, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter, onFetchResponse = _ref.onFetchResponse;
+                    // fetchOptions 里面的 headers 优先级高于外部的 headers
+                    fetchOptions.headers = _objectSpread({}, headers || {}, fetchOptions.headers || {});
                     if (params) {
                         fetchOptions.method = method || "GET";
                         url = "".concat(url).concat(url.indexOf("?") >= 0 ? "&" : "?").concat((0, _param.toUrlParams)(params));
@@ -64,7 +78,17 @@ var request = function() {
                             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
                         }, fetchOptions.headers || {})
                     });
-                    else if (json) Object.assign(fetchOptions, {
+                    else if (formData) {
+                        body = formData;
+                        if (!_instanceof(formData, FormData)) {
+                            body = new FormData();
+                            for(var key in formData)body.append(key, formData[key]);
+                        }
+                        Object.assign(fetchOptions, {
+                            method: method || "POST",
+                            body: body
+                        });
+                    } else if (json) Object.assign(fetchOptions, {
                         method: method || "POST",
                         body: JSON.stringify(json),
                         headers: _objectSpread({
@@ -82,9 +106,7 @@ var request = function() {
                     ]);
                     return [
                         4,
-                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(function(res) {
-                            return res.json();
-                        })
+                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
                     ];
                 case 2:
                     resp = _state.sent();
@@ -98,7 +120,7 @@ var request = function() {
                     afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(false, {
                         message: e === null || e === void 0 ? void 0 : e.message
                     });
-                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(errorMessage || "");
+                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(((_e_response = e.response) === null || _e_response === void 0 ? void 0 : _e_response.message) || errorMessage || "", e.response);
                     return [
                         2,
                         undefined
