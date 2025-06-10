@@ -20,6 +20,9 @@ export default defineConfig({
                 onBrokenLinks: 'warn',
                 navBarLogo: 'static/1.jpg',
                 navBarTitle: 'youtil (油梯)',
+                path: 'doc',
+                // github pages 要求必须是 docs 文件夹
+                outputDir: 'docs',
             },
         ],
     ],

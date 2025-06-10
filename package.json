@@ -5,7 +5,7 @@
   "files": [
     "esm",
     "cjs",
-    "build",
+    "docs",
     "dist"
   ],
   "main": "cjs/index.js",
