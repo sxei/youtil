@@ -8,7 +8,7 @@
 
 > **initWindowMessage**(`scene`, `targetWindow`?): `object`
 
-Defined in: message.ts:9
+Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/546889c0d7d3d63efd7c483f4351140561c22e55/src/message.ts#L9)
 
 初始化窗口通信
 

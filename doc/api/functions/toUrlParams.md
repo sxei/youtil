@@ -8,7 +8,7 @@
 
 > **toUrlParams**(`data`): `string`
 
-Defined in: [param.ts:75](https://github.com/sxei/youtil/blob/0789efb6304454ceafe2268d335875118354d3ab/src/param.ts#L75)
+Defined in: [param.ts:75](https://github.com/sxei/youtil/blob/546889c0d7d3d63efd7c483f4351140561c22e55/src/param.ts#L75)
 
 将一个普通对象转为 a=1&b=2 的URL格式，会自动过滤undefined的值
 

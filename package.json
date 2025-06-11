@@ -1,6 +1,6 @@
 {
   "name": "youtil",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
   "files": [
     "es",
@@ -41,24 +41,22 @@
     "youtil"
   ],
   "dependencies": {
-    "@swc/helpers": "0..1"
+    "@swc/helpers": "0.4.14"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "@ice/jsx-runtime": "^0.2.0",
     "@ice/pkg": "1.5.5",
-    "@ice/pkg-plugin-docusaurus": "^1..18",
+    "@ice/pkg-plugin-docusaurus": "^1.4.18",
     "@iceworks/spec": "^1.0.0",
-    "@types/fs-extra": "^11.0.",
-    "concurrently": "^9.1.2",
     "eslint": "^7.0.0",
-    "fs-extra": "^11.3.0",
     "jest": "^29.5.0",
     "react": "^16",
     "react-dom": "^16",
     "stylelint": "^13.7.2",
     "ts-jest": "^29.0.5",
     "typedoc": "^0.28.1",
-    "typedoc-plugin-markdown": "^.6.0"
+    "typedoc-plugin-markdown": "^4.6.0"
   },
   "publishConfig": {
     "access": "public"

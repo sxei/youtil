@@ -8,7 +8,7 @@
 
 > **decodeHtml**(`html`): `any`
 
-Defined in: other.ts:36
+Defined in: [other.ts:36](https://github.com/sxei/youtil/blob/546889c0d7d3d63efd7c483f4351140561c22e55/src/other.ts#L36)
 
 HTML解码，例如将 【&quot;】 变成 【"】
 

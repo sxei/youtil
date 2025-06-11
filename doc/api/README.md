@@ -23,7 +23,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 ## API
 
-参见[index.d.ts](https://github.com/sxei/youtil/blob/master/esm/index.d.ts);
+参见[API文档](https://youtil.haoji.me/api/globals);
 
 ## 关于命名
 
