@@ -8,7 +8,7 @@
 
 > **setParam**(`name`, `value`, `url`?): `string`
 
-Defined in: [param.ts:46](https://github.com/sxei/youtil/blob/efdd931ce1d472236d5eaf587fbf4bb3111ece5e/src/param.ts#L46)
+Defined in: [param.ts:46](https://github.com/sxei/youtil/blob/4999cb04c9c5f142b047826e2208c5a9abceefdb/src/param.ts#L46)
 
 给URL设置参数，如果已经存在，替换之，兼容hash存在的情况
 setParam('a', '123', '?a=1&b=2&a=3#d') // '?a=123&b=2&a=123#d'

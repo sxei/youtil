@@ -3,12 +3,14 @@ import _instanceof from "@swc/helpers/src/_instanceof.mjs";
 import _object_spread from "@swc/helpers/src/_object_spread.mjs";
 import _ts_generator from "@swc/helpers/src/_ts_generator.mjs";
 import { toUrlParams } from "./param";
-var mergeOptions = function(options1, options2) {
-    var options = Object.assign({}, options1 || {}, options2 || {});
-    // 对象比较特殊，需要特殊处理，防止引用
-    options.headers = _object_spread({}, options.headers || {});
-    options.fetchOptions = _object_spread({}, options.fetchOptions || {});
-    return options;
+/** 合并2个options对象 */ var mergeOptions = function(ops1, ops2) {
+    // 对象比较特殊，需要特殊处理
+    var headers = Object.assign({}, (ops1 === null || ops1 === void 0 ? void 0 : ops1.headers) || {}, (ops2 === null || ops2 === void 0 ? void 0 : ops2.headers) || {});
+    var fetchOptions = Object.assign({}, (ops1 === null || ops1 === void 0 ? void 0 : ops1.fetchOptions) || {}, (ops2 === null || ops2 === void 0 ? void 0 : ops2.fetchOptions) || {});
+    return Object.assign({}, ops1 || {}, ops2 || {}, {
+        headers: headers,
+        fetchOptions: fetchOptions
+    });
 };
 /**
  * 通用的API请求方法
@@ -99,7 +101,7 @@ var mergeOptions = function(options1, options2) {
                     ]);
                     return [
                         4,
-                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
+                        fetch("".concat((url === null || url === void 0 ? void 0 : url.indexOf("http")) === 0 ? "" : baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
                     ];
                 case 2:
                     resp = _state.sent();

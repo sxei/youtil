@@ -36,12 +36,12 @@ export interface IRequestOptions {
     onFetchResponse?: (response: Response) => any;
 }
 
-const mergeOptions = (options1: IRequestOptions, options2?: IRequestOptions) => {
-    const options = Object.assign({}, options1 || {}, options2 || {});
-    // 对象比较特殊，需要特殊处理，防止引用
-    options.headers = { ...(options.headers || {}) };
-    options.fetchOptions = { ...(options.fetchOptions || {}) };
-    return options;
+/** 合并2个options对象 */
+const mergeOptions = (ops1: IRequestOptions, ops2?: IRequestOptions) => {
+    // 对象比较特殊，需要特殊处理
+    const headers = Object.assign({}, ops1?.headers || {}, ops2?.headers || {});
+    const fetchOptions = Object.assign({}, ops1?.fetchOptions || {}, ops2?.fetchOptions || {});
+    return Object.assign({}, ops1 || {}, ops2 || {}, { headers, fetchOptions });
 };
 
 /**
@@ -141,7 +141,7 @@ const request = async <T = any>(url: string, options?: IRequestOptions) => {
     }
     let resp = null;
     try {
-        resp = await fetch(`${baseUrl || ''}${url}`, fetchOptions).then(onFetchResponse);
+        resp = await fetch(`${url?.indexOf('http') === 0 ? '' : (baseUrl || '')}${url}`, fetchOptions).then(onFetchResponse);
     } catch (e: any) {
         console.error(e);
         afterRequest?.(false, { message: e?.message });

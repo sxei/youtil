@@ -21,12 +21,14 @@ var _instanceof = require("@swc/helpers/lib/_instanceof.js").default;
 var _objectSpread = require("@swc/helpers/lib/_object_spread.js").default;
 var _tsGenerator = require("@swc/helpers/lib/_ts_generator.js").default;
 var _param = require("./param");
-var mergeOptions = function(options1, options2) {
-    var options = Object.assign({}, options1 || {}, options2 || {});
-    // 对象比较特殊，需要特殊处理，防止引用
-    options.headers = _objectSpread({}, options.headers || {});
-    options.fetchOptions = _objectSpread({}, options.fetchOptions || {});
-    return options;
+/** 合并2个options对象 */ var mergeOptions = function(ops1, ops2) {
+    // 对象比较特殊，需要特殊处理
+    var headers = Object.assign({}, (ops1 === null || ops1 === void 0 ? void 0 : ops1.headers) || {}, (ops2 === null || ops2 === void 0 ? void 0 : ops2.headers) || {});
+    var fetchOptions = Object.assign({}, (ops1 === null || ops1 === void 0 ? void 0 : ops1.fetchOptions) || {}, (ops2 === null || ops2 === void 0 ? void 0 : ops2.fetchOptions) || {});
+    return Object.assign({}, ops1 || {}, ops2 || {}, {
+        headers: headers,
+        fetchOptions: fetchOptions
+    });
 };
 /**
  * 通用的API请求方法
@@ -117,7 +119,7 @@ var mergeOptions = function(options1, options2) {
                     ]);
                     return [
                         4,
-                        fetch("".concat(baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
+                        fetch("".concat((url === null || url === void 0 ? void 0 : url.indexOf("http")) === 0 ? "" : baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
                     ];
                 case 2:
                     resp = _state.sent();

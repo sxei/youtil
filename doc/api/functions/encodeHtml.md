@@ -8,7 +8,7 @@
 
 > **encodeHtml**(`html`): `any`
 
-Defined in: [other.ts:18](https://github.com/sxei/youtil/blob/efdd931ce1d472236d5eaf587fbf4bb3111ece5e/src/other.ts#L18)
+Defined in: [other.ts:18](https://github.com/sxei/youtil/blob/4999cb04c9c5f142b047826e2208c5a9abceefdb/src/other.ts#L18)
 
 HTML编码，例如将 【"】 变成 【&quot;】
 

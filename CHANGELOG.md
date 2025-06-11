@@ -1,5 +1,10 @@
 # 变更历史
 
+## 3.0.3 (2025-06-11)
+
+* 修复`mergeOptions`中可能会把`fetchOptions`覆盖的问题；
+* 修复`baseUrl`未兼容`url`已经是`http`开头的情况；
+
 ## 3.0.2 (2025-06-11)
 
 * 新增`request.create(options)`方法，原来的`new Request()`废弃；
