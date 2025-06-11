@@ -39,7 +39,11 @@ export interface IRequestOptions {
  * @param options
  * @returns
  */
-export declare const request: <T = any>(url: string, options?: IRequestOptions) => Promise<T>;
+declare const request: {
+    <T = any>(url: string, options?: IRequestOptions): Promise<T>;
+    create: any;
+};
+export { request };
 type IRequest = typeof request;
 interface RequestConstructor {
     new (overrideOptions: IRequestOptions): IRequest;
@@ -47,6 +51,6 @@ interface RequestConstructor {
 }
 /**
  * 支持实例化一个新的request方法，覆盖默认的部分配置项
+ * @deprecated 推荐使用 request.create() 实例化新的request
  */
 export declare const Request: RequestConstructor;
-export {};

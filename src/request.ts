@@ -36,13 +36,21 @@ export interface IRequestOptions {
     onFetchResponse?: (response: Response) => any;
 }
 
+const mergeOptions = (options1: IRequestOptions, options2?: IRequestOptions) => {
+    const options = Object.assign({}, options1 || {}, options2 || {});
+    // 对象比较特殊，需要特殊处理，防止引用
+    options.headers = { ...(options.headers || {}) };
+    options.fetchOptions = { ...(options.fetchOptions || {}) };
+    return options;
+};
+
 /**
  * 通用的API请求方法
  * @param url
  * @param options
  * @returns
  */
-export const request = async <T = any>(url: string, options?: IRequestOptions) => {
+const request = async <T = any>(url: string, options?: IRequestOptions) => {
     const defaultOptions: IRequestOptions = {
         errorMessage: '系统繁忙，请稍后再试',
         errorHandler: (msg) => {
@@ -77,9 +85,7 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
             throw error;
         },
     };
-    options = Object.assign({}, defaultOptions, options || {});
-    // 防止对象引用产生严重bug
-    options.fetchOptions = { ...(options.fetchOptions || {}) };
+    options = mergeOptions(defaultOptions, options);
     const {
         params,
         data,
@@ -153,6 +159,26 @@ export const request = async <T = any>(url: string, options?: IRequestOptions) =
     }
 };
 
+/**
+ * 基于当前 request 实例化一个新的 request 函数并覆盖部分配置
+ * @param this
+ * @param overrideOptions 要覆盖的配置
+ * @returns
+ */
+const create = function (this: any, overrideOptions: IRequestOptions) {
+    const mergedOptions = mergeOptions(this.overrideDefaultOptions, overrideOptions);
+    const newRequest = (url: string, options?: IRequestOptions) => {
+        return request(url, mergeOptions(mergedOptions, options));
+    };
+    // 记录相比于 defaultOptions 之外所有合并后的覆盖options，供下次 create 使用
+    newRequest.overrideDefaultOptions = mergedOptions;
+    newRequest.create = create.bind(newRequest);
+    return newRequest;
+};
+request.create = create.bind(request);
+
+export { request };
+
 type IRequest = typeof request;
 interface RequestConstructor {
     new (overrideOptions: IRequestOptions): IRequest;
@@ -161,6 +187,7 @@ interface RequestConstructor {
 
 /**
  * 支持实例化一个新的request方法，覆盖默认的部分配置项
+ * @deprecated 推荐使用 request.create() 实例化新的request
  */
 export const Request: RequestConstructor = function (this: IRequest, req: IRequest | IRequestOptions, overrideOptions: IRequestOptions) {
     let overrideDefaultOptions = overrideOptions;

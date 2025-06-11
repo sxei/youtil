@@ -8,7 +8,7 @@
 
 > **getParams**(`url`): `any`
 
-Defined in: [param.ts:29](https://github.com/sxei/youtil/blob/546889c0d7d3d63efd7c483f4351140561c22e55/src/param.ts#L29)
+Defined in: [param.ts:29](https://github.com/sxei/youtil/blob/efdd931ce1d472236d5eaf587fbf4bb3111ece5e/src/param.ts#L29)
 
 获取某个URL的全部参数
 getParams('?a=1&b=2#cc') // {a: '1', b: '2'}

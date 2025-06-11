@@ -11,7 +11,7 @@
 
 ## Variables
 
-- [Request](variables/Request.md)
+- [~~Request~~](variables/Request.md)
 
 ## Functions
 

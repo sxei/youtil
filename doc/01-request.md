@@ -181,4 +181,32 @@ const json = {};
 await requestAPI('xxx', { json });
 ```
 
+## 创建新的实例
+
+
+```jsx preview
+import { request, Request } from 'youtil';
+import { useEffect } from 'react';
+
+var request2 = request.create({
+  baseUrl: 'http://xxx.com',
+  errorMessage: '报错啦啦啦',
+});
+console.log(request2.overrideOptions);
+
+var request3 = request2.create({
+  toastHandler: msg => alert(msg),
+});
+console.log(request3.overrideOptions);
+
+export default () => {
+  const test = async () => {
+    await request3('/test', { data: {a: 1} });
+  }
+  return <div>
+    <a href="javascript:;" onClick={test}>点击请求</a>
+  </div>;
+}
+```
+
 ## 未完待续

@@ -3,12 +3,19 @@ import _instanceof from "@swc/helpers/src/_instanceof.mjs";
 import _object_spread from "@swc/helpers/src/_object_spread.mjs";
 import _ts_generator from "@swc/helpers/src/_ts_generator.mjs";
 import { toUrlParams } from "./param";
+var mergeOptions = function(options1, options2) {
+    var options = Object.assign({}, options1 || {}, options2 || {});
+    // 对象比较特殊，需要特殊处理，防止引用
+    options.headers = _object_spread({}, options.headers || {});
+    options.fetchOptions = _object_spread({}, options.fetchOptions || {});
+    return options;
+};
 /**
  * 通用的API请求方法
  * @param url
  * @param options
  * @returns
- */ export var request = function() {
+ */ var request = function() {
     var _ref = _async_to_generator(function(url, options) {
         var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, e, _e_response;
         return _ts_generator(this, function(_state) {
@@ -49,9 +56,7 @@ import { toUrlParams } from "./param";
                             throw error;
                         }
                     };
-                    options = Object.assign({}, defaultOptions, options || {});
-                    // 防止对象引用产生严重bug
-                    options.fetchOptions = _object_spread({}, options.fetchOptions || {});
+                    options = mergeOptions(defaultOptions, options);
                     _ref = options || {}, params = _ref.params, data = _ref.data, formData = _ref.formData, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter, onFetchResponse = _ref.onFetchResponse;
                     // fetchOptions 里面的 headers 优先级高于外部的 headers
                     fetchOptions.headers = _object_spread({}, headers || {}, fetchOptions.headers || {});
@@ -140,7 +145,25 @@ import { toUrlParams } from "./param";
     };
 }();
 /**
+ * 基于当前 request 实例化一个新的 request 函数并覆盖部分配置
+ * @param this
+ * @param overrideOptions 要覆盖的配置
+ * @returns
+ */ var create = function create1(overrideOptions) {
+    var mergedOptions = mergeOptions(this.overrideDefaultOptions, overrideOptions);
+    var newRequest = function(url, options) {
+        return request(url, mergeOptions(mergedOptions, options));
+    };
+    // 记录相比于 defaultOptions 之外所有合并后的覆盖options，供下次 create 使用
+    newRequest.overrideDefaultOptions = mergedOptions;
+    newRequest.create = create.bind(newRequest);
+    return newRequest;
+};
+request.create = create.bind(request);
+export { request };
+/**
  * 支持实例化一个新的request方法，覆盖默认的部分配置项
+ * @deprecated 推荐使用 request.create() 实例化新的request
  */ export var Request = function Request(req, overrideOptions) {
     var overrideDefaultOptions = overrideOptions;
     if (!overrideOptions) {

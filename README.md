@@ -43,6 +43,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 * 更新代码；
 * 更新`package.json`和`changelog`；
 * `npm publish`；
+* `npm run after-publish`务必不能漏了！
 * `git push`；
 
 注意：@ice/pkg和@swc/helpers 升级到0.5.0以上版本时其他业务可能报错，非常坑！目前写死版本
