@@ -29,7 +29,7 @@ var formatDate = function(date, fmt) {
     var _loop = function(i) {
         fmt = fmt.replace(new RegExp("".concat(i, "+"), "g"), function(m) {
             var val = "".concat(obj[i]);
-            if (i === "w") return (m.length > 2 ? "星期" : "周") + week[val];
+            if (i === "w") return "".concat(m.length > 2 ? "星期" : "周").concat(week[val]);
             for(var j = 0, len = val.length; j < m.length - len; j++)val = "0".concat(val);
             return m.length === 1 ? val : val.substring(val.length - m.length);
         });
@@ -68,7 +68,6 @@ var formatDate = function(date, fmt) {
         "五",
         "六"
     ];
-    // eslint-disable-next-line guard-for-in
     for(var i in obj)_loop(i);
     return fmt;
 };
@@ -86,7 +85,7 @@ var parseDate = function(str, fmt) {
     };
     fmt.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function(m, $1, $2, $3, $4) {
         str = str.replace(new RegExp("".concat($1, "(\\d{").concat($2.length, "})").concat($4)), function(_m, _$1) {
-            obj[$3] = parseInt(_$1);
+            obj[$3] = parseInt(_$1, 10);
             return "";
         });
         return "";

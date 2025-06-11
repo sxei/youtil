@@ -8,7 +8,7 @@
 
 > **hideLoading**(): `void`
 
-Defined in: [loading.ts:89](https://github.com/sxei/youtil/blob/f5dc221b993abf7457adce16980faa2f15738fd6/src/loading.ts#L89)
+Defined in: [loading.ts:118](https://github.com/sxei/youtil/blob/0789efb6304454ceafe2268d335875118354d3ab/src/loading.ts#L118)
 
 主动关闭loading提示
 

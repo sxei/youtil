@@ -1,4 +1,5 @@
 import { toUrlParams } from './param';
+
 /** requestAPI的第二个参数类型 */
 export interface IRequestOptions {
     /** GET请求时传递的参数 */

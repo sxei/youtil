@@ -64,7 +64,7 @@ export const setParam = (name: string, value: string | number, url?: string) => 
  */
 export const delParam = (name: string, url: string) => {
     url = url || `${location.pathname}${location.search}`;
-    return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => $2 === '&' ? $1 : $2);
+    return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => ($2 === '&' ? $1 : $2));
 };
 
 /**
@@ -74,7 +74,7 @@ export const delParam = (name: string, url: string) => {
  */
 export const toUrlParams = (data: any) => {
     return Object.keys(data || {})
-        .filter(key => data[key] !== undefined)
+        .filter((key) => data[key] !== undefined)
         .map((key) => {
             const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
             return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;

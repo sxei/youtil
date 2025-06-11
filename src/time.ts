@@ -43,12 +43,11 @@ export const formatDate = (date?: Date | number | string, fmt?: string) => {
         S: date.getMilliseconds(), // 毫秒
     };
     const week: any = ['天', '一', '二', '三', '四', '五', '六'];
-    // eslint-disable-next-line guard-for-in
     for (const i in obj) {
-        fmt = fmt.replace(new RegExp(`${i}+`, 'g'), function (m) {
+        fmt = fmt.replace(new RegExp(`${i}+`, 'g'), (m) => {
             let val = `${obj[i]}`;
             if (i === 'w') {
-                return (m.length > 2 ? '星期' : '周') + week[val];
+                return `${m.length > 2 ? '星期' : '周'}${week[val]}`;
             }
             for (let j = 0, len = val.length; j < m.length - len; j++) {
                 val = `0${val}`;
@@ -68,9 +67,9 @@ export const formatDate = (date?: Date | number | string, fmt?: string) => {
 export const parseDate = (str: string, fmt?: string) => {
     fmt = fmt || 'yyyy-MM-dd';
     const obj: any = { y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0 };
-    fmt.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function (m, $1, $2, $3, $4) {
-        str = str.replace(new RegExp(`${$1}(\\d{${$2.length}})${$4}`), function (_m, _$1) {
-            obj[$3] = parseInt(_$1);
+    fmt.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, (m, $1, $2, $3, $4) => {
+        str = str.replace(new RegExp(`${$1}(\\d{${$2.length}})${$4}`), (_m, _$1) => {
+            obj[$3] = parseInt(_$1, 10);
             return '';
         });
         return '';

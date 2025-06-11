@@ -1,5 +1,15 @@
 # 变更历史
 
+## 3.0.0 (2025-06-11)
+
+鉴于之间的未合并的esm格式在很多工程里会有奇奇怪怪的问题，所有后面默认的`module`指向合并的esm而不是`transform`的esm文件，同时对输出文件命名做了比较大的调整。
+
+* `module`默认指向`es/index.mjs`（即原来的`dist/index.esm.es5.production.js`）;
+* `dist/index.umd.es5.production.js`重命名为`umd/index.js`；
+* `docs`重命名为`doc`，`docs`改为构建后的文档目录（由于github pages必须叫这个名字）；
+* 新增`createEnum`、`initWindowMessage`方法；
+* 完善`showLoading`相关代码，修复mask不生效问题； 
+
 ## 2.1.0 (2025-04-29)
 
 `request`破坏更新：

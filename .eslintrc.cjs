@@ -11,6 +11,9 @@ module.exports = getESLintConfig('react-ts', {
         'no-trailing-spaces': 'warn',
         'no-console': 'off',
         '@typescript-eslint/indent': ['warn', 4],
+        '@typescript-eslint/no-invalid-void-type': 'off',
         '@iceworks/best-practices/recommend-polyfill': 'off',
+        'arrow-parens': 'off',
+        'comma-dangle': 'warn',
     },
 });
