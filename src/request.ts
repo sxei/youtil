@@ -141,7 +141,12 @@ const request = async <T = any>(url: string, options?: IRequestOptions) => {
     }
     let resp = null;
     try {
-        resp = await fetch(`${url?.indexOf('http') === 0 ? '' : (baseUrl || '')}${url}`, fetchOptions).then(onFetchResponse);
+        let targetUrl = `${/^(http|\/\/)/g.test(url) ? '' : (baseUrl || '')}${url}`;
+        // 如果当前是blob地址，目标地址又是 // 开头，自动修正
+        if (targetUrl.indexOf('//') === 0 && location.protocol === 'blob:') {
+            targetUrl = `${location.pathname.split(':')?.[0]}:${targetUrl}`;
+        }
+        resp = await fetch(targetUrl, fetchOptions).then(onFetchResponse);
     } catch (e: any) {
         console.error(e);
         afterRequest?.(false, { message: e?.message });

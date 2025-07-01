@@ -37,7 +37,7 @@ var _param = require("./param");
  * @returns
  */ var request = function() {
     var _ref = _asyncToGenerator(function(url, options) {
-        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, e, _e_response;
+        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, _location_pathname_split, targetUrl, e, _e_response;
         return _tsGenerator(this, function(_state) {
             switch(_state.label){
                 case 0:
@@ -117,9 +117,12 @@ var _param = require("./param");
                         ,
                         4
                     ]);
+                    targetUrl = "".concat(/^(http|\/\/)/g.test(url) ? "" : baseUrl || "").concat(url);
+                    // 如果当前是blob地址，目标地址又是 // 开头，自动修正
+                    if (targetUrl.indexOf("//") === 0 && location.protocol === "blob:") targetUrl = "".concat((_location_pathname_split = location.pathname.split(":")) === null || _location_pathname_split === void 0 ? void 0 : _location_pathname_split[0], ":").concat(targetUrl);
                     return [
                         4,
-                        fetch("".concat((url === null || url === void 0 ? void 0 : url.indexOf("http")) === 0 ? "" : baseUrl || "").concat(url), fetchOptions).then(onFetchResponse)
+                        fetch(targetUrl, fetchOptions).then(onFetchResponse)
                     ];
                 case 2:
                     resp = _state.sent();
