@@ -26,3 +26,17 @@ export declare const decodeHtml: (html: string | any) => any;
  * @returns
  */
 export declare const copyToClipboard: (text: string, onFailure: (message: string) => void, supportSilent: boolean) => Promise<void>;
+/**
+ * 获取身份证号第18位校验码
+ * @params cid 身份证号码，17或18位均可
+ */
+export declare const getIdCardLastChar: (cid: string) => string;
+/**
+ * 检测某个身份证ID是否合法，包括长度和最后一位校验码检测
+ * @params cid 身份证号码，必须是18位
+ */
+export declare const validateIdCard: (cid: string) => boolean;
+/**
+ * 键盘键值映射，如: keyCodes.ctrl == 17
+ */
+export declare const keyCodes: Record<string, number>;

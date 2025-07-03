@@ -10,3 +10,4 @@ _exportStar(require("./other"), exports);
 _exportStar(require("./param"), exports);
 _exportStar(require("./request"), exports);
 _exportStar(require("./time"), exports);
+_exportStar(require("./string"), exports);

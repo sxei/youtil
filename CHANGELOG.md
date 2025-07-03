@@ -1,5 +1,10 @@
 # 变更历史
 
+## 3.0.5 (2025-07-03)
+
+* 新增`getIdCardLastChar`、`validateIdCard`、`keyCodes`；
+* 新增字符串系列方法，如`formatJson`、`getRandom`等5个方法；
+
 ## 3.0.4 (2025-07-01)
 
 * 修复`baseUrl`未兼容`url`已经是`//`开头的情况；

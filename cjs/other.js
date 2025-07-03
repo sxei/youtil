@@ -24,6 +24,15 @@ _export(exports, {
     },
     copyToClipboard: function() {
         return copyToClipboard;
+    },
+    getIdCardLastChar: function() {
+        return getIdCardLastChar;
+    },
+    validateIdCard: function() {
+        return validateIdCard;
+    },
+    keyCodes: function() {
+        return keyCodes;
     }
 });
 var deepCopy = function(obj) {
@@ -79,3 +88,80 @@ var copyToClipboard = function(text, onFailure, supportSilent) {
         }
     });
 };
+var getIdCardLastChar = function(cid) {
+    if (!cid || cid.length < 17) throw new Error("传入的身份证号长度必须>=17");
+    var weights = [
+        7,
+        9,
+        10,
+        5,
+        8,
+        4,
+        2,
+        1,
+        6,
+        3,
+        7,
+        9,
+        10,
+        5,
+        8,
+        4,
+        2
+    ]; // 十七位数字权重
+    var validates = [
+        "1",
+        "0",
+        "X",
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2"
+    ]; // 校验码
+    var sum = 0;
+    for(var i = 0; i < 17; i++)sum += parseInt(cid.charAt(i), 10) * weights[i];
+    return validates[sum % 11];
+};
+var validateIdCard = function(cid) {
+    if (!cid || cid.length !== 18) {
+        console.error("身份证号不是18位！");
+        return false;
+    }
+    return "".concat(getIdCardLastChar(cid)) === cid.charAt(17);
+};
+var keyCodes = function() {
+    var keys = {
+        backspace: 8,
+        tab: 9,
+        clear: 12,
+        enter: 13,
+        shift: 16,
+        ctrl: 17,
+        alt: 18,
+        esc: 27,
+        space: 32,
+        pageup: 33,
+        pagedown: 34,
+        end: 35,
+        home: 36,
+        left: 37,
+        up: 38,
+        right: 39,
+        down: 40,
+        insert: 45,
+        delete: 46
+    };
+    // 数字0-9
+    for(var i = 48; i <= 57; i++)keys[String.fromCharCode(i)] = i;
+    // 字母a-z
+    for(var i1 = 65; i1 <= 90; i1++)keys[String.fromCharCode(i1).toLowerCase()] = i1;
+    // 小键盘数字0-9，这里用num0-num9表示
+    for(var i2 = 96; i2 <= 105; i2++)keys["num".concat(i2 - 96)] = i2;
+    // f1-f12功能键
+    for(var i3 = 112; i3 <= 123; i3++)keys["f".concat(i3 - 111)] = i3;
+    return keys;
+}();

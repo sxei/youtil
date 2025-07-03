@@ -11,6 +11,7 @@
 
 ## Variables
 
+- [keyCodes](variables/keyCodes.md)
 - [~~Request~~](variables/Request.md)
 
 ## Functions
@@ -22,9 +23,13 @@
 - [delParam](functions/delParam.md)
 - [encodeHtml](functions/encodeHtml.md)
 - [formatDate](functions/formatDate.md)
+- [formatJson](functions/formatJson.md)
+- [getIdCardLastChar](functions/getIdCardLastChar.md)
 - [getParam](functions/getParam.md)
 - [getParamInt](functions/getParamInt.md)
 - [getParams](functions/getParams.md)
+- [getRandom](functions/getRandom.md)
+- [getRandomStr](functions/getRandomStr.md)
 - [hideLoading](functions/hideLoading.md)
 - [initWindowMessage](functions/initWindowMessage.md)
 - [parseDate](functions/parseDate.md)
@@ -32,4 +37,7 @@
 - [setParam](functions/setParam.md)
 - [showLoading](functions/showLoading.md)
 - [sleep](functions/sleep.md)
+- [toHump](functions/toHump.md)
+- [toUnderline](functions/toUnderline.md)
 - [toUrlParams](functions/toUrlParams.md)
+- [validateIdCard](functions/validateIdCard.md)
