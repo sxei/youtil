@@ -15,3 +15,5 @@ fs.readdirSync('./es').forEach(fileName => {
 await fs.move('./es/index.esm.es5.production.mjs', './es/index.mjs', { overwrite: true });
 const content = await fs.readFile('./es/index.mjs', { encoding: 'utf8' });
 await fs.writeFile('./es/index.mjs', content.replace('.esm.es5.production.js', '.esm.es5.production.mjs'));
+// docs文件夹每次都会被重置
+await fs.copy('./CNAME', './docs/CNAME');

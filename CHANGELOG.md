@@ -1,5 +1,15 @@
 # 变更历史
 
+## 3.0.6 (2025-07-23)
+
+* `request`方法重大更新：
+    * 新增`setLoading`方法，代替经典的`const afterRequest = () => setLoading(false)`；
+    * 新增`overrideMessage`，负责统一处理自定义异常文案逻辑，可以用于覆盖默认的`resp.message`；
+    * `errorHandler`增加第3个参数`options`，解决自定义`errorHandler`时无法获取到`options.silent`的问题；
+    * 为消除歧义，`errorMessage`更名为`defaultErrorMessage`，`errorMessage`标记为过期；
+    * 不兼容更新：`resp.message || resp.msg`更改为`resp.message`，不再兼容不标准返回；
+    * 不兼容更新：发生异常时`error.response._response`改为`{ ..._response }`；
+
 ## 3.0.5 (2025-07-03)
 
 * 新增`getIdCardLastChar`、`validateIdCard`、`keyCodes`；

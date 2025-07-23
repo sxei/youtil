@@ -8,7 +8,7 @@
 
 > **createEnum**\<`T`\>(`items`): `EnumType`\<`T`\>
 
-Defined in: [enum.ts:29](https://github.com/sxei/youtil/blob/9ed40274f152c481747c0d8f4cd2063727f76538/src/enum.ts#L29)
+Defined in: [enum.ts:29](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/enum.ts#L29)
 
 创建一个枚举，支持多种高级用法：
 const enums = createEnum([{ key: 'MAN', label: '男', value: 1 }])

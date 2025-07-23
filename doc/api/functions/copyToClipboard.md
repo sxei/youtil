@@ -8,7 +8,7 @@
 
 > **copyToClipboard**(`text`, `onFailure`, `supportSilent`): `Promise`\<`void`\>
 
-Defined in: [other.ts:58](https://github.com/sxei/youtil/blob/9ed40274f152c481747c0d8f4cd2063727f76538/src/other.ts#L58)
+Defined in: [other.ts:58](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/other.ts#L58)
 
 复制一段文本到剪贴板，如果失败会抛出异常，推荐使用姿势：
 await copyTextToClipboard('要复制的文本', message => alert(`复制到剪贴板失败：${message}`));

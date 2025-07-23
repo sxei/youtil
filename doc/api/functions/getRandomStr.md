@@ -8,7 +8,7 @@
 
 > **getRandomStr**(`length`, `type`?): `string`
 
-Defined in: string.ts:82
+Defined in: [string.ts:82](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/string.ts#L82)
 
 获取随机字符串
 

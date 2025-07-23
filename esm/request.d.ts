@@ -22,16 +22,22 @@ export interface IRequestOptions {
     checkSuccess?: (resp: any) => boolean;
     /** 对响应进行自定义格式化处理，包含 checkSuccess 全部能力 */
     responseConverter?: (resp: any) => any;
-    /** 后端未返回 message 时的兜底异常文案 */
+    /** @deprecated 后端未返回 message 时的默认异常文案，由于名称经常引发歧义，估改名为 defaultErrorMessage */
     errorMessage?: string;
+    /** 后端未返回 message 时的默认异常文案 */
+    defaultErrorMessage?: string;
     /** 发生异常时的处理方法，一般不太建议重写此方法 */
-    errorHandler?: (message: string, resp?: any) => void;
+    errorHandler?: (message: string, resp: any, options: IRequestOptions) => void;
     /** 自定义toast实现，为了和UI解耦，方法默认不包含UI处理代码 */
     toastHandler?: (message: string) => void;
     /** 是否关闭默认的异常toast */
     silent?: boolean;
     /** 自定义 fetch.then() ，非常底层的一个方法，非必要请勿使用 */
     onFetchResponse?: (response: Response) => any;
+    /** 切换loading状态的方法，会在开始请求前置为true，结束时置为false。为什么设计这个方法？在非hooks场景下更方便的切换loading状态 */
+    setLoading?: (loading?: boolean) => void;
+    /** 覆盖默认的 resp.message 自定义异常抛出文案，也支持传入方法，注意返回''和undefined效果不同 */
+    overrideMessage?: string | ((resp: any) => string);
 }
 /**
  * 通用的API请求方法

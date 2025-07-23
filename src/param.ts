@@ -8,7 +8,7 @@
  * @param {*} url 要获取的URL，默认当前地址
  */
 export const getParam = (name: string, url: string = location.search) => {
-    return (new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g').exec(url) || [])[2];
+	return (new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g').exec(url) || [])[2];
 };
 
 /**
@@ -17,7 +17,7 @@ export const getParam = (name: string, url: string = location.search) => {
  * @param {*} url 要获取的URL，默认当前地址
  */
 export const getParamInt = (name: string, url: string = location.search) => {
-    return parseInt(getParam(name, url) || '0', 10);
+	return parseInt(getParam(name, url) || '0', 10);
 };
 
 /**
@@ -27,12 +27,12 @@ export const getParamInt = (name: string, url: string = location.search) => {
  * @returns 参数对象
  */
 export const getParams = (url = location.search) => {
-    const search = ((url || '').split('?').pop() || '').split('#')[0] || '';
-    const params: any = {};
-    search.split('&').map(item => item.split('=')).forEach(([key, value]) => {
-        params[key] = value || '';
-    });
-    return params;
+	const search = ((url || '').split('?').pop() || '').split('#')[0] || '';
+	const params: any = {};
+	search.split('&').map(item => item.split('=')).forEach(([key, value]) => {
+		params[key] = value || '';
+	});
+	return params;
 };
 
 /**
@@ -44,13 +44,13 @@ export const getParams = (url = location.search) => {
  * @param {Object} url 如果不传默认当前页面URL
  */
 export const setParam = (name: string, value: string | number, url?: string) => {
-    url = url || `${location.pathname}${location.search}`;
-    // 如果参数已经存在，替换之
-    if (getParam(name, url) !== undefined) {
-        return url.replace(new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g'), `$1${name}=${value}`);
-    }
-    const [pathname, hash] = url.split('#'); // 处理存在hash的情况
-    return `${pathname}${pathname.indexOf('?') < 0 ? '?' : '&'}${name}=${value}${hash ? '#' : ''}${hash || ''}`;
+	url = url || `${location.pathname}${location.search}`;
+	// 如果参数已经存在，替换之
+	if (getParam(name, url) !== undefined) {
+		return url.replace(new RegExp(`(^|\\?|&)${name}=(.*?)(?=&|#|$)`, 'g'), `$1${name}=${value}`);
+	}
+	const [pathname, hash] = url.split('#'); // 处理存在hash的情况
+	return `${pathname}${pathname.indexOf('?') < 0 ? '?' : '&'}${name}=${value}${hash ? '#' : ''}${hash || ''}`;
 };
 
 /**
@@ -63,8 +63,8 @@ export const setParam = (name: string, value: string | number, url?: string) => 
  * @returns 处理完后的URL
  */
 export const delParam = (name: string, url: string) => {
-    url = url || `${location.pathname}${location.search}`;
-    return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => ($2 === '&' ? $1 : $2));
+	url = url || `${location.pathname}${location.search}`;
+	return url.replace(new RegExp(`(^|\\?|&)${name}=.*?(&|#|$)`, 'g'), (_m, $1, $2) => ($2 === '&' ? $1 : $2));
 };
 
 /**
@@ -73,12 +73,12 @@ export const delParam = (name: string, url: string) => {
  * @returns 返回类似 a=1&b=2 的字符串
  */
 export const toUrlParams = (data: any) => {
-    return Object.keys(data || {})
-        .filter((key) => data[key] !== undefined)
-        .map((key) => {
-            const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
-            return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-        })
-        .join('&');
+	return Object.keys(data || {})
+		.filter((key) => data[key] !== undefined)
+		.map((key) => {
+			const value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
+			return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+		})
+		.join('&');
 };
 

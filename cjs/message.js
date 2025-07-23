@@ -19,11 +19,11 @@ function initWindowMessage(scene, targetWindow) {
         return functionId;
     };
     var postMessage = /**
-     * 发送消息并等待响应
-     * @param {string} eventName 事件名称
-     * @param {*} [payload] 负载数据
-     * @returns {Promise} 返回一个Promise，resolve接收回调数据
-     */ function postMessage(eventName) {
+	 * 发送消息并等待响应
+	 * @param {string} eventName 事件名称
+	 * @param {*} [payload] 负载数据
+	 * @returns {Promise} 返回一个Promise，resolve接收回调数据
+	 */ function postMessage(eventName) {
         for(var _len = arguments.length, payload = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
             payload[_key - 1] = arguments[_key];
         }
@@ -49,10 +49,10 @@ function initWindowMessage(scene, targetWindow) {
         });
     };
     var onMessage = /**
-     * 监听消息
-     * @param {string} eventName 事件名称
-     * @param {function} listener 监听函数(支持异步)：(...params) => callbackValue
-     */ function onMessage(eventName, listener) {
+	 * 监听消息
+	 * @param {string} eventName 事件名称
+	 * @param {function} listener 监听函数(支持异步)：(...params) => callbackValue
+	 */ function onMessage(eventName, listener) {
         if (!eventListeners.has(eventName)) eventListeners.set(eventName, []);
         eventListeners.get(eventName).push(listener);
     };

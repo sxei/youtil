@@ -1,6 +1,6 @@
 {
     "name": "youtil",
-    "version": "3.0.5",
+    "version": "3.0.6",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
         "es",

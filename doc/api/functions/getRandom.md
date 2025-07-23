@@ -8,7 +8,7 @@
 
 > **getRandom**(`start`?, `end`?): `any`
 
-Defined in: string.ts:56
+Defined in: [string.ts:56](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/string.ts#L56)
 
 获取各种随机数，支持如下几种调用方式：
 getRandom() 返回0-1的随机小数，等同于Math.random()，0 <= result < 1

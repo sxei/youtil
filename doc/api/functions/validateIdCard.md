@@ -8,7 +8,7 @@
 
 > **validateIdCard**(`cid`): `boolean`
 
-Defined in: [other.ts:114](https://github.com/sxei/youtil/blob/9ed40274f152c481747c0d8f4cd2063727f76538/src/other.ts#L114)
+Defined in: [other.ts:114](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/other.ts#L114)
 
 检测某个身份证ID是否合法，包括长度和最后一位校验码检测
 

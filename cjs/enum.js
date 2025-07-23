@@ -36,8 +36,8 @@ function createEnum(items) {
     return enumArray;
 } // 使用示例
  // const genders = createEnum([
- //     { label: '男', value: 1, key: 'MAN', a: 1 },
- //     { label: '女', value: '2', key: 'WOMAN' },
+ //	 { label: '男', value: 1, key: 'MAN', a: 1 },
+ //	 { label: '女', value: '2', key: 'WOMAN' },
  // ] as const);
  // console.log(genders.MAN); // 鼠标悬停显示类型为 1
  // console.log(genders.pick('MAN')); // 返回MAN的完整对象

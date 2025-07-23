@@ -1,6 +1,12 @@
+import _assert_this_initialized from "@swc/helpers/src/_assert_this_initialized.mjs";
 import _async_to_generator from "@swc/helpers/src/_async_to_generator.mjs";
+import _class_call_check from "@swc/helpers/src/_class_call_check.mjs";
+import _inherits from "@swc/helpers/src/_inherits.mjs";
 import _instanceof from "@swc/helpers/src/_instanceof.mjs";
 import _object_spread from "@swc/helpers/src/_object_spread.mjs";
+import _object_spread_props from "@swc/helpers/src/_object_spread_props.mjs";
+import _wrap_native_super from "@swc/helpers/src/_wrap_native_super.mjs";
+import _create_super from "@swc/helpers/src/_create_super.mjs";
 import _ts_generator from "@swc/helpers/src/_ts_generator.mjs";
 import { toUrlParams } from "./param";
 /** 合并2个options对象 */ var mergeOptions = function(ops1, ops2) {
@@ -13,23 +19,38 @@ import { toUrlParams } from "./param";
     });
 };
 /**
+ * 支持传入自定义属性的Error对象，包括 cause
+ */ var MyError = /*#__PURE__*/ function(Error1) {
+    "use strict";
+    _inherits(MyError, Error1);
+    var _super = _create_super(MyError);
+    function MyError(message, options) {
+        _class_call_check(this, MyError);
+        var _this;
+        _this = _super.call(this, message);
+        Object.assign(_assert_this_initialized(_this), options || {});
+        return _this;
+    }
+    return MyError;
+}(_wrap_native_super(Error));
+/**
  * 通用的API请求方法
  * @param url
  * @param options
  * @returns
  */ var request = function() {
     var _ref = _async_to_generator(function(url, options) {
-        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, body, key, resp, _location_pathname_split, targetUrl, e, _e_response;
+        var defaultOptions, _ref, params, data, formData, json, method, headers, baseUrl, fetchOptions, checkSuccess, afterRequest, errorHandler, errorMessage, responseConverter, onFetchResponse, setLoading, overrideMessage, defaultErrorMessage, body, key, resp, _location_pathname_split, targetUrl, e, _e_response, localMessage, localMessage1;
         return _ts_generator(this, function(_state) {
             switch(_state.label){
                 case 0:
                     defaultOptions = {
                         errorMessage: "系统繁忙，请稍后再试",
-                        errorHandler: function(msg) {
+                        errorHandler: function(message) {
                             var _options_toastHandler;
-                            if (!(options === null || options === void 0 ? void 0 : options.silent)) options === null || options === void 0 ? void 0 : (_options_toastHandler = options.toastHandler) === null || _options_toastHandler === void 0 ? void 0 : _options_toastHandler.call(options, msg);
+                            if (!(options === null || options === void 0 ? void 0 : options.silent) && message) options === null || options === void 0 ? void 0 : (_options_toastHandler = options.toastHandler) === null || _options_toastHandler === void 0 ? void 0 : _options_toastHandler.call(options, message);
                             // 抛出异常，阻止执行之后的操作
-                            throw new Error(msg);
+                            throw new Error(message);
                         },
                         baseUrl: "",
                         headers: {},
@@ -45,21 +66,18 @@ import { toUrlParams } from "./param";
                         },
                         onFetchResponse: function(response) {
                             if (response.status === 200) return response.json();
-                            var errorResponse = {
-                                code: response.status,
-                                status: response.status,
-                                message: response.statusText,
-                                headers: response.headers,
-                                // 返回整个response备用，但是一般不推荐用户直接使用
-                                _response: response
-                            };
-                            var error = new Error(errorResponse.message);
-                            error.response = errorResponse;
-                            throw error;
+                            throw new MyError(response.statusText, {
+                                response: _object_spread_props(_object_spread({}, response), {
+                                    code: response.status,
+                                    message: response.statusText,
+                                    /** 标记这是HTTP原始响应，并非服务端返回数据 */ isHttpResponse: true
+                                })
+                            });
                         }
                     };
                     options = mergeOptions(defaultOptions, options);
-                    _ref = options || {}, params = _ref.params, data = _ref.data, formData = _ref.formData, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter, onFetchResponse = _ref.onFetchResponse;
+                    _ref = options || {}, params = _ref.params, data = _ref.data, formData = _ref.formData, json = _ref.json, method = _ref.method, headers = _ref.headers, baseUrl = _ref.baseUrl, fetchOptions = _ref.fetchOptions, checkSuccess = _ref.checkSuccess, afterRequest = _ref.afterRequest, errorHandler = _ref.errorHandler, errorMessage = _ref.errorMessage, responseConverter = _ref.responseConverter, onFetchResponse = _ref.onFetchResponse, setLoading = _ref.setLoading, overrideMessage = _ref.overrideMessage;
+                    defaultErrorMessage = (options === null || options === void 0 ? void 0 : options.defaultErrorMessage) || errorMessage;
                     // fetchOptions 里面的 headers 优先级高于外部的 headers
                     fetchOptions.headers = _object_spread({}, headers || {}, fetchOptions.headers || {});
                     if (params) {
@@ -91,6 +109,7 @@ import { toUrlParams } from "./param";
                         }, fetchOptions.headers || {})
                     });
                     resp = null;
+                    setLoading === null || setLoading === void 0 ? void 0 : setLoading(true);
                     _state.label = 1;
                 case 1:
                     _state.trys.push([
@@ -115,15 +134,16 @@ import { toUrlParams } from "./param";
                 case 3:
                     e = _state.sent();
                     console.error(e);
-                    afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(false, {
-                        message: e === null || e === void 0 ? void 0 : e.message
-                    });
-                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(((_e_response = e.response) === null || _e_response === void 0 ? void 0 : _e_response.message) || errorMessage || "", e.response);
+                    setLoading === null || setLoading === void 0 ? void 0 : setLoading(false);
+                    afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(false, e.response);
+                    localMessage = typeof overrideMessage === "function" ? overrideMessage(e.response) : overrideMessage;
+                    errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(localMessage !== null && localMessage !== void 0 ? localMessage : ((_e_response = e.response) === null || _e_response === void 0 ? void 0 : _e_response.message) || defaultErrorMessage, e.response, options);
                     return [
                         2,
                         undefined
                     ];
                 case 4:
+                    setLoading === null || setLoading === void 0 ? void 0 : setLoading(false);
                     resp = responseConverter ? responseConverter(resp) : resp;
                     if (checkSuccess === null || checkSuccess === void 0 ? void 0 : checkSuccess(resp)) {
                         afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(true, resp);
@@ -133,7 +153,8 @@ import { toUrlParams } from "./param";
                         ];
                     } else {
                         afterRequest === null || afterRequest === void 0 ? void 0 : afterRequest(false, resp);
-                        errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(resp.message || resp.msg || errorMessage || "", resp);
+                        localMessage1 = typeof overrideMessage === "function" ? overrideMessage(resp) : overrideMessage;
+                        errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(localMessage1 !== null && localMessage1 !== void 0 ? localMessage1 : resp.message || defaultErrorMessage, resp, options);
                         return [
                             2,
                             undefined

@@ -8,7 +8,7 @@
 
 > **toUnderline**(`str`, `flag`?): `string`
 
-Defined in: string.ts:96
+Defined in: [string.ts:96](https://github.com/sxei/youtil/blob/8e9577520240aa8b6f6b2cd2200d03ed8000ea52/src/string.ts#L96)
 
 字符串转下划线形式，示例：getParam 转 get_param
 
