@@ -1,6 +1,6 @@
 # youtil
 
-`youtil`，发音同`util`，中文可以叫做`油梯`，一个与框架（`Vue`、`React`等）、环境（`Nodejs`、`Browser`等）无关的小巧、精简、实用、不依赖任何第三方库的`JavaScript`工具库。
+`youtil`，发音同`util`，中文可以叫做`油梯`，一个与框架（`Vue`、`React`等）、环境（`Nodejs`、`Browser`等）无关的小巧、精简、实用、不依赖任何第三方库的`JavaScript`工具库，官网：[youtil.haoji.me](https://youtil.haoji.me)。
 
 > 1. 代码还在不断补充完善，敬请期待！
 > 2. 少数方法可能依赖DOM，例如`showLoading`；
