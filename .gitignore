@@ -15,7 +15,7 @@ tmp/
 .eslintcache
 .docusaurus
 .vscode
-
+.joycode
 
 npm-debug.log*
 yarn-debug.log*

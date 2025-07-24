@@ -25,7 +25,7 @@ export declare const getRandom: (start?: any, end?: any) => any;
  * @param type all 表示所有，number表示仅数字，默认所有
  * @return string
  */
-export declare const getRandomStr: (length: number, type?: 'number' | 'all') => string;
+export declare const getRandomStr: (length: number, type?: "number" | "all") => string;
 /**
  * 字符串转下划线形式，示例：getParam 转 get_param
  * @param str 要转换的字符串

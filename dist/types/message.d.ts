@@ -6,7 +6,7 @@ type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any>
  * @returns {{postMessage: function, onMessage: function}} 返回postMessage和onMessage方法
  */
 export declare function initWindowMessage(scene: string, targetWindow?: Window): {
-    postMessage: <T>(eventName: string, ...payload: any[]) => void | Promise<T>;
+    postMessage: <T>(eventName: string, ...payload: any[]) => Promise<T> | void;
     onMessage: (eventName: string, listener: onMessageListener) => void;
 };
 export {};

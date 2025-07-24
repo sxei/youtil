@@ -1,5 +1,9 @@
 # 变更历史
 
+## 3.1.0 (2025-07-24)
+
+* 脚手架重大更新，废弃`ice-pkg`，直接采用`esbuild`构建，仅输出`dist/index.mjs`和`dist/index.umd.js`2个文件，不再支持`cjs`以及`transform`模式；
+
 ## 3.0.6 (2025-07-23)
 
 * `request`方法重大更新：
