@@ -20,11 +20,12 @@
         "es/*"
     ],
     "scripts": {
-        "dev": "concurrently \"typedoc --watch\" \"ice-pkg start\"",
+        "dev": "concurrently \"typedoc --watch\" \"dumi dev\"",
         "_build": "typedoc && ice-pkg build && node after-build.mjs",
         "build": "node esbuild.config.mjs",
+        "build:doc": "typedoc && dumi build && node after-build-doc.mjs",
+        "preview": "dumi preview",
         "prepublishOnly": "npm run build",
-        "after-publish": "node after-publish.mjs",
         "test": "jest",
         "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
         "eslint:fix": "npm run eslint -- --fix",
@@ -43,6 +44,7 @@
         "@ice/pkg-plugin-docusaurus": "^1.4.18",
         "@iceworks/spec": "^1.0.0",
         "concurrently": "^9.1.2",
+        "dumi": "^2.4.21",
         "esbuild": "^0.25.8",
         "esbuild-plugin-d.ts": "^1.3.1",
         "eslint": "^7.0.0",
