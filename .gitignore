@@ -17,6 +17,7 @@ tmp/
 .vscode
 .joycode
 .dumi
+dist
 
 npm-debug.log*
 yarn-debug.log*
