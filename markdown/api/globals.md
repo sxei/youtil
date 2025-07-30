@@ -13,6 +13,11 @@ title: API索引
 - [IRequestOptions](interfaces/IRequestOptions.md)
 - [IShowLoadingConfig](interfaces/IShowLoadingConfig.md)
 
+## Type Aliases
+
+- [EnumItem](type-aliases/EnumItem.md)
+- [EnumType](type-aliases/EnumType.md)
+
 ## Variables
 
 - [keyCodes](variables/keyCodes.md)

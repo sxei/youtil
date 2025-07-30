@@ -1,6 +1,6 @@
 {
     "name": "youtil",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
         "docs",
@@ -23,7 +23,7 @@
         "dev": "concurrently \"typedoc --watch\" \"dumi dev\"",
         "_build": "typedoc && ice-pkg build && node after-build.mjs",
         "build": "node esbuild.config.mjs",
-        "build:doc": "typedoc && dumi build && node after-build-doc.mjs",
+        "build:docs": "typedoc && dumi build && node scripts/after-build-doc.mjs",
         "preview": "dumi preview",
         "prepublishOnly": "npm run build",
         "test": "jest",

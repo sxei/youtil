@@ -4,11 +4,11 @@ export default defineConfig({
   // github pages 只能叫这个名字
   outputPath: 'docs',
   themeConfig: {
-    logo: 'https://cn.vuejs.org/logo.svg',
+    logo: 'https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png',
     name: 'youtil',
     footer: 'Power by youtil',
   },
-  favicons: ['https://cn.vuejs.org/logo.svg'],
+  favicons: ['https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png'],
   // 开启组件文档自动生成
   apiParser: {
   },

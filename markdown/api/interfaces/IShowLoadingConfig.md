@@ -10,7 +10,7 @@ title: IShowLoadingConfig
 
 # Interface: IShowLoadingConfig
 
-Defined in: [loading.ts:2](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L2)
+Defined in: [loading.ts:2](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L2)
 
 showLoading配置
 
@@ -20,7 +20,7 @@ showLoading配置
 
 > `optional` **cancelInline**: `boolean`
 
-Defined in: [loading.ts:5](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L5)
+Defined in: [loading.ts:5](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L5)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [loading.ts:5](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406
 
 > `optional` **hasMask**: `boolean`
 
-Defined in: [loading.ts:3](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L3)
+Defined in: [loading.ts:3](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L3)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [loading.ts:3](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406
 
 > `optional` **id**: `string`
 
-Defined in: [loading.ts:7](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L7)
+Defined in: [loading.ts:7](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L7)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [loading.ts:7](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406
 
 > `optional` **maskColor**: `string`
 
-Defined in: [loading.ts:4](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L4)
+Defined in: [loading.ts:4](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L4)
 
 ***
 
@@ -52,4 +52,4 @@ Defined in: [loading.ts:4](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406
 
 > `optional` **onCancel**: `Function`
 
-Defined in: [loading.ts:6](https://github.com/sxei/youtil/blob/b488c7f70ed7c3406efe20a0ac6e98bf131225b1/src/loading.ts#L6)
+Defined in: [loading.ts:6](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/loading.ts#L6)

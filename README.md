@@ -19,7 +19,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 ## API
 
-参见[API文档](https://youtil.haoji.me/api/globals);
+本文档仅对一些重点模块进行单独介绍，很多简单函数未做一一介绍，完整函数列表请参见[API文档](https://youtil.haoji.me/api/globals)。
 
 ## 关于命名
 
@@ -42,7 +42,7 @@ conssole.log(parseDate('2023-02-14', 'yyyy-MM-dd'));
 
 * 更新代码；
 * 更新`package.json`和`changelog`；
-* `npm run build:doc`，然后合并master；
+* `npm run build:docs`，然后合并master；
 * `npm publish`；
 
 注意：@ice/pkg和@swc/helpers 升级到0.5.0以上版本时其他业务可能报错，非常坑！目前写死版本

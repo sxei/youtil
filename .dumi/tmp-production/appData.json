@@ -2,7 +2,7 @@
   "cwd": "/Users/liuxianan1/workspace/youtil",
   "pkg": {
     "name": "youtil",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
       "docs",
@@ -25,7 +25,8 @@
       "dev": "concurrently \"typedoc --watch\" \"dumi dev\"",
       "_build": "typedoc && ice-pkg build && node after-build.mjs",
       "build": "node esbuild.config.mjs",
-      "build:doc": "typedoc && dumi build && node after-build-doc.mjs",
+      "build:docs": "typedoc && dumi build && node scripts/after-build-doc.mjs",
+      "preview": "dumi preview",
       "prepublishOnly": "npm run build",
       "test": "jest",
       "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
@@ -88,7 +89,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 4
       },
       "enableBy": "register",
       "type": "preset",
@@ -149,7 +150,7 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            9
+            7
           ]
         },
         "register": 11
@@ -165,7 +166,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -202,7 +203,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -215,7 +216,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1085,7 +1086,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1102,7 +1103,7 @@
             0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1128,7 +1129,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 47
+        "register": 45
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1141,7 +1142,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 49
+        "register": 54
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1175,7 +1176,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1188,7 +1189,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1201,7 +1202,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1226,7 +1227,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1239,7 +1240,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
@@ -1264,7 +1265,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1278,10 +1279,10 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
@@ -1293,7 +1294,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1306,7 +1307,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1319,7 +1320,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1332,7 +1333,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1345,7 +1346,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1358,7 +1359,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1371,7 +1372,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
@@ -1396,7 +1397,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1422,7 +1423,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1435,7 +1436,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1460,7 +1461,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 12
+        "register": 11
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1473,7 +1474,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/test/test.js",
@@ -1485,7 +1486,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
@@ -1510,7 +1511,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1523,7 +1524,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
@@ -1539,7 +1540,7 @@
             0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1552,7 +1553,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
@@ -1564,7 +1565,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1577,7 +1578,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
@@ -1589,7 +1590,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
@@ -1601,7 +1602,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1614,7 +1615,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1627,7 +1628,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1640,7 +1641,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 17
+        "register": 19
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1653,7 +1654,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 18
+        "register": 21
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -1665,7 +1666,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1691,7 +1692,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1704,7 +1705,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1756,7 +1757,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1782,7 +1783,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1808,7 +1809,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1821,7 +1822,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1847,7 +1848,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1860,7 +1861,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1886,7 +1887,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1899,7 +1900,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1912,7 +1913,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1925,7 +1926,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1938,7 +1939,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1951,7 +1952,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2055,7 +2056,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            0
+            1
           ]
         },
         "register": 1
@@ -2144,7 +2145,7 @@
             0
           ]
         },
-        "register": 13
+        "register": 15
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2167,7 +2168,7 @@
             3
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2198,7 +2199,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ],
           "modifyRoutes": [
             0
@@ -2223,10 +2224,10 @@
           ],
           "modifyAppData": [
             0,
-            2
+            3
           ]
         },
-        "register": 15
+        "register": 17
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2274,7 +2275,7 @@
             0
           ],
           "onCheckPkgJSON": [
-            103
+            125
           ]
         },
         "register": 1
@@ -2361,12 +2362,12 @@
   "userConfig": {
     "outputPath": "docs",
     "themeConfig": {
-      "logo": "https://cn.vuejs.org/logo.svg",
+      "logo": "https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png",
       "name": "youtil",
       "footer": "Power by youtil"
     },
     "favicons": [
-      "https://cn.vuejs.org/logo.svg"
+      "https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png"
     ],
     "apiParser": {},
     "resolve": {
@@ -2419,7 +2420,7 @@
       },
       "nprogress": true,
       "lastUpdated": true,
-      "logo": "https://cn.vuejs.org/logo.svg",
+      "logo": "https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png",
       "name": "youtil"
     },
     "resolve": {
@@ -2454,7 +2455,7 @@
     "esbuildMinifyIIFE": true,
     "outputPath": "docs",
     "favicons": [
-      "https://cn.vuejs.org/logo.svg"
+      "https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png"
     ],
     "apiParser": {},
     "styles": [
@@ -2584,6 +2585,20 @@
       "file": "/Users/liuxianan1/workspace/youtil/markdown/api/functions/toUrlParams.md",
       "absPath": "/api/functions/to-url-params"
     },
+    "markdown/api/type-aliases/EnumItem": {
+      "path": "api/type-aliases/enum-item",
+      "id": "markdown/api/type-aliases/EnumItem",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/api/type-aliases/EnumItem.md",
+      "absPath": "/api/type-aliases/enum-item"
+    },
+    "markdown/api/type-aliases/EnumType": {
+      "path": "api/type-aliases/enum-type",
+      "id": "markdown/api/type-aliases/EnumType",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/api/type-aliases/EnumType.md",
+      "absPath": "/api/type-aliases/enum-type"
+    },
     "markdown/api/functions/createEnum": {
       "path": "api/functions/create-enum",
       "id": "markdown/api/functions/createEnum",
@@ -2710,6 +2725,13 @@
       "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md",
       "absPath": "/guide/loading"
     },
+    "markdown/guide/message": {
+      "path": "guide/message",
+      "id": "markdown/guide/message",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/message.md",
+      "absPath": "/guide/message"
+    },
     "markdown/guide/request": {
       "path": "guide/request",
       "id": "markdown/guide/request",
@@ -2730,6 +2752,13 @@
       "parentId": "DocLayout",
       "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/index.md",
       "absPath": "/guide"
+    },
+    "markdown/guide/enum": {
+      "path": "guide/enum",
+      "id": "markdown/guide/enum",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md",
+      "absPath": "/guide/enum"
     },
     "markdown/index": {
       "path": "",

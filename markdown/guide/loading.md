@@ -1,8 +1,11 @@
 ---
 toc: content
+order: 4
 ---
 
-# loading
+# 全局loading
+
+`loading`是web中非常常见的一种交互，但是很多时候为了一个`loading`去引入非常重的组件库得不偿失，本方法弥补了此类不足。只有2个方法，一个`showLoading()`，一个`hideLoading()`，并且它是单例模式。
 
 ```jsx preview
 import { showLoading, hideLoading } from 'youtil';

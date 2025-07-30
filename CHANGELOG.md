@@ -1,5 +1,10 @@
 # 变更历史
 
+## 3.1.1 (2025-07-30)
+
+* 枚举增加`pickByLabel`方法；
+* 完善文档；
+
 ## 3.1.0 (2025-07-24)
 
 * 脚手架重大更新，废弃`ice-pkg`，直接采用`esbuild`构建，仅输出`dist/index.mjs`和`dist/index.umd.js`2个文件，不再支持`cjs`以及`transform`模式；
