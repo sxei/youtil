@@ -17,7 +17,18 @@ const tsconfig = {
 	include: ['src'],
 	exclude: ['node_modules'],
 };
-
+// 构建cjs版本
+await build({
+	entryPoints: ['src/index.ts'],
+	outfile: 'dist/index.cjs',
+	bundle: true,
+	minify: true,
+	sourcemap: false,
+	format: 'cjs',
+	target: ['es2017'],
+	platform: 'node',
+});
+// 构建esm版本
 await build({
 	entryPoints: ['src/index.ts'],
 	outfile: 'dist/index.mjs',
@@ -33,6 +44,7 @@ await build({
 		}),
 	],
 });
+// 构建umd版本
 await build({
 	entryPoints: ['src/index.ts'],
 	outfile: 'dist/index.umd.js',
