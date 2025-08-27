@@ -51,7 +51,7 @@ export const formatJson = (json: string, indent?: string, leftBracesInSameLine?:
  * getRandom(array, count) 随机从数组中返回长度为count的不重复内容组成的新数组，如果不足count个，返回全部 并乱序
  * @param {Object} start
  * @param {Object} end
- * @return {Object} 
+ * @return {Object}
  */
 export const getRandom = (start?: any, end?: any) => {
 	if (typeof start === 'number') {

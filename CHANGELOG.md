@@ -1,5 +1,11 @@
 # 变更历史
 
+## 3.1.4 (2025-08-27)
+
+* 新增`openNewTab`、`formatDuration`、`isLeapYear`、`getMonthDays`方法；
+* 新增`getCookie`、`setCookie`、`delCookie`方法；
+* 更新：支持`formatDate('2025-08-12 12:23:44')`格式；
+
 ## 3.1.2 (2025-08-04)
 
 * 增加`index.cjs`构建产物；

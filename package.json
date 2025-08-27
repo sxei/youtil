@@ -1,17 +1,17 @@
 {
     "name": "youtil",
-    "version": "3.1.2",
+    "version": "3.1.4",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
         "dist"
     ],
-    "main": "dist/index.mjs",
+    "main": "dist/index.cjs",
     "module": "dist/index.mjs",
     "types": "dist/types/index.d.ts",
     "exports": {
         ".": {
             "types": "./dist/types/index.d.ts",
-            "require": "./dist/index.mjs",
+            "require": "./dist/index.cjs",
             "import": "./dist/index.mjs"
         }
     },
