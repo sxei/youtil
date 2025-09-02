@@ -1,4 +1,7 @@
 import { toUrlParams } from './param';
+import { parseMock } from './mockRequest';
+
+export { mockRequest, resetMock, configMock } from './mockRequest';
 
 /** requestAPI的第二个参数类型 */
 export interface IRequestOptions {
@@ -40,6 +43,8 @@ export interface IRequestOptions {
 	setLoading?: (loading?: boolean) => void;
 	/** 覆盖默认的 resp.message 自定义异常抛出文案，也支持传入方法，注意返回''和undefined效果不同 */
 	overrideMessage?: string | ((resp: any) => string);
+	/** 如需允许手动终止请求，请传入 signal */
+	signal?: AbortSignal;
 }
 
 /** 合并2个options对象 */
@@ -117,10 +122,14 @@ const request = async <T = any>(url: string, options?: IRequestOptions) => {
 		onFetchResponse,
 		setLoading,
 		overrideMessage,
+		signal,
 	} = options || {};
 	const defaultErrorMessage = options?.defaultErrorMessage || errorMessage;
 	// fetchOptions 里面的 headers 优先级高于外部的 headers
 	fetchOptions.headers = { ...(headers || {}), ...(fetchOptions.headers || {}) };
+	if (!fetchOptions.signal && signal) {
+		fetchOptions.signal = signal;
+	}
 	if (params) {
 		fetchOptions.method = method || 'GET';
 		url = `${url}${url.indexOf('?') >= 0 ? '&' : '?'}${toUrlParams(params)}`;
@@ -164,7 +173,10 @@ const request = async <T = any>(url: string, options?: IRequestOptions) => {
 		if (targetUrl.indexOf('//') === 0 && location.protocol === 'blob:') {
 			targetUrl = `${location.pathname.split(':')?.[0]}:${targetUrl}`;
 		}
-		resp = await fetch(targetUrl, fetchOptions).then(onFetchResponse);
+		resp = await parseMock(targetUrl, fetchOptions);
+		if (!resp) {
+			resp = await fetch(targetUrl, fetchOptions).then(onFetchResponse);
+		}
 	} catch (e: any) {
 		console.error(e);
 		setLoading?.(false);

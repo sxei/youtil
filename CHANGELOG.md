@@ -1,5 +1,11 @@
 # 变更历史
 
+## 3.1.5 (2025-09-02)
+
+* `request`更新：
+  * 支持`mock`，新增`mockRequest`、`configMock`、`resetMock`3个方法；
+  * 新增`signal`以支持`abort`；
+
 ## 3.1.4 (2025-08-27)
 
 * 新增`openNewTab`、`formatDuration`、`isLeapYear`、`getMonthDays`方法；

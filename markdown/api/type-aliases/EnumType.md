@@ -12,7 +12,7 @@ title: EnumType
 
 > **EnumType**\<`T`\> = `T` & `{ [K in T[number]["key"]]: Extract<T[number], { key: K }>["value"] }` & `object`
 
-Defined in: [enum.ts:11](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/enum.ts#L11)
+Defined in: [enum.ts:11](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/enum.ts#L11)
 
 ## Type declaration
 

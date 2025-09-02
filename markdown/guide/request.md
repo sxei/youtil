@@ -213,4 +213,50 @@ export default () => {
 }
 ```
 
+## abort 请求终止
+
+```jsx preview
+import { request, mockRequest } from 'youtil';
+import { useEffect } from 'react';
+
+export default () => {
+  const test = async () => {
+    const controller = new AbortController();
+    request('xxx', { signal: controller.signal });
+    controller.abort('用户主动取消请求');
+  };
+  return <div>
+    <a href="javascript:;" onClick={test}>测试abort</a>
+  </div>;
+}
+```
+
+## mockRequest
+
+通过`mockRequest(url, ({ url, params, method }) => resp)`可以实现兼容性良好的`mock`功能，无论是`xhr`还是`fetch`都能兼容，由于不会对`xhr`或`fetch`进行重写，所以即使发布到生产环境关系也不大。
+
+注意，回调中的`params`已经过特殊处理，无论是`get`还是`post`还是`postJson`都会把参数正确解析到`params`中。
+
+```jsx preview
+import { request, mockRequest } from 'youtil';
+import { useEffect } from 'react';
+
+mockRequest('/mockTest', ({ params }) => {
+  console.log(333, params);
+  return {
+    code: 0,
+    data: 123,
+  }
+});
+export default () => {
+  const test = async () => {
+    const data = await request('/mockTest', { data: {a: 1} });
+    alert(`接口返回：${data}`);
+  };
+  return <div>
+    <a href="javascript:;" onClick={test}>测试mock能力</a>
+  </div>;
+}
+```
+
 ## 未完待续

@@ -12,7 +12,7 @@ title: deepCopy
 
 > **deepCopy**(`obj`): `any`
 
-Defined in: [other.ts:6](https://github.com/sxei/youtil/blob/3b581c08fcff87306a01ca309f1a64565d5e1e6a/src/other.ts#L6)
+Defined in: [other.ts:6](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/other.ts#L6)
 
 基于JSON的简单深拷贝
 
