@@ -12,7 +12,7 @@ title: getParamInt
 
 > **getParamInt**(`name`, `url`): `number`
 
-Defined in: [param.ts:19](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/param.ts#L19)
+Defined in: [param.ts:19](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/param.ts#L19)
 
 从URL中获取int参数
 

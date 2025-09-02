@@ -14,7 +14,7 @@ title: request
 
 > **request**\<`T`\>(`url`, `options`?): `Promise`\<`T`\>
 
-Defined in: [request.ts:74](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/request.ts#L74)
+Defined in: [request.ts:74](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/request.ts#L74)
 
 通用的API请求方法
 

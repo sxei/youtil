@@ -12,7 +12,7 @@ title: toUnderline
 
 > **toUnderline**(`str`, `flag`?): `string`
 
-Defined in: [string.ts:96](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/string.ts#L96)
+Defined in: [string.ts:96](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/string.ts#L96)
 
 字符串转下划线形式，示例：getParam 转 get_param
 

@@ -12,7 +12,7 @@ title: getIdCardLastChar
 
 > **getIdCardLastChar**(`cid`): `string`
 
-Defined in: [other.ts:99](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/other.ts#L99)
+Defined in: [other.ts:99](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/other.ts#L99)
 
 获取身份证号第18位校验码
 

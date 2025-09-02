@@ -12,7 +12,7 @@ title: EnumItem
 
 > **EnumItem**\<`K`, `V`\> = `object`
 
-Defined in: [enum.ts:1](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/enum.ts#L1)
+Defined in: [enum.ts:1](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/enum.ts#L1)
 
 ## Type Parameters
 
@@ -34,7 +34,7 @@ Defined in: [enum.ts:1](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab
 
 > `optional` **key**: `K`
 
-Defined in: [enum.ts:7](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/enum.ts#L7)
+Defined in: [enum.ts:7](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/enum.ts#L7)
 
 方便记忆的英文别名，可选
 
@@ -44,7 +44,7 @@ Defined in: [enum.ts:7](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab
 
 > **label**: `string`
 
-Defined in: [enum.ts:3](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/enum.ts#L3)
+Defined in: [enum.ts:3](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/enum.ts#L3)
 
 显示出来的名称
 
@@ -54,6 +54,6 @@ Defined in: [enum.ts:3](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab
 
 > **value**: `V`
 
-Defined in: [enum.ts:5](https://github.com/sxei/youtil/blob/e9b34c64623618e698ab667bad1efa38ce987ab1/src/enum.ts#L5)
+Defined in: [enum.ts:5](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/enum.ts#L5)
 
 实际传递的值
