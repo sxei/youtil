@@ -1,3 +1,4 @@
+export { mockRequest, resetMock, configMock } from './mockRequest';
 /** requestAPI的第二个参数类型 */
 export interface IRequestOptions {
     /** GET请求时传递的参数 */
@@ -38,6 +39,8 @@ export interface IRequestOptions {
     setLoading?: (loading?: boolean) => void;
     /** 覆盖默认的 resp.message 自定义异常抛出文案，也支持传入方法，注意返回''和undefined效果不同 */
     overrideMessage?: string | ((resp: any) => string);
+    /** 如需允许手动终止请求，请传入 signal */
+    signal?: AbortSignal;
 }
 /**
  * 通用的API请求方法
