@@ -1,4 +1,4 @@
-export type EnumItem<K extends string, V extends string | number> = {
+interface EnumItem<K extends string, V extends string | number> {
     /** 显示出来的名称 */
     label: string;
     /** 实际传递的值 */
@@ -6,8 +6,8 @@ export type EnumItem<K extends string, V extends string | number> = {
     /** 方便记忆的英文别名，可选 */
     key?: K;
     [key: string]: any;
-};
-export type EnumType<T extends ReadonlyArray<EnumItem<string, string | number>>> = T & {
+}
+export type EnumType<T extends Array<EnumItem<string, string | number>>> = T & {
     [K in T[number]['key']]: Extract<T[number], {
         key: K;
     }>['value'];
@@ -35,4 +35,5 @@ export type EnumType<T extends ReadonlyArray<EnumItem<string, string | number>>>
  * @param items
  * @returns
  */
-export declare function createEnum<T extends ReadonlyArray<EnumItem<string, string | number>>>(items: T): EnumType<T>;
+export declare function createEnum<T extends Array<EnumItem<string, string | number>>>(items: T): EnumType<T>;
+export {};

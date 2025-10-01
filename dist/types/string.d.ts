@@ -1,13 +1,4 @@
 /**
- * 格式化一段JSON字符串，支持解析非标准JSON
- * 不同于绝大多数格式化工具，本方法支持设置缩进方式以及左大括号是否换行
- * @start 2016-08-24
- * @param {Object} json 要格式化的json串
- * @param {Object} indent 缩进方式，可以是若干个空格和tab，默认tab缩进，如 2个空格："  "、4个空格："	"、tab："	"
- * @param {Object} leftBracesInSameLine 左大括号是否保持在同一行，默认 false
- */
-export declare const formatJson: (json: string, indent?: string, leftBracesInSameLine?: boolean) => string;
-/**
  * 获取各种随机数，支持如下几种调用方式：
  * getRandom() 返回0-1的随机小数，等同于Math.random()，0 <= result < 1
  * getRandom(start, end) 返回start-end的随机整数，start <= result < end
