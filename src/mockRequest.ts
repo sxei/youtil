@@ -1,5 +1,6 @@
 /* eslint-disable no-await-in-loop */
-import { getParams, sleep } from './index';
+import { getParams } from './param';
+import { sleep } from './time';
 
 // 存放所有已 mock 的数据
 interface MockItem {
@@ -61,7 +62,7 @@ export const configMock = (options: MockConfig) => {
 };
 
 const getParamsFromFetchOptions = (options: any) => {
-	const method = options.method.toLowerCase();
+	const method = (options.method || 'get').toLowerCase();
 	const { url, body } = options;
 	let params: any = {};
 	if (method === 'get') {

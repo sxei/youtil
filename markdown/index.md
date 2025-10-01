@@ -1,7 +1,7 @@
 ---
 hero:
   title: youtil
-  description: 油梯，一个与框架、环境无关的小巧、精简、实用的高质量JavaScript工具库
+  description: 油梯，一个与框架、环境无关的小巧、精简、实用、仅7kb的高质量JavaScript工具函数库
   actions:
     - text: 查看文档
       link: /guide
@@ -13,7 +13,7 @@ features:
     description: 不依赖Vue、React等任何框架
   - title: 不依赖任何第三方库
     emoji: 🌈
-    description: 尽可能做到小巧精简
+    description: 尽可能做到小巧精简，gzip后仅7kb
   - title: 简单、实用、高质量
     emoji: 🍳
     description: 匠心沉淀，尽量仅收录代码量在200行以内的方法

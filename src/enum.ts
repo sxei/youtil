@@ -1,4 +1,4 @@
-export type EnumItem<K extends string, V extends string | number> = {
+interface EnumItem<K extends string, V extends string | number> {
 	/** 显示出来的名称 */
 	label: string;
 	/** 实际传递的值 */
@@ -6,9 +6,9 @@ export type EnumItem<K extends string, V extends string | number> = {
 	/** 方便记忆的英文别名，可选 */
 	key?: K;
 	[key: string]: any;
-};
+}
 
-export type EnumType<T extends ReadonlyArray<EnumItem<string, string | number>>> = T & {
+export type EnumType<T extends Array<EnumItem<string, string | number>>> = T & {
 	[K in T[number]['key']]: Extract<T[number], { key: K }>['value'];
 } & {
 	/** 根据 key 或者 value 查找整个对象 */
@@ -35,7 +35,7 @@ export type EnumType<T extends ReadonlyArray<EnumItem<string, string | number>>>
  * @param items
  * @returns
  */
-export function createEnum<T extends ReadonlyArray<EnumItem<string, string | number>>>(items: T): EnumType<T> {
+export function createEnum<T extends Array<EnumItem<string, string | number>>>(items: T): EnumType<T> {
 	const enums = [...items] as unknown as EnumType<T>;
 	const map: Record<string, EnumItem<string, string | number>> = {};
 	const labelMap: Record<string, EnumItem<string, string | number>> = {};
@@ -60,13 +60,13 @@ export function createEnum<T extends ReadonlyArray<EnumItem<string, string | num
 	enums.pickValue = (keyOrValue: string | number) => enums.pick(keyOrValue)?.value;
 	enums.pickKey = (keyOrValue: string | number) => enums.pick(keyOrValue)?.key;
 	enums.pickByLabel = (label: string) => labelMap[label];
-	return enums as EnumType<T>;
+	return enums;
 }
 
 // 使用示例
 /* const genders = createEnum([
 	{ label: '男', value: 1, key: 'MAN', a: 1 },
-	{ label: '女', value: '2', key2: 'WOMAN' },
+	{ label: '女', value: '2', key: 'WOMAN' },
 ] as const);
 
 console.log(genders.MAN); // 鼠标悬停显示类型为 1
@@ -77,3 +77,4 @@ console.log(genders.pickValue('MAN')); // 1
 console.log(genders.pickKey(1)); // MAN
 console.log(genders); // 输出完整数组
 console.log(genders.length); // 输出2 */
+

@@ -1,5 +1,14 @@
 # 变更历史
 
+## 3.1.6 (2025-10-01)
+
+🇨🇳国庆快乐！
+
+* `enums`更新，从之前的`ReadonlyArray`改成普通`Array`，避免部分组件严格TS校验导致告警；
+* `format`：新增`formatNumber`、`formatPercent`方法；
+* `number`：新增`initBigJs`、`calculate`、`toFixed`方法；
+* 文档更新：更新`request`文档，新增`日期解析`、`数学运算`文档；
+
 ## 3.1.5 (2025-09-02)
 
 * `request`更新：

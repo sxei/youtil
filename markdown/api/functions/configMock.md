@@ -12,7 +12,7 @@ title: configMock
 
 > **configMock**(`options`): `void`
 
-Defined in: [mockRequest.ts:59](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/mockRequest.ts#L59)
+Defined in: [mockRequest.ts:60](https://github.com/sxei/youtil/blob/504e940dd531066db1982fbf39deebbbf978dd5a/src/mockRequest.ts#L60)
 
 配置mock参数
 

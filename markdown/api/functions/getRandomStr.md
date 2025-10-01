@@ -12,7 +12,7 @@ title: getRandomStr
 
 > **getRandomStr**(`length`, `type`?): `string`
 
-Defined in: [string.ts:82](https://github.com/sxei/youtil/blob/7f7adc3aa8118da3d99649c0a35e2677f23d7bc0/src/string.ts#L82)
+Defined in: [string.ts:38](https://github.com/sxei/youtil/blob/504e940dd531066db1982fbf39deebbbf978dd5a/src/string.ts#L38)
 
 获取随机字符串
 

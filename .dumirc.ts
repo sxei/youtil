@@ -20,10 +20,16 @@ export default defineConfig({
   styles: [`
 /* 隐藏二级导航 */
 .dumi-default-navbar-collapse-btn {
-    display: none;
+  display: none;
 }
 .dumi-default-navbar-dropdown {
-    display: none;
+  display: none;
+}
+iframe {
+  display: none;
+}
+body {
+  -webkit-font-smoothing: antialiased;
 }
     `]
 });

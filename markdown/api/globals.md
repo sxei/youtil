@@ -15,7 +15,6 @@ title: API索引
 
 ## Type Aliases
 
-- [EnumItem](type-aliases/EnumItem.md)
 - [EnumType](type-aliases/EnumType.md)
 
 ## Variables
@@ -25,6 +24,7 @@ title: API索引
 
 ## Functions
 
+- [calculate](functions/calculate.md)
 - [configMock](functions/configMock.md)
 - [copyToClipboard](functions/copyToClipboard.md)
 - [createEnum](functions/createEnum.md)
@@ -36,6 +36,8 @@ title: API索引
 - [formatDate](functions/formatDate.md)
 - [formatDuration](functions/formatDuration.md)
 - [formatJson](functions/formatJson.md)
+- [formatNumber](functions/formatNumber.md)
+- [formatPercent](functions/formatPercent.md)
 - [getCookie](functions/getCookie.md)
 - [getIdCardLastChar](functions/getIdCardLastChar.md)
 - [getMonthDays](functions/getMonthDays.md)
@@ -45,6 +47,7 @@ title: API索引
 - [getRandom](functions/getRandom.md)
 - [getRandomStr](functions/getRandomStr.md)
 - [hideLoading](functions/hideLoading.md)
+- [initBigJs](functions/initBigJs.md)
 - [initWindowMessage](functions/initWindowMessage.md)
 - [isLeapYear](functions/isLeapYear.md)
 - [mockRequest](functions/mockRequest.md)
@@ -56,6 +59,7 @@ title: API索引
 - [setParam](functions/setParam.md)
 - [showLoading](functions/showLoading.md)
 - [sleep](functions/sleep.md)
+- [toFixed](functions/toFixed.md)
 - [toHump](functions/toHump.md)
 - [toUnderline](functions/toUnderline.md)
 - [toUrlParams](functions/toUrlParams.md)
