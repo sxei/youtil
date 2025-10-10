@@ -12,7 +12,7 @@ title: setCookie
 
 > **setCookie**(`name`, `value`, `options`): `void`
 
-Defined in: [cookie.ts:34](https://github.com/sxei/youtil/blob/504e940dd531066db1982fbf39deebbbf978dd5a/src/cookie.ts#L34)
+Defined in: [cookie.ts:34](https://github.com/sxei/youtil/blob/b47ef7b1757ff0687608f2a4a60408b636b14d73/src/cookie.ts#L34)
 
 设置cookie，对于中文和特殊字符必须先进行编码
 

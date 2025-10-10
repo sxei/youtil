@@ -17,6 +17,7 @@ export default defineConfig({
     // 配置入口文件路径，API 解析将从这里开始
     entryFile: './src/index.ts',
   },
+  scripts: ['https://unpkg.shop.jd.com/youtil/dist/index.umd.js'],
   styles: [`
 /* 隐藏二级导航 */
 .dumi-default-navbar-collapse-btn {

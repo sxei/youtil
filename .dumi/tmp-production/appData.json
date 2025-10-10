@@ -75,7 +75,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "preset",
@@ -101,7 +101,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "preset",
@@ -132,10 +132,10 @@
       "time": {
         "hooks": {
           "modifyRoutes": [
-            0
+            1
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -152,7 +152,7 @@
             10
           ]
         },
-        "register": 13
+        "register": 14
       },
       "enableBy": "register",
       "type": "plugin",
@@ -232,7 +232,7 @@
             0
           ]
         },
-        "register": 5
+        "register": 4
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1128,7 +1128,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 46
+        "register": 47
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1141,7 +1141,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 59
+        "register": 47
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1158,7 +1158,7 @@
             0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1188,7 +1188,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1201,7 +1201,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1214,7 +1214,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 21
+        "register": 20
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
@@ -1226,7 +1226,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1239,7 +1239,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
@@ -1278,7 +1278,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            0
+            1
           ]
         },
         "register": 4
@@ -1293,7 +1293,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1306,7 +1306,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1383,7 +1383,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1435,7 +1435,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1473,7 +1473,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/test/test.js",
@@ -1485,7 +1485,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
@@ -1497,7 +1497,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1564,7 +1564,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1640,7 +1640,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 20
+        "register": 18
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1653,7 +1653,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 22
+        "register": 19
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -1756,7 +1756,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1769,7 +1769,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1795,7 +1795,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1808,7 +1808,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1834,7 +1834,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1847,7 +1847,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1860,7 +1860,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1899,7 +1899,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1912,7 +1912,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1938,7 +1938,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1951,7 +1951,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2055,10 +2055,10 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/dumi/dist/features/autoAlias.js",
@@ -2078,10 +2078,10 @@
             0
           ],
           "onCheck": [
-            1
+            0
           ]
         },
-        "register": 2
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2141,10 +2141,10 @@
           "modifyConfig": [
             0,
             0,
-            0
+            1
           ]
         },
-        "register": 7
+        "register": 14
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2164,10 +2164,10 @@
             0
           ],
           "modifyRoutes": [
-            4
+            3
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2198,7 +2198,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            0
+            1
           ],
           "modifyRoutes": [
             0
@@ -2219,14 +2219,14 @@
         "hooks": {
           "modifyConfig": [
             0,
-            12
+            11
           ],
           "modifyAppData": [
             0,
             2
           ]
         },
-        "register": 16
+        "register": 15
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2254,7 +2254,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2274,7 +2274,7 @@
             0
           ],
           "onCheckPkgJSON": [
-            122
+            118
           ]
         },
         "register": 1
@@ -2318,7 +2318,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 5
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/dumi/dist/features/sitemap.js",
@@ -2330,7 +2330,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2375,6 +2375,9 @@
       ],
       "entryFile": "./src/index.ts"
     },
+    "scripts": [
+      "https://unpkg.shop.jd.com/youtil/dist/index.umd.js"
+    ],
     "styles": [
       "\n/* 隐藏二级导航 */\n.dumi-default-navbar-collapse-btn {\n  display: none;\n}\n.dumi-default-navbar-dropdown {\n  display: none;\n}\niframe {\n  display: none;\n}\nbody {\n  -webkit-font-smoothing: antialiased;\n}\n    "
     ]
@@ -2457,6 +2460,9 @@
       "https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png"
     ],
     "apiParser": {},
+    "scripts": [
+      "https://unpkg.shop.jd.com/youtil/dist/index.umd.js"
+    ],
     "styles": [
       "\n/* 隐藏二级导航 */\n.dumi-default-navbar-collapse-btn {\n  display: none;\n}\n.dumi-default-navbar-dropdown {\n  display: none;\n}\niframe {\n  display: none;\n}\nbody {\n  -webkit-font-smoothing: antialiased;\n}\n    "
     ],

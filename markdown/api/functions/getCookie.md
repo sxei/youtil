@@ -12,7 +12,7 @@ title: getCookie
 
 > **getCookie**(`name`): `string`
 
-Defined in: [cookie.ts:8](https://github.com/sxei/youtil/blob/504e940dd531066db1982fbf39deebbbf978dd5a/src/cookie.ts#L8)
+Defined in: [cookie.ts:8](https://github.com/sxei/youtil/blob/b47ef7b1757ff0687608f2a4a60408b636b14d73/src/cookie.ts#L8)
 
 获取cookie
 
