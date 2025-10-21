@@ -8,5 +8,6 @@ type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any>
 export declare function initWindowMessage(scene: string, targetWindow?: Window): {
     postMessage: <T>(eventName: string, ...payload: any[]) => Promise<T> | void;
     onMessage: (eventName: string, listener: onMessageListener) => void;
+    offMessage: (eventName?: string, listener?: onMessageListener) => void;
 };
 export {};
