@@ -26,7 +26,7 @@ order: 2
 ```js
 import { initWindowMessage } from 'youtil';
 // scene用来标识场景，只有scene相同的2个窗口发送消息才能接收到
-const { postMessage, onMessage } = initWindowMessage('your_scene');
+const { postMessage, onMessage, offMessage } = initWindowMessage('your_scene');
 ```
 
 完整定义：
@@ -34,9 +34,32 @@ const { postMessage, onMessage } = initWindowMessage('your_scene');
 ```js
 type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any> | any | void;
 
+/**
+ * 初始化窗口通信
+ * @param {string} scene 场景，必传，互相通信的2个窗口必须保证 scene 相同
+ * @param {Window} targetWindow 目标窗口对象(父窗口或子窗口)，互相通信时允许有一方不传，自动从 event.source 获取
+ * @returns {{postMessage: function, onMessage: function}} 返回postMessage和onMessage方法
+ */
 function initWindowMessage(scene: string, targetWindow?: Window): {
-    postMessage: <T>(eventName: string, ...payload: any[]) => Promise<T>;
-    onMessage: (eventName: string, listener: onMessageListener) => void;
+	/**
+	 * 向目标窗口发送一条消息（触发一个事件），支持异步回调
+	 * @param eventName 事件名
+	 * @param payload 要传递的参数，支持传入多个
+	 * @returns 异步回调
+	 */
+	postMessage: <T>(eventName: string, ...payload: any[]) => Promise<T>;
+	/**
+	 * 监听消息
+	 * @param {string} eventName 事件名称
+	 * @param {function} listener 监听函数(支持异步)：(...params) => callbackValue
+	 */
+	onMessage: (eventName: string, listener: onMessageListener) => void;
+	/**
+	 * 取消消息监听事件绑定
+	 * @param eventName 要取消的事件名，如果不传，取消所有消息监听
+	 * @param listener 要取消的具体监听方法，如果不传，取消所有名为 eventName 的事件
+	 */
+	offMessage: (eventName?: string, listener?: onMessageListener) => void;
 }
 ```
 

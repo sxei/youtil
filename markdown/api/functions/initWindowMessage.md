@@ -12,7 +12,7 @@ title: initWindowMessage
 
 > **initWindowMessage**(`scene`, `targetWindow`?): `object`
 
-Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/b47ef7b1757ff0687608f2a4a60408b636b14d73/src/message.ts#L9)
+Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/message.ts#L9)
 
 初始化窗口通信
 
@@ -35,6 +35,30 @@ Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/b47ef7b1757ff0687
 `object`
 
 返回postMessage和onMessage方法
+
+### offMessage()
+
+> **offMessage**: (`eventName`?, `listener`?) => `void`
+
+取消消息监听事件绑定
+
+#### Parameters
+
+##### eventName?
+
+`string`
+
+要取消的事件名，如果不传，取消所有消息监听
+
+##### listener?
+
+`onMessageListener`
+
+要取消的具体监听方法，如果不传，取消所有名为 eventName 的事件
+
+#### Returns
+
+`void`
 
 ### onMessage()
 

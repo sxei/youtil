@@ -12,7 +12,7 @@ title: getParam
 
 > **getParam**(`name`, `url`): `string`
 
-Defined in: [param.ts:10](https://github.com/sxei/youtil/blob/b47ef7b1757ff0687608f2a4a60408b636b14d73/src/param.ts#L10)
+Defined in: [param.ts:10](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/param.ts#L10)
 
 从URL中获取某个参数，如果不存在返回 undefined ，如果存在多个同名参数，返回第一个匹配值
 getParam('a', '?a=1&b=&c=3&c=33#abc') // '1'

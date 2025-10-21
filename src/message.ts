@@ -161,6 +161,26 @@ export function initWindowMessage(scene: string, targetWindow?: Window) {
 		eventListeners.get(eventName).push(listener);
 	}
 
+	/**
+	 * 取消消息监听事件绑定
+	 * @param eventName 要取消的事件名，如果不传，取消所有消息监听
+	 * @param listener 要取消的具体监听方法，如果不传，取消所有名为 eventName 的事件
+	 */
+	function offMessage(eventName?: string, listener?: onMessageListener) {
+		if (!eventName) {
+			eventListeners.clear();
+			return;
+		}
+		if (!listener) {
+			eventListeners.delete(eventName);
+			return;
+		}
+		const listeners = eventListeners.get(eventName);
+		if (listeners?.length) {
+			eventListeners.set(eventName, listeners.filter(item => item !== listener));
+		}
+	}
+
 	onMessage('executeLocalFunction', (functionId, ...params) => {
 		functionId = functionId?.replace('getFn_', '') || '';
 		if (!localFunctions[functionId]) throw new Error(`未找到本地缓存方法：${functionId}`);
@@ -172,5 +192,6 @@ export function initWindowMessage(scene: string, targetWindow?: Window) {
 	return {
 		postMessage,
 		onMessage,
+		offMessage,
 	};
 }
