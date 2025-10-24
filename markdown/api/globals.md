@@ -10,12 +10,14 @@ title: API索引
 
 ## Interfaces
 
+- [initWindowMessageOptions](interfaces/initWindowMessageOptions.md)
 - [IRequestOptions](interfaces/IRequestOptions.md)
 - [IShowLoadingConfig](interfaces/IShowLoadingConfig.md)
 
 ## Type Aliases
 
 - [EnumType](type-aliases/EnumType.md)
+- [onMessageListener](type-aliases/onMessageListener.md)
 
 ## Variables
 

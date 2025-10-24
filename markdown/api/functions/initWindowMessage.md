@@ -10,9 +10,9 @@ title: initWindowMessage
 
 # Function: initWindowMessage()
 
-> **initWindowMessage**(`scene`, `targetWindow`?): `object`
+> **initWindowMessage**(`scene`, `targetWindow`?, `options`?): `object`
 
-Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/message.ts#L9)
+Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/message.ts#L14)
 
 初始化窗口通信
 
@@ -29,6 +29,10 @@ Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/0455fcfbe53956d21
 `Window`
 
 目标窗口对象(父窗口或子窗口)，互相通信时允许有一方不传，自动从 event.source 获取
+
+### options?
+
+[`initWindowMessageOptions`](../interfaces/initWindowMessageOptions.md)
 
 ## Returns
 
@@ -52,7 +56,7 @@ Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/0455fcfbe53956d21
 
 ##### listener?
 
-`onMessageListener`
+[`onMessageListener`](../type-aliases/onMessageListener.md)
 
 要取消的具体监听方法，如果不传，取消所有名为 eventName 的事件
 
@@ -76,7 +80,7 @@ Defined in: [message.ts:9](https://github.com/sxei/youtil/blob/0455fcfbe53956d21
 
 ##### listener
 
-`onMessageListener`
+[`onMessageListener`](../type-aliases/onMessageListener.md)
 
 监听函数(支持异步)：(...params) => callbackValue
 

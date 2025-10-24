@@ -12,7 +12,7 @@ title: toHump
 
 > **toHump**(`str`, `flag`?): `string`
 
-Defined in: [string.ts:63](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/string.ts#L63)
+Defined in: [string.ts:63](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/string.ts#L63)
 
 字符串转驼峰形式
 示例一： toHump('get_param')，返回getParam

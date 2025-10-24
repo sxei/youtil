@@ -12,7 +12,7 @@ title: encodeHtml
 
 > **encodeHtml**(`html`): `any`
 
-Defined in: [other.ts:18](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/other.ts#L18)
+Defined in: [other.ts:18](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/other.ts#L18)
 
 HTML编码，例如将 【"】 变成 【&quot;】
 

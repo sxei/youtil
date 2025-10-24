@@ -12,7 +12,7 @@ title: toFixed
 
 > **toFixed**(`num`, `fractionDigits`?): `any`
 
-Defined in: [number.ts:56](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/number.ts#L56)
+Defined in: [number.ts:56](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/number.ts#L56)
 
 替代浏览器自带toFixed，会进行正确的四舍五入
 

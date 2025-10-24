@@ -12,7 +12,7 @@ title: resetMock
 
 > **resetMock**(): `void`
 
-Defined in: [mockRequest.ts:52](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/mockRequest.ts#L52)
+Defined in: [mockRequest.ts:52](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/mockRequest.ts#L52)
 
 重置mock
 

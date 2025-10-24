@@ -1,4 +1,9 @@
-type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any> | any;
+export type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any> | any;
+export interface initWindowMessageOptions {
+	/** 是否开启 debug 模式 */
+	debug?: boolean;
+}
+
 
 /**
  * 初始化窗口通信
@@ -6,7 +11,7 @@ type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any>
  * @param {Window} targetWindow 目标窗口对象(父窗口或子窗口)，互相通信时允许有一方不传，自动从 event.source 获取
  * @returns {{postMessage: function, onMessage: function}} 返回postMessage和onMessage方法
  */
-export function initWindowMessage(scene: string, targetWindow?: Window) {
+export function initWindowMessage(scene: string, targetWindow?: Window, options?: initWindowMessageOptions) {
 	// iframe模式下自动设置目标窗口
 	if (!targetWindow && window !== window.parent) {
 		targetWindow = window.parent;
@@ -15,6 +20,7 @@ export function initWindowMessage(scene: string, targetWindow?: Window) {
 	if (!targetWindow && window.opener) {
 		targetWindow = window.opener;
 	}
+	const { debug } = options || {};
 	// 回调函数集合
 	const callbacks = new Map<string, { resolve: Function; reject: Function }>();
 	// 监听器集合
@@ -77,11 +83,13 @@ export function initWindowMessage(scene: string, targetWindow?: Window) {
 	window.addEventListener('message', async (e) => {
 		// 过滤无效消息
 		if (!e.data || e.data.scene !== scene) return;
-		// console.log('收到来自这里的消息：', location.href, e.target.location.href, e.data);
+		if (debug) {
+			console.log(`收到来自 ${e.origin || ''} 的消息：`, e.data);
+		}
 		// 始终根据 source 自动更新 targetWindow
 		// 父子iframe场景下，如果iframe经常动态销毁和重建，自动更新可以减少一些逻辑处理
 		targetWindow = e.source as Window;
-		const { type, eventName, payload, callbackId } = e.data;
+		const { type = 'event', eventName, payload, callbackId } = e.data;
 		if (type === 'event') {
 			const payloads = handleFunction(payload, (item) => {
 				if (typeof item === 'string' && item.startsWith(fnPrefix)) {

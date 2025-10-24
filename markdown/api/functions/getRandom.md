@@ -12,7 +12,7 @@ title: getRandom
 
 > **getRandom**(`start`?, `end`?): `any`
 
-Defined in: [string.ts:12](https://github.com/sxei/youtil/blob/0455fcfbe53956d21f737c88dfe47107d25db202/src/string.ts#L12)
+Defined in: [string.ts:12](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/string.ts#L12)
 
 获取各种随机数，支持如下几种调用方式：
 getRandom() 返回0-1的随机小数，等同于Math.random()，0 <= result < 1
