@@ -29,7 +29,7 @@ const getBigJs = () => {
  */
 export const calc = (exp: string, toFixedDigits?: number) => {
 	const Big = getBigJs();
-	const [n1, op, n2] = exp.split(/(\+|-|\*|\/)/g).map(item => item.trim());
+	const [n1, op, n2] = exp.split(/(\+|-|\*|\/|%)/g).map(item => item.trim());
 	if (!op || !n2) {
 		throw new Error('输入字符串不合法！');
 	}
@@ -38,12 +38,13 @@ export const calc = (exp: string, toFixedDigits?: number) => {
 		'-': 'minus',
 		'*': 'times',
 		'/': 'div',
+		'%': 'mod',
 	})[op];
 	if (!method) {
 		throw new Error('op不合法！');
 	}
 	const val = new Big(n1)[method](n2);
-	if (toFixedDigits === undefined) return Number(val.toString());
+	if (toFixedDigits === undefined) return val.toNumber();
 	return val.toFixed(toFixedDigits);
 };
 
