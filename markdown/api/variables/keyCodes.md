@@ -14,6 +14,6 @@ title: keyCodes
 
 > `const` **keyCodes**: `Record`\<`string`, `number`\>
 
-Defined in: [other.ts:125](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/other.ts#L125)
+Defined in: [other.ts:125](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/other.ts#L125)
 
 键盘键值映射，如: keyCodes.ctrl == 17

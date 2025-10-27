@@ -5,7 +5,7 @@ order: 6
 
 # 数学运算
 
-基于`big.js`进行简单封装的适合金融等严肃场景的数学运算函数`calculate()`，参考：[https://blog.haoji.me/js-float.html](https://blog.haoji.me/js-float.html)。
+基于`big.js`进行简单封装的适合金融等严肃场景的数学运算函数`calc()`，参考：[https://blog.haoji.me/js-float.html](https://blog.haoji.me/js-float.html)。
 
 
 ## big.js初始化
@@ -23,12 +23,12 @@ initBigJs(Big);
 ## 加减乘除运算
 
 ```js
-import { calculate } from 'youtil';
+import { calc } from 'youtil';
 
-calculate('0.1+0.2'); // 0.3
-calculate('3-1'); // 2
-calculate('3*4'); // 12
-calculate('8.8/100', 1); // 保留1位小数 0.09
+calc('0.1+0.2'); // 0.3
+calc('3-1'); // 2
+calc('3*4'); // 12
+calc('8.8/100', 1); // 保留1位小数 0.09
 ```
 
 ## toFixed

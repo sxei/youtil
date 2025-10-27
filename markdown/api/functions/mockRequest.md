@@ -12,7 +12,7 @@ title: mockRequest
 
 > **mockRequest**(`url`, `resp`): `void`
 
-Defined in: [mockRequest.ts:38](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/mockRequest.ts#L38)
+Defined in: [mockRequest.ts:38](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/mockRequest.ts#L38)
 
 mock一个请求
 

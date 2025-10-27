@@ -1,3 +1,4 @@
+import { calc } from './number';
 
 /**
  * 将日期格式化成指定格式的字符串
@@ -103,10 +104,11 @@ export const sleep = (ms?: number) => new Promise(resolve => setTimeout(resolve,
  */
 export const formatDuration = (duration: number, fmt: string = 'd:hh:mm:ss') => {
 	const values: Record<string, number> = {
-		d: Math.floor(duration / 86400), // 24 * 3600
-		h: Math.floor((duration % 86400) / 3600),
-		m: Math.floor((duration % 3600) / 60),
-		s: duration % 60,
+		d: Math.floor(calc(`${duration} / 86400`)), // 24 * 3600
+		h: Math.floor(calc(`${calc(`${duration} % 86400`)} / 3600`)),
+		m: Math.floor(calc(`${calc(`${duration} % 3600`)} / 60`)),
+		// 如果不采用 big.js 可能会有精度问题，例如： 255.692 % 60
+		s: calc(`${duration} % 60`),
 	};
 	if (values.h === 0) fmt = fmt.replace(/^[^m]+/g, '');
 	else if (values.d === 0) fmt = fmt.replace(/^[^h]+/g, '');

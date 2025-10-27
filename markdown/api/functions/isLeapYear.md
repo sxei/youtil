@@ -12,7 +12,7 @@ title: isLeapYear
 
 > **isLeapYear**(`year`): `boolean`
 
-Defined in: [time.ts:126](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/time.ts#L126)
+Defined in: [time.ts:127](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/time.ts#L127)
 
 判断某一年是否是闰年
 

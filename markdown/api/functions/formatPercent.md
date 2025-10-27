@@ -12,7 +12,7 @@ title: formatPercent
 
 > **formatPercent**(`num`, `toFixedValue`): `string` \| `number`
 
-Defined in: [format.ts:79](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/format.ts#L79)
+Defined in: [format.ts:79](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/format.ts#L79)
 
 将小数格式化成百分比
 

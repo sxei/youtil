@@ -21,12 +21,13 @@ title: API索引
 
 ## Variables
 
+- [~~calculate~~](variables/calculate.md)
 - [keyCodes](variables/keyCodes.md)
 - [~~Request~~](variables/Request.md)
 
 ## Functions
 
-- [calculate](functions/calculate.md)
+- [calc](functions/calc.md)
 - [configMock](functions/configMock.md)
 - [copyToClipboard](functions/copyToClipboard.md)
 - [createEnum](functions/createEnum.md)

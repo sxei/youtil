@@ -17,7 +17,7 @@ const getBigJs = () => {
 	}
 	throw new Error(`big.js未初始化，您可以：
 		1. 通过npm初始化：import Big from 'big.js'; initBigJs(Big);
-		1. 通过CDN初始化：https://cdn.jsdelivr.net/npm/big.js/big.min.js`);
+		1. 通过CDN初始化：https://unpkg.shop.jd.com/big.js@7.0.1/big.js`);
 };
 
 /**
@@ -25,11 +25,11 @@ const getBigJs = () => {
  * 注意，由于 youtil 承诺不会在代码中依赖任何第三方模块，调用前需要确保 window.Big 存在
  * @param exp 计算表达式，例如 '3.14+8.99'，注意仅支持单次运算
  * @param toFixedDigits 对结果进行四舍五入需要保留的小数点，不传忽略四舍五入
- * @returns 返回字符串
+ * @returns 默认情况返回 number ，设置了 toFixed 后返回字符串
  */
-export const calculate = (exp: string, toFixedDigits?: number) => {
+export const calc = (exp: string, toFixedDigits?: number) => {
 	const Big = getBigJs();
-	const [n1, op, n2] = exp.split(/(\+|-|\*|\/)/g);
+	const [n1, op, n2] = exp.split(/(\+|-|\*|\/)/g).map(item => item.trim());
 	if (!op || !n2) {
 		throw new Error('输入字符串不合法！');
 	}
@@ -43,9 +43,14 @@ export const calculate = (exp: string, toFixedDigits?: number) => {
 		throw new Error('op不合法！');
 	}
 	const val = new Big(n1)[method](n2);
-	if (toFixedDigits === undefined) return val.toString();
+	if (toFixedDigits === undefined) return Number(val.toString());
 	return val.toFixed(toFixedDigits);
 };
+
+/**
+ * @deprecated 请使用 calc
+ */
+export const calculate = calc;
 
 /**
  * 替代浏览器自带toFixed，会进行正确的四舍五入

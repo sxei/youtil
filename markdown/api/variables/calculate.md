@@ -8,11 +8,11 @@ title: calculate
 
 [youtil](../globals.md) / calculate
 
-# Function: calculate()
+# Variable: ~~calculate()~~
 
-> **calculate**(`exp`, `toFixedDigits`?): `any`
+> `const` **calculate**: (`exp`, `toFixedDigits`?) => `any` = `calc`
 
-Defined in: [number.ts:30](https://github.com/sxei/youtil/blob/30101427658751f8b43f24d4818a71bdd729822f/src/number.ts#L30)
+Defined in: [number.ts:53](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/number.ts#L53)
 
 不会丢失精度的计算数学表达式
 注意，由于 youtil 承诺不会在代码中依赖任何第三方模块，调用前需要确保 window.Big 存在
@@ -35,4 +35,8 @@ Defined in: [number.ts:30](https://github.com/sxei/youtil/blob/30101427658751f8b
 
 `any`
 
-返回字符串
+默认情况返回 number ，设置了 toFixed 后返回字符串
+
+## Deprecated
+
+请使用 calc
