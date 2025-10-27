@@ -12,7 +12,7 @@ title: parseDate
 
 > **parseDate**(`str`, `fmt`?): `Date`
 
-Defined in: [time.ts:70](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/time.ts#L70)
+Defined in: [time.ts:70](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/time.ts#L70)
 
 将字符串解析成日期
 

@@ -12,7 +12,7 @@ title: formatJson
 
 > **formatJson**(`json`, `indent`?, `leftBracesInSameLine`?): `string`
 
-Defined in: [format.ts:11](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/format.ts#L11)
+Defined in: [format.ts:11](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/format.ts#L11)
 
 格式化一段JSON字符串，支持解析非标准JSON
 不同于绝大多数格式化工具，本方法支持设置缩进方式以及左大括号是否换行

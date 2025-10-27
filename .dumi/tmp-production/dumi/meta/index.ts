@@ -57,24 +57,24 @@ import { frontmatter as fm26, toc as t26 } from '/Users/liuxianan1/workspace/you
 import { demoIndex as dmi26 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/isLeapYear.md?type=demo-index';
 import { frontmatter as fm27, toc as t27 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/openNewTab.md?type=frontmatter';
 import { demoIndex as dmi27 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/openNewTab.md?type=demo-index';
-import { frontmatter as fm28, toc as t28 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/calculate.md?type=frontmatter';
-import { demoIndex as dmi28 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/calculate.md?type=demo-index';
-import { frontmatter as fm29, toc as t29 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/delCookie.md?type=frontmatter';
-import { demoIndex as dmi29 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/delCookie.md?type=demo-index';
-import { frontmatter as fm30, toc as t30 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getCookie.md?type=frontmatter';
-import { demoIndex as dmi30 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getCookie.md?type=demo-index';
-import { frontmatter as fm31, toc as t31 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getParams.md?type=frontmatter';
-import { demoIndex as dmi31 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getParams.md?type=demo-index';
-import { frontmatter as fm32, toc as t32 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getRandom.md?type=frontmatter';
-import { demoIndex as dmi32 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getRandom.md?type=demo-index';
-import { frontmatter as fm33, toc as t33 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/initBigJs.md?type=frontmatter';
-import { demoIndex as dmi33 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/initBigJs.md?type=demo-index';
-import { frontmatter as fm34, toc as t34 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/parseDate.md?type=frontmatter';
-import { demoIndex as dmi34 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/parseDate.md?type=demo-index';
-import { frontmatter as fm35, toc as t35 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/resetMock.md?type=frontmatter';
-import { demoIndex as dmi35 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/resetMock.md?type=demo-index';
-import { frontmatter as fm36, toc as t36 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=frontmatter';
-import { demoIndex as dmi36 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=demo-index';
+import { frontmatter as fm28, toc as t28 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/delCookie.md?type=frontmatter';
+import { demoIndex as dmi28 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/delCookie.md?type=demo-index';
+import { frontmatter as fm29, toc as t29 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getCookie.md?type=frontmatter';
+import { demoIndex as dmi29 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getCookie.md?type=demo-index';
+import { frontmatter as fm30, toc as t30 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getParams.md?type=frontmatter';
+import { demoIndex as dmi30 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getParams.md?type=demo-index';
+import { frontmatter as fm31, toc as t31 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getRandom.md?type=frontmatter';
+import { demoIndex as dmi31 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/getRandom.md?type=demo-index';
+import { frontmatter as fm32, toc as t32 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/initBigJs.md?type=frontmatter';
+import { demoIndex as dmi32 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/initBigJs.md?type=demo-index';
+import { frontmatter as fm33, toc as t33 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/parseDate.md?type=frontmatter';
+import { demoIndex as dmi33 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/parseDate.md?type=demo-index';
+import { frontmatter as fm34, toc as t34 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/resetMock.md?type=frontmatter';
+import { demoIndex as dmi34 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/resetMock.md?type=demo-index';
+import { frontmatter as fm35, toc as t35 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=frontmatter';
+import { demoIndex as dmi35 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=demo-index';
+import { frontmatter as fm36, toc as t36 } from '/Users/liuxianan1/workspace/youtil/markdown/api/variables/calculate.md?type=frontmatter';
+import { demoIndex as dmi36 } from '/Users/liuxianan1/workspace/youtil/markdown/api/variables/calculate.md?type=demo-index';
 import { frontmatter as fm37, toc as t37 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/deepCopy.md?type=frontmatter';
 import { demoIndex as dmi37 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/deepCopy.md?type=demo-index';
 import { frontmatter as fm38, toc as t38 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/delParam.md?type=frontmatter';
@@ -95,24 +95,26 @@ import { frontmatter as fm45, toc as t45 } from '/Users/liuxianan1/workspace/you
 import { demoIndex as dmi45 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/toHump.md?type=demo-index';
 import { frontmatter as fm46, toc as t46 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/sleep.md?type=frontmatter';
 import { demoIndex as dmi46 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/sleep.md?type=demo-index';
-import { frontmatter as fm47, toc as t47 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=frontmatter';
-import { demoIndex as dmi47 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=demo-index';
-import { frontmatter as fm48, toc as t48 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=frontmatter';
-import { demoIndex as dmi48 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=demo-index';
-import { frontmatter as fm49, toc as t49 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=frontmatter';
-import { demoIndex as dmi49 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=demo-index';
-import { frontmatter as fm50, toc as t50 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=frontmatter';
-import { demoIndex as dmi50 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=demo-index';
-import { frontmatter as fm51, toc as t51 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=frontmatter';
-import { demoIndex as dmi51 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=demo-index';
-import { frontmatter as fm52, toc as t52 } from '/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=frontmatter';
-import { demoIndex as dmi52 } from '/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=demo-index';
-import { frontmatter as fm53, toc as t53 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=frontmatter';
-import { demoIndex as dmi53 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=demo-index';
-import { frontmatter as fm54, toc as t54 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=frontmatter';
-import { demoIndex as dmi54 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=demo-index';
-import { frontmatter as fm55, toc as t55 } from '/Users/liuxianan1/workspace/youtil/markdown/index.md?type=frontmatter';
-import { demoIndex as dmi55 } from '/Users/liuxianan1/workspace/youtil/markdown/index.md?type=demo-index';
+import { frontmatter as fm47, toc as t47 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/calc.md?type=frontmatter';
+import { demoIndex as dmi47 } from '/Users/liuxianan1/workspace/youtil/markdown/api/functions/calc.md?type=demo-index';
+import { frontmatter as fm48, toc as t48 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=frontmatter';
+import { demoIndex as dmi48 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=demo-index';
+import { frontmatter as fm49, toc as t49 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=frontmatter';
+import { demoIndex as dmi49 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=demo-index';
+import { frontmatter as fm50, toc as t50 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=frontmatter';
+import { demoIndex as dmi50 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=demo-index';
+import { frontmatter as fm51, toc as t51 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=frontmatter';
+import { demoIndex as dmi51 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=demo-index';
+import { frontmatter as fm52, toc as t52 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=frontmatter';
+import { demoIndex as dmi52 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=demo-index';
+import { frontmatter as fm53, toc as t53 } from '/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=frontmatter';
+import { demoIndex as dmi53 } from '/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=demo-index';
+import { frontmatter as fm54, toc as t54 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=frontmatter';
+import { demoIndex as dmi54 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=demo-index';
+import { frontmatter as fm55, toc as t55 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=frontmatter';
+import { demoIndex as dmi55 } from '/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=demo-index';
+import { frontmatter as fm56, toc as t56 } from '/Users/liuxianan1/workspace/youtil/markdown/index.md?type=frontmatter';
+import { demoIndex as dmi56 } from '/Users/liuxianan1/workspace/youtil/markdown/index.md?type=demo-index';
 
 export const filesMeta = {
   'markdown/api/interfaces/initWindowMessageOptions': {
@@ -283,59 +285,59 @@ export const filesMeta = {
     demoIndex: dmi27,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/openNewTab.md?type=text'),
   },
-  'markdown/api/functions/calculate': {
+  'markdown/api/functions/delCookie': {
     frontmatter: fm28,
     toc: t28,
     demoIndex: dmi28,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/calculate.md?type=text'),
-  },
-  'markdown/api/functions/delCookie': {
-    frontmatter: fm29,
-    toc: t29,
-    demoIndex: dmi29,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/delCookie.md?type=text'),
   },
   'markdown/api/functions/getCookie': {
-    frontmatter: fm30,
-    toc: t30,
-    demoIndex: dmi30,
+    frontmatter: fm29,
+    toc: t29,
+    demoIndex: dmi29,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/getCookie.md?type=text'),
   },
   'markdown/api/functions/getParams': {
-    frontmatter: fm31,
-    toc: t31,
-    demoIndex: dmi31,
+    frontmatter: fm30,
+    toc: t30,
+    demoIndex: dmi30,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/getParams.md?type=text'),
   },
   'markdown/api/functions/getRandom': {
-    frontmatter: fm32,
-    toc: t32,
-    demoIndex: dmi32,
+    frontmatter: fm31,
+    toc: t31,
+    demoIndex: dmi31,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/getRandom.md?type=text'),
   },
   'markdown/api/functions/initBigJs': {
-    frontmatter: fm33,
-    toc: t33,
-    demoIndex: dmi33,
+    frontmatter: fm32,
+    toc: t32,
+    demoIndex: dmi32,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/initBigJs.md?type=text'),
   },
   'markdown/api/functions/parseDate': {
-    frontmatter: fm34,
-    toc: t34,
-    demoIndex: dmi34,
+    frontmatter: fm33,
+    toc: t33,
+    demoIndex: dmi33,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/parseDate.md?type=text'),
   },
   'markdown/api/functions/resetMock': {
-    frontmatter: fm35,
-    toc: t35,
-    demoIndex: dmi35,
+    frontmatter: fm34,
+    toc: t34,
+    demoIndex: dmi34,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/resetMock.md?type=text'),
   },
   'markdown/api/functions/setCookie': {
+    frontmatter: fm35,
+    toc: t35,
+    demoIndex: dmi35,
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=text'),
+  },
+  'markdown/api/variables/calculate': {
     frontmatter: fm36,
     toc: t36,
     demoIndex: dmi36,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/setCookie.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/variables/calculate.md?type=text'),
   },
   'markdown/api/functions/deepCopy': {
     frontmatter: fm37,
@@ -397,58 +399,64 @@ export const filesMeta = {
     demoIndex: dmi46,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/sleep.md?type=text'),
   },
-  'markdown/guide/formatDate': {
+  'markdown/api/functions/calc': {
     frontmatter: fm47,
     toc: t47,
     demoIndex: dmi47,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/functions/calc.md?type=text'),
   },
-  'markdown/guide/loading': {
+  'markdown/guide/formatDate': {
     frontmatter: fm48,
     toc: t48,
     demoIndex: dmi48,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md?type=text'),
   },
-  'markdown/guide/message': {
+  'markdown/guide/loading': {
     frontmatter: fm49,
     toc: t49,
     demoIndex: dmi49,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/loading.md?type=text'),
   },
-  'markdown/guide/request': {
+  'markdown/guide/message': {
     frontmatter: fm50,
     toc: t50,
     demoIndex: dmi50,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/message.md?type=text'),
   },
-  'markdown/guide/number': {
+  'markdown/guide/request': {
     frontmatter: fm51,
     toc: t51,
     demoIndex: dmi51,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/request.md?type=text'),
   },
-  'markdown/api/globals': {
+  'markdown/guide/number': {
     frontmatter: fm52,
     toc: t52,
     demoIndex: dmi52,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/number.md?type=text'),
   },
-  'markdown/guide/index': {
+  'markdown/api/globals': {
     frontmatter: fm53,
     toc: t53,
     demoIndex: dmi53,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/api/globals.md?type=text'),
   },
-  'markdown/guide/enum': {
+  'markdown/guide/index': {
     frontmatter: fm54,
     toc: t54,
     demoIndex: dmi54,
-    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=text'),
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/index.md?type=text'),
   },
-  'markdown/index': {
+  'markdown/guide/enum': {
     frontmatter: fm55,
     toc: t55,
     demoIndex: dmi55,
+    textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md?type=text'),
+  },
+  'markdown/index': {
+    frontmatter: fm56,
+    toc: t56,
+    demoIndex: dmi56,
     textGetter: () => import(/* webpackChunkName: "meta__markdown" */'/Users/liuxianan1/workspace/youtil/markdown/index.md?type=text'),
   },
 }

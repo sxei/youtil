@@ -12,7 +12,7 @@ title: getMonthDays
 
 > **getMonthDays**(`year`?, `month`?): `number`
 
-Defined in: [time.ts:139](https://github.com/sxei/youtil/blob/694ab8493a838606110abf86b5e5d35bb7326cbe/src/time.ts#L139)
+Defined in: [time.ts:140](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/time.ts#L140)
 
 获取某一年某一月的总天数，没有任何参数时获取当前月份的
 方式一：getMonthDays();
