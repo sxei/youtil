@@ -12,7 +12,7 @@ title: createEnum
 
 > **createEnum**\<`T`\>(`items`): [`EnumType`](../type-aliases/EnumType.md)\<`T`\>
 
-Defined in: [enum.ts:38](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/enum.ts#L38)
+Defined in: [enum.ts:38](https://github.com/sxei/youtil/blob/912f5a94397507d38dcc16fa17ea818b6f46a442/src/enum.ts#L38)
 
 创建一个枚举，支持多种高级用法：<br>
 const enums = createEnum([{ key: 'MAN', label: '男', value: 1 }])<br>

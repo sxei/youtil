@@ -14,7 +14,7 @@ const entryExports = {
 };
 
 // Static content
-const pkg = {"name":"youtil","description":"油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库","version":"3.1.9","license":"MIT","repository":{"type":"git","url":"github.com/sxei/youtil"},"author":"sxei"};
+const pkg = {"name":"youtil","description":"油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库","version":"3.1.11","license":"MIT","repository":{"type":"git","url":"github.com/sxei/youtil"},"author":"sxei"};
 const historyType = "browser";
 const hostname = undefined;
 const themeConfig = {"footer":"Power by youtil","prefersColor":{"default":"light","switch":true},"nprogress":true,"lastUpdated":true,"logo":"https://img10.360buyimg.com/imagetools/jfs/t1/316988/13/20626/79139/688a0b88F01a2c450/a6419401b21c0aef.png","name":"youtil"};

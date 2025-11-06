@@ -12,7 +12,7 @@ title: formatDuration
 
 > **formatDuration**(`duration`, `fmt`): `string`
 
-Defined in: [time.ts:105](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/time.ts#L105)
+Defined in: [time.ts:105](https://github.com/sxei/youtil/blob/912f5a94397507d38dcc16fa17ea818b6f46a442/src/time.ts#L105)
 
 将一段单位为秒的时长格式化成时间格式，例如：
 formatDuration(100) // 01:40

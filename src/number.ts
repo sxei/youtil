@@ -15,7 +15,7 @@ const getBigJs = () => {
 	if (bigJs || (window as any).Big) {
 		return bigJs || (window as any).Big;
 	}
-	throw new Error(`big.js未初始化，您可以：
+	throw new Error(`big.js未初始化，您可以在调用本方法前：
 		1. 通过npm初始化：import Big from 'big.js'; initBigJs(Big);
 		1. 通过CDN初始化：https://unpkg.shop.jd.com/big.js@7.0.1/big.js`);
 };
@@ -60,6 +60,9 @@ export const calculate = calc;
  * @returns 返回四舍五入后的字符串
  */
 export const toFixed = (num: string | number, fractionDigits?: number) => {
+	if (fractionDigits === undefined) {
+		return `${num ?? ''}`;
+	}
 	const Big = getBigJs();
 	return new Big(num).toFixed(fractionDigits).toString();
 };

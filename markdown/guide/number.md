@@ -40,3 +40,16 @@ import { toFixed } from 'youtil';
 toFixed('0.338', 2); // 0.34
 ```
 
+## 演练场
+
+
+```jsx preview
+import * as youtil from 'youtil';
+
+export default () => {
+    return <div>
+        {youtil.formatNumber(123456789.4322, 'fin')}
+    </div>;
+}
+```
+

@@ -16,7 +16,7 @@ tmp/
 .docusaurus
 .vscode
 .joycode
-.dumi
+.dumi/
 dist
 
 npm-debug.log*

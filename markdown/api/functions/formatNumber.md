@@ -10,9 +10,9 @@ title: formatNumber
 
 # Function: formatNumber()
 
-> **formatNumber**(`number`?): `string` \| `number`
+> **formatNumber**(`number`?, `options`?): `any`
 
-Defined in: [format.ts:52](https://github.com/sxei/youtil/blob/af6f491cb17306b7a3da8a0d38d7e2a76b38fa40/src/format.ts#L52)
+Defined in: [format.ts:53](https://github.com/sxei/youtil/blob/912f5a94397507d38dcc16fa17ea818b6f46a442/src/format.ts#L53)
 
 将数字格式化成更易读取的格式，例如 189、3.8万、427万、29亿
 
@@ -24,8 +24,30 @@ Defined in: [format.ts:52](https://github.com/sxei/youtil/blob/af6f491cb17306b7a
 
 `string` | `number`
 
+### options?
+
+其它配置项
+
+`string` |
+
+\{ `style`: `"short"` \| `"fin"` \| `"en-fin"`; `toFixed`: `number`; \}
+
+其它配置项
+
+#### style?
+
+`"short"` \| `"fin"` \| `"en-fin"`
+
+格式化风格，short 类似48万 这种，fin 类似 3,4531 ，en-fin 类似 34,531
+
+#### toFixed?
+
+`number`
+
+要保留的小数点，不传不做任何处理
+
 ## Returns
 
-`string` \| `number`
+`any`
 
 返回格式化后的数字
