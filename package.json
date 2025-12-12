@@ -1,6 +1,6 @@
 {
     "name": "youtil",
-    "version": "3.1.11",
+    "version": "3.1.12",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
         "dist"
@@ -42,6 +42,7 @@
         "@ice/pkg": "1.5.5",
         "@ice/pkg-plugin-docusaurus": "^1.4.18",
         "@iceworks/spec": "^1.0.0",
+        "@types/jest": "^30.0.0",
         "concurrently": "^9.1.2",
         "dumi": "^2.4.21",
         "esbuild": "^0.25.8",

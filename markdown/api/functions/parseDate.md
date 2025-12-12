@@ -12,23 +12,23 @@ title: parseDate
 
 > **parseDate**(`str`, `fmt`?): `Date`
 
-Defined in: [time.ts:70](https://github.com/sxei/youtil/blob/912f5a94397507d38dcc16fa17ea818b6f46a442/src/time.ts#L70)
+Defined in: [time.ts:9](https://github.com/sxei/youtil/blob/1e50ad47b736bfc1b992a5b1e11e18a70e299e02/src/time.ts#L9)
 
-将字符串解析成日期
+将字符串或数字解析成日期
 
 ## Parameters
 
 ### str
 
-`string`
+输入的日期字符串，如'2014-09-13'，也可以是一个时间戳
 
-输入的日期字符串，如'2014-09-13'
+`string` | `number` | `Date`
 
 ### fmt?
 
 `string`
 
-字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S，不支持w和q
+字符串格式，支持如下：y、M、d、H、m、s、S，不支持w和q，不传时会根据str的格式尽量自动判断
 
 ## Returns
 

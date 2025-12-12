@@ -2,7 +2,7 @@
   "cwd": "/Users/liuxianan1/workspace/youtil",
   "pkg": {
     "name": "youtil",
-    "version": "3.1.11",
+    "version": "3.1.12",
     "description": "油梯，一个与框架、环境无关的小巧、精简、实用的JavaScript工具库",
     "files": [
       "dist"
@@ -44,6 +44,7 @@
       "@ice/pkg": "1.5.5",
       "@ice/pkg-plugin-docusaurus": "^1.4.18",
       "@iceworks/spec": "^1.0.0",
+      "@types/jest": "^30.0.0",
       "concurrently": "^9.1.2",
       "dumi": "^2.4.21",
       "esbuild": "^0.25.8",
@@ -88,7 +89,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 11
       },
       "enableBy": "register",
       "type": "preset",
@@ -101,7 +102,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 3
       },
       "enableBy": "register",
       "type": "preset",
@@ -115,10 +116,10 @@
       "time": {
         "hooks": {
           "onStart": [
-            1
+            2
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -135,7 +136,7 @@
             0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -149,10 +150,10 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            11
+            12
           ]
         },
-        "register": 12
+        "register": 14
       },
       "enableBy": "register",
       "type": "plugin",
@@ -165,7 +166,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -185,7 +186,7 @@
             0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -202,7 +203,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -215,7 +216,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -232,7 +233,7 @@
             0
           ]
         },
-        "register": 6
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1099,7 +1100,7 @@
       "time": {
         "hooks": {
           "onStart": [
-            1
+            0
           ]
         },
         "register": 0
@@ -1128,7 +1129,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 43
+        "register": 49
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1141,7 +1142,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 58
+        "register": 74
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1188,7 +1189,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1201,7 +1202,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1214,7 +1215,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 19
+        "register": 20
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
@@ -1264,7 +1265,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1306,7 +1307,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1332,7 +1333,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1383,7 +1384,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1448,7 +1449,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
@@ -1460,7 +1461,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 12
+        "register": 13
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1473,7 +1474,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/test/test.js",
@@ -1485,7 +1486,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
@@ -1497,7 +1498,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1510,7 +1511,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1523,7 +1524,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
@@ -1640,7 +1641,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 19
+        "register": 24
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1653,7 +1654,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 23
+        "register": 31
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -1691,7 +1692,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1704,7 +1705,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1743,7 +1744,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1756,7 +1757,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1782,7 +1783,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1795,7 +1796,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1821,7 +1822,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1834,7 +1835,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1860,7 +1861,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1899,7 +1900,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1912,7 +1913,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2078,10 +2079,10 @@
             0
           ],
           "onCheck": [
-            0
+            1
           ]
         },
-        "register": 3
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2108,7 +2109,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2141,10 +2142,10 @@
           "modifyConfig": [
             0,
             0,
-            0
+            1
           ]
         },
-        "register": 14
+        "register": 21
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2226,7 +2227,7 @@
             2
           ]
         },
-        "register": 16
+        "register": 23
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2254,7 +2255,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2274,7 +2275,7 @@
             0
           ],
           "onCheckPkgJSON": [
-            115
+            121
           ]
         },
         "register": 1
@@ -2290,7 +2291,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/dumi/dist/features/assets.js",
@@ -2318,7 +2319,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 9
       },
       "type": "plugin",
       "path": "/Users/liuxianan1/workspace/youtil/node_modules/dumi/dist/features/sitemap.js",
@@ -2528,6 +2529,13 @@
       "parentId": "DocLayout",
       "file": "/Users/liuxianan1/workspace/youtil/markdown/api/interfaces/IShowLoadingConfig.md",
       "absPath": "/api/interfaces/i-show-loading-config"
+    },
+    "markdown/api/functions/formatFriendlyDate": {
+      "path": "api/functions/format-friendly-date",
+      "id": "markdown/api/functions/formatFriendlyDate",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/api/functions/formatFriendlyDate.md",
+      "absPath": "/api/functions/format-friendly-date"
     },
     "markdown/api/functions/getIdCardLastChar": {
       "path": "api/functions/get-id-card-last-char",
@@ -2844,13 +2852,6 @@
       "file": "/Users/liuxianan1/workspace/youtil/markdown/api/functions/calc.md",
       "absPath": "/api/functions/calc"
     },
-    "markdown/guide/formatDate": {
-      "path": "guide/format-date",
-      "id": "markdown/guide/formatDate",
-      "parentId": "DocLayout",
-      "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/formatDate.md",
-      "absPath": "/guide/format-date"
-    },
     "markdown/guide/loading": {
       "path": "guide/loading",
       "id": "markdown/guide/loading",
@@ -2899,6 +2900,13 @@
       "parentId": "DocLayout",
       "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/enum.md",
       "absPath": "/guide/enum"
+    },
+    "markdown/guide/time": {
+      "path": "guide/time",
+      "id": "markdown/guide/time",
+      "parentId": "DocLayout",
+      "file": "/Users/liuxianan1/workspace/youtil/markdown/guide/time.md",
+      "absPath": "/guide/time"
     },
     "markdown/index": {
       "path": "",

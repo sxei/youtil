@@ -38,6 +38,7 @@ title: API索引
 - [encodeHtml](functions/encodeHtml.md)
 - [formatDate](functions/formatDate.md)
 - [formatDuration](functions/formatDuration.md)
+- [formatFriendlyDate](functions/formatFriendlyDate.md)
 - [formatJson](functions/formatJson.md)
 - [formatNumber](functions/formatNumber.md)
 - [formatPercent](functions/formatPercent.md)

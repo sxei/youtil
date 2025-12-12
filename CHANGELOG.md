@@ -1,5 +1,15 @@
 # 变更历史
 
+## 3.1.12 (2025-12-11)
+
+* 更新`parseDate`方法：
+  * 取消 fmt 默认值；
+  * 如果不传 fmt ，会尝试尽可能自动解析；
+* 更新`formatDate`方法，内部调用`parseDate`；
+* 新增`formatFriendlyDate`方法；
+* 文档：完善时间工具文档，新增`formatFriendlyDate`、`formatDuration`、`sleep`说明，补充`parseDate`自动解析示例与函数签名。
+* 测试：补全时间相关单测，覆盖`parseDate`、`formatFriendlyDate`、`formatDuration`、`sleep`等场景。
+
 ## 3.1.11 (2025-11-06)
 
 * 更新`formatNumber`方法，支持传入`options`，支持按照`fin|en-fin|short`设置风格，默认`short`；

@@ -1,4 +1,11 @@
 /**
+ * 将字符串或数字解析成日期
+ * @param str 输入的日期字符串，如'2014-09-13'，也可以是一个时间戳
+ * @param fmt 字符串格式，支持如下：y、M、d、H、m、s、S，不支持w和q，不传时会根据str的格式尽量自动判断
+ * @returns 解析后的Date类型日期
+ */
+export declare const parseDate: (str: Date | string | number, fmt?: string) => Date | null;
+/**
  * 将日期格式化成指定格式的字符串
  * @param date 要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
  * @param fmt 目标字符串格式，支持的字符有：y,M,d,q,w,H,h,m,S，默认：yyyy-MM-dd HH:mm:ss
@@ -6,12 +13,11 @@
  */
 export declare const formatDate: (date?: Date | number | string, fmt?: string) => string;
 /**
- * 将字符串解析成日期
- * @param str 输入的日期字符串，如'2014-09-13'
- * @param fmt 字符串格式，默认'yyyy-MM-dd'，支持如下：y、M、d、H、m、s、S，不支持w和q
- * @returns 解析后的Date类型日期
+ * 将一个日期格式化成友好格式，比如，1分钟以内的返回“刚刚”，
+ * 当天的返回时分，当年的返回月日，否则，返回年月日
+ * @param {Object} date
  */
-export declare const parseDate: (str: string, fmt?: string) => Date;
+export declare const formatFriendlyDate: (date: Date | number | string) => string;
 /**
  * 休息一段时间，单位毫秒
  * 示例：await sleep(200); // 休息200毫秒
@@ -41,8 +47,3 @@ export declare const isLeapYear: (year: number | Date) => boolean;
  * 方式三：getMonthDays(2017, 2);
  */
 export declare const getMonthDays: (year?: number | Date, month?: number) => number;
-/**
- * 将一个日期格式化成友好格式，比如，1分钟以内的返回“刚刚”，
- * 当天的返回时分，当年的返回月日，否则，返回年月日
- * @param {Object} date
- */
