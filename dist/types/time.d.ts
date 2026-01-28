@@ -42,8 +42,12 @@ export declare const formatDuration: (duration: number, fmt?: string) => string;
 export declare const isLeapYear: (year: number | Date) => boolean;
 /**
  * 获取某一年某一月的总天数，没有任何参数时获取当前月份的
+ * 方式：getMonthDays(2017, 2);
+ */
+export declare const getMonthDays: (year: number, month: number) => number;
+/**
+ * 获取某一年某一月的总天数，没有任何参数时获取当前月份的
  * 方式一：getMonthDays();
  * 方式二：getMonthDays(new Date());
  * 方式三：getMonthDays(2017, 2);
  */
-export declare const getMonthDays: (year?: number | Date, month?: number) => number;

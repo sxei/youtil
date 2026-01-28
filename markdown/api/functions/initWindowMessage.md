@@ -12,7 +12,7 @@ title: initWindowMessage
 
 > **initWindowMessage**(`scene`, `targetWindow`?, `options`?): `object`
 
-Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/1e50ad47b736bfc1b992a5b1e11e18a70e299e02/src/message.ts#L14)
+Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/message.ts#L14)
 
 初始化窗口通信
 

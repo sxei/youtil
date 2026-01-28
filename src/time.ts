@@ -175,20 +175,30 @@ export const isLeapYear = (year: number | Date) => {
 
 /**
  * 获取某一年某一月的总天数，没有任何参数时获取当前月份的
+ * 方式：getMonthDays(2017, 2);
+ */
+export const getMonthDays = (year: number, month: number) => {
+	// 第3个参数为0时，时间会变成当前月份的上一个月的最后一天
+	// 而由于月份是从0开始的，所以 month 刚好和语义上的月份对齐
+	return new Date(year, month, 0).getDate();
+};
+
+/**
+ * 获取某一年某一月的总天数，没有任何参数时获取当前月份的
  * 方式一：getMonthDays();
  * 方式二：getMonthDays(new Date());
  * 方式三：getMonthDays(2017, 2);
  */
-export const getMonthDays = (year?: number | Date, month?: number) => {
-	const m = month - 1;
-	year = year || new Date();
-	if (year instanceof Date) {
-		month = year.getMonth();
-		year = year.getFullYear();
-	}
-	// 非闰年的一年中每个月份的天数
-	const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-	// 闰年2月是29天
-	if (m === 1 && isLeapYear(year)) return days[m] + 1;
-	return days[m];
-};
+// export const getMonthDays = (year?: number | Date, month?: number) => {
+// 	const m = month - 1;
+// 	year = year || new Date();
+// 	if (year instanceof Date) {
+// 		month = year.getMonth();
+// 		year = year.getFullYear();
+// 	}
+// 	// 非闰年的一年中每个月份的天数
+// 	const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+// 	// 闰年2月是29天
+// 	if (m === 1 && isLeapYear(year)) return days[m] + 1;
+// 	return days[m];
+// };

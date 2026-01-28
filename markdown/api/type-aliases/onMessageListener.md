@@ -12,7 +12,7 @@ title: onMessageListener
 
 > **onMessageListener** = (`eventName`?, ...`payload`) => `Promise`\<`any`\> \| `any`
 
-Defined in: [message.ts:1](https://github.com/sxei/youtil/blob/1e50ad47b736bfc1b992a5b1e11e18a70e299e02/src/message.ts#L1)
+Defined in: [message.ts:1](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/message.ts#L1)
 
 ## Parameters
 
