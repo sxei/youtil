@@ -1,9 +1,11 @@
-export type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any> | any;
+export interface onMessageListener {
+	(eventName: string, ...payload: any[]): Promise<any> | any;
+	(...payload: any[]): Promise<any> | any;
+}
 export interface initWindowMessageOptions {
 	/** 是否开启 debug 模式 */
 	debug?: boolean;
 }
-
 
 /**
  * 初始化窗口通信
@@ -203,3 +205,7 @@ export function initWindowMessage(scene: string, targetWindow?: Window, options?
 		offMessage,
 	};
 }
+const { onMessage } = initWindowMessage('')
+onMessage('', (a, b) => {
+
+});
