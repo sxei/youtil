@@ -1,5 +1,9 @@
 # 变更历史
 
+## 3.1.15 (2026-02-06)
+
+* feat: 新增`makeDownload`、`selectFile`、`loadScript`方法和文档；
+
 ## 3.1.14 (2026-02-04)
 
 * fix: 完善`onMessageListener`的`TS`定义；

@@ -10,14 +10,16 @@ title: API索引
 
 ## Interfaces
 
+- [ILoadScriptOption](interfaces/ILoadScriptOption.md)
 - [initWindowMessageOptions](interfaces/initWindowMessageOptions.md)
 - [IRequestOptions](interfaces/IRequestOptions.md)
+- [ISelectFileOption](interfaces/ISelectFileOption.md)
 - [IShowLoadingConfig](interfaces/IShowLoadingConfig.md)
+- [onMessageListener](interfaces/onMessageListener.md)
 
 ## Type Aliases
 
 - [EnumType](type-aliases/EnumType.md)
-- [onMessageListener](type-aliases/onMessageListener.md)
 
 ## Variables
 
@@ -54,11 +56,14 @@ title: API索引
 - [initBigJs](functions/initBigJs.md)
 - [initWindowMessage](functions/initWindowMessage.md)
 - [isLeapYear](functions/isLeapYear.md)
+- [loadScript](functions/loadScript.md)
+- [makeDownload](functions/makeDownload.md)
 - [mockRequest](functions/mockRequest.md)
 - [openNewTab](functions/openNewTab.md)
 - [parseDate](functions/parseDate.md)
 - [request](functions/request.md)
 - [resetMock](functions/resetMock.md)
+- [selectFile](functions/selectFile.md)
 - [setCookie](functions/setCookie.md)
 - [setParam](functions/setParam.md)
 - [showLoading](functions/showLoading.md)

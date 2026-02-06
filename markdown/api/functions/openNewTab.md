@@ -12,7 +12,7 @@ title: openNewTab
 
 > **openNewTab**(`url`): `void`
 
-Defined in: [web.ts:5](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/web.ts#L5)
+Defined in: [web.ts:5](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/web.ts#L5)
 
 新标签打开某个地址
 

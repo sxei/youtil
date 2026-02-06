@@ -1,4 +1,7 @@
-export type onMessageListener = (eventName?: string, ...payload: any[]) => Promise<any> | any;
+export interface onMessageListener {
+    (eventName: string, ...payload: any[]): Promise<any> | any;
+    (...payload: any[]): Promise<any> | any;
+}
 export interface initWindowMessageOptions {
     /** 是否开启 debug 模式 */
     debug?: boolean;

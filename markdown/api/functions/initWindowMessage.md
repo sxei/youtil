@@ -12,7 +12,7 @@ title: initWindowMessage
 
 > **initWindowMessage**(`scene`, `targetWindow`?, `options`?): `object`
 
-Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/message.ts#L14)
+Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/message.ts#L16)
 
 初始化窗口通信
 
@@ -56,7 +56,7 @@ Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/ac54be507b7365b6
 
 ##### listener?
 
-[`onMessageListener`](../type-aliases/onMessageListener.md)
+[`onMessageListener`](../interfaces/onMessageListener.md)
 
 要取消的具体监听方法，如果不传，取消所有名为 eventName 的事件
 
@@ -80,7 +80,7 @@ Defined in: [message.ts:14](https://github.com/sxei/youtil/blob/ac54be507b7365b6
 
 ##### listener
 
-[`onMessageListener`](../type-aliases/onMessageListener.md)
+[`onMessageListener`](../interfaces/onMessageListener.md)
 
 监听函数(支持异步)：(...params) => callbackValue
 

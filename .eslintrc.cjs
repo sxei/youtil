@@ -17,5 +17,6 @@ module.exports = getESLintConfig('react-ts', {
 		'arrow-parens': 'off',
 		'comma-dangle': 'warn',
 		'@typescript-eslint/no-inferrable-types': 'off',
+		'no-return-assign': 'off',
 	},
 });

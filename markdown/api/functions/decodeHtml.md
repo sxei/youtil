@@ -12,7 +12,7 @@ title: decodeHtml
 
 > **decodeHtml**(`html`): `any`
 
-Defined in: [other.ts:36](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/other.ts#L36)
+Defined in: [other.ts:36](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/other.ts#L36)
 
 HTML解码，例如将 【&quot;】 变成 【"】
 

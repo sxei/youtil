@@ -10,7 +10,7 @@ title: initWindowMessageOptions
 
 # Interface: initWindowMessageOptions
 
-Defined in: [message.ts:2](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/message.ts#L2)
+Defined in: [message.ts:5](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/message.ts#L5)
 
 ## Properties
 
@@ -18,6 +18,6 @@ Defined in: [message.ts:2](https://github.com/sxei/youtil/blob/ac54be507b7365b69
 
 > `optional` **debug**: `boolean`
 
-Defined in: [message.ts:4](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/message.ts#L4)
+Defined in: [message.ts:7](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/message.ts#L7)
 
 是否开启 debug 模式

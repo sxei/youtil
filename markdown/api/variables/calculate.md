@@ -12,7 +12,7 @@ title: calculate
 
 > `const` **calculate**: (`exp`, `toFixedDigits`?) => `any` = `calc`
 
-Defined in: [number.ts:54](https://github.com/sxei/youtil/blob/ac54be507b7365b6960657f0d7da10429b64d770/src/number.ts#L54)
+Defined in: [number.ts:54](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/number.ts#L54)
 
 不会丢失精度的计算数学表达式
 注意，由于 youtil 承诺不会在代码中依赖任何第三方模块，调用前需要确保 window.Big 存在

@@ -201,14 +201,15 @@ const baseUrl= '//xxx.jd.com';
 await request('xxx', { baseUrl });
 ```
 
-## 自定义 axios 配置
+## 自定义 fetch 配置
+
+允许自定义fetch所有配置，优先级最高；
 
 ```js
 setLoading(true);
-const axiosOptions = {
-  timeout: 30000,
+const fetchOptions = {
 };
-await request('xxx', { axiosOptions });
+await request('xxx', { fetchOptions });
 ```
 
 ## 异常中断执行
