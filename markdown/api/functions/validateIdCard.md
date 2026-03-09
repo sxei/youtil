@@ -12,7 +12,7 @@ title: validateIdCard
 
 > **validateIdCard**(`cid`): `boolean`
 
-Defined in: [other.ts:114](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/other.ts#L114)
+Defined in: [other.ts:114](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/other.ts#L114)
 
 检测某个身份证ID是否合法，包括长度和最后一位校验码检测
 

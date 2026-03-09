@@ -1,5 +1,11 @@
 # 变更历史
 
+## 3.2.0 (2026-03-09)
+
+* `big.js`直接内置，更新`calc`函数，支持复杂表达式；
+* 移动`formatNumber`和`formatPercent`2个方法位置；
+* 文档更新：完善`markdown/guide/number.md`文档，补充`formatNumber`和`formatPercent`函数的详细说明、参数说明和使用示例;
+
 ## 3.1.15 (2026-02-06)
 
 * feat: 新增`makeDownload`、`selectFile`、`loadScript`方法和文档；

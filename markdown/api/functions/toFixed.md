@@ -10,9 +10,9 @@ title: toFixed
 
 # Function: toFixed()
 
-> **toFixed**(`num`, `fractionDigits`?): `any`
+> **toFixed**(`num`, `toFixedDigits`?): `any`
 
-Defined in: [number.ts:62](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/number.ts#L62)
+Defined in: [number.ts:131](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L131)
 
 替代浏览器自带toFixed，会进行正确的四舍五入
 
@@ -24,7 +24,7 @@ Defined in: [number.ts:62](https://github.com/sxei/youtil/blob/61594afa3671728b8
 
 `string` | `number`
 
-### fractionDigits?
+### toFixedDigits?
 
 `number`
 

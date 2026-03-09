@@ -12,7 +12,7 @@ title: selectFile
 
 > **selectFile**(`options`?): `Promise`\<`File`[]\>
 
-Defined in: [web.ts:88](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/web.ts#L88)
+Defined in: [web.ts:88](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L88)
 
 通用文件选择方法（优先现代API，不支持再降级为传统input模式）
 

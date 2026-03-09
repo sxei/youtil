@@ -12,7 +12,7 @@ title: initBigJs
 
 > **initBigJs**(`Big`): `void`
 
-Defined in: [number.ts:10](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/number.ts#L10)
+Defined in: [number.ts:13](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L13)
 
 初始化 big.js，在执行数学相关的函数前必须执行一次本方法：
 import Big from 'big.js';

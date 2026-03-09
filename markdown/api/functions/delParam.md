@@ -12,7 +12,7 @@ title: delParam
 
 > **delParam**(`name`, `url`): `string`
 
-Defined in: [param.ts:65](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/param.ts#L65)
+Defined in: [param.ts:65](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/param.ts#L65)
 
 删除URL中某个参数
 delParam('a', '?a=1&b=2&a=3#d') // '?b=2#d'

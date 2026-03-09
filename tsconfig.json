@@ -7,6 +7,7 @@
     "lib": ["ES2017", "DOM"],
     "sourceMap": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

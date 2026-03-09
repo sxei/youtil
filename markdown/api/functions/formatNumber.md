@@ -12,7 +12,7 @@ title: formatNumber
 
 > **formatNumber**(`number`?, `options`?): `any`
 
-Defined in: [format.ts:53](https://github.com/sxei/youtil/blob/61594afa3671728b8ff4a347dd6d485914ed84a4/src/format.ts#L53)
+Defined in: [number.ts:145](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L145)
 
 将数字格式化成更易读取的格式，例如 189、3.8万、427万、29亿
 

@@ -146,11 +146,11 @@ export const sleep = (ms?: number) => new Promise(resolve => setTimeout(resolve,
  */
 export const formatDuration = (duration: number, fmt: string = 'd:hh:mm:ss') => {
 	const values: Record<string, number> = {
-		d: Math.floor(calc(`${duration} / 86400`)), // 24 * 3600
-		h: Math.floor(calc(`${calc(`${duration} % 86400`)} / 3600`)),
-		m: Math.floor(calc(`${calc(`${duration} % 3600`)} / 60`)),
+		d: Math.floor(calc(`${duration} / 86400`) as number), // 24 * 3600
+		h: Math.floor(calc(`${calc(`${duration} % 86400`)} / 3600`) as number),
+		m: Math.floor(calc(`${calc(`${duration} % 3600`)} / 60`) as number),
 		// 如果不采用 big.js 可能会有精度问题，例如： 255.692 % 60
-		s: calc(`${duration} % 60`),
+		s: calc(`${duration} % 60`) as number,
 	};
 	if (values.h === 0) fmt = fmt.replace(/^[^m]+/g, '');
 	else if (values.d === 0) fmt = fmt.replace(/^[^h]+/g, '');
