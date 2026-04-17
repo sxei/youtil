@@ -10,9 +10,9 @@ title: initWindowMessage
 
 # Function: initWindowMessage()
 
-> **initWindowMessage**(`scene`, `targetWindow`?, `options`?): `object`
+> **initWindowMessage**(`scene`, `targetWindow?`, `options?`): `object`
 
-Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/message.ts#L16)
+Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/message.ts#L16)
 
 初始化窗口通信
 
@@ -36,13 +36,11 @@ Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/219118a9936c982e
 
 ## Returns
 
-`object`
-
 返回postMessage和onMessage方法
 
-### offMessage()
+### offMessage
 
-> **offMessage**: (`eventName`?, `listener`?) => `void`
+> **offMessage**: (`eventName?`, `listener?`) => `void`
 
 取消消息监听事件绑定
 
@@ -64,7 +62,7 @@ Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/219118a9936c982e
 
 `void`
 
-### onMessage()
+### onMessage
 
 > **onMessage**: (`eventName`, `listener`) => `void`
 
@@ -88,9 +86,9 @@ Defined in: [message.ts:16](https://github.com/sxei/youtil/blob/219118a9936c982e
 
 `void`
 
-### postMessage()
+### postMessage
 
-> **postMessage**: \<`T`\>(`eventName`, ...`payload`?) => `void` \| `Promise`\<`T`\>
+> **postMessage**: \<`T`\>(`eventName`, ...`payload?`) => `void` \| `Promise`\<`T`\>
 
 发送消息并等待响应
 

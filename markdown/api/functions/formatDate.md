@@ -10,9 +10,9 @@ title: formatDate
 
 # Function: formatDate()
 
-> **formatDate**(`date`?, `fmt`?): `string`
+> **formatDate**(`date?`, `fmt?`): `string`
 
-Defined in: [time.ts:69](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/time.ts#L69)
+Defined in: [time.ts:69](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/time.ts#L69)
 
 将日期格式化成指定格式的字符串
 
@@ -20,9 +20,9 @@ Defined in: [time.ts:69](https://github.com/sxei/youtil/blob/219118a9936c982e04b
 
 ### date?
 
-要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
+`string` \| `number` \| `Date`
 
-`string` | `number` | `Date`
+要格式化的日期，不传时默认当前时间，也可以是一个时间戳等
 
 ### fmt?
 

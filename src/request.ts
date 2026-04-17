@@ -165,7 +165,7 @@ const request = async <T = any>(url: string, options?: IRequestOptions) => {
 			},
 		});
 	}
-	let resp = null;
+	let resp;
 	setLoading?.(true);
 	try {
 		let targetUrl = `${/^(http|\/\/)/g.test(url) ? '' : (baseUrl || '')}${url}`;

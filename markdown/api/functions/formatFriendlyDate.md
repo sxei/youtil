@@ -12,7 +12,7 @@ title: formatFriendlyDate
 
 > **formatFriendlyDate**(`date`): `string`
 
-Defined in: [time.ts:109](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/time.ts#L109)
+Defined in: [time.ts:109](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/time.ts#L109)
 
 将一个日期格式化成友好格式，比如，1分钟以内的返回“刚刚”，
 当天的返回时分，当年的返回月日，否则，返回年月日
@@ -21,7 +21,7 @@ Defined in: [time.ts:109](https://github.com/sxei/youtil/blob/219118a9936c982e04
 
 ### date
 
-`string` | `number` | `Date`
+`string` \| `number` \| `Date`
 
 ## Returns
 

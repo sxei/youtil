@@ -10,9 +10,9 @@ title: toUnderline
 
 # Function: toUnderline()
 
-> **toUnderline**(`str`, `flag`?): `string`
+> **toUnderline**(`str`, `flag?`): `string`
 
-Defined in: [string.ts:52](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/string.ts#L52)
+Defined in: [string.ts:52](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/string.ts#L52)
 
 字符串转下划线形式，示例：getParam 转 get_param
 

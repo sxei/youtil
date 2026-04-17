@@ -10,9 +10,9 @@ title: formatNumber
 
 # Function: formatNumber()
 
-> **formatNumber**(`number`?, `options`?): `any`
+> **formatNumber**(`number?`, `options?`): `any`
 
-Defined in: [number.ts:145](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L145)
+Defined in: [number.ts:145](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/number.ts#L145)
 
 将数字格式化成更易读取的格式，例如 189、3.8万、427万、29亿
 
@@ -20,27 +20,33 @@ Defined in: [number.ts:145](https://github.com/sxei/youtil/blob/219118a9936c982e
 
 ### number?
 
-要格式化的数字
+`string` \| `number`
 
-`string` | `number`
+要格式化的数字
 
 ### options?
 
-其它配置项
-
-`string` |
-
-\{ `style`: `"short"` \| `"fin"` \| `"en-fin"`; `toFixed`: `number`; \}
+`string` \| \{ `style?`: `"short"` \| `"fin"` \| `"en-fin"`; `toFixed?`: `number`; \}
 
 其它配置项
 
-#### style?
+`string`
+
+***
+
+#### Type Literal
+
+\{ `style?`: `"short"` \| `"fin"` \| `"en-fin"`; `toFixed?`: `number`; \}
+
+其它配置项
+
+##### style?
 
 `"short"` \| `"fin"` \| `"en-fin"`
 
 格式化风格，short 类似48万 这种，fin 类似 3,4531 ，en-fin 类似 34,531
 
-#### toFixed?
+##### toFixed?
 
 `number`
 

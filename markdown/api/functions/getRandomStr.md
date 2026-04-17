@@ -10,9 +10,9 @@ title: getRandomStr
 
 # Function: getRandomStr()
 
-> **getRandomStr**(`length`, `type`?): `string`
+> **getRandomStr**(`length`, `type?`): `string`
 
-Defined in: [string.ts:38](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/string.ts#L38)
+Defined in: [string.ts:38](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/string.ts#L38)
 
 获取随机字符串
 
@@ -26,9 +26,9 @@ Defined in: [string.ts:38](https://github.com/sxei/youtil/blob/219118a9936c982e0
 
 ### type?
 
-all 表示所有，number表示仅数字，默认所有
+`"number"` \| `"all"`
 
-`"number"` | `"all"`
+all 表示所有，number表示仅数字，默认所有
 
 ## Returns
 

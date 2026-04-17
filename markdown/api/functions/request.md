@@ -12,9 +12,9 @@ title: request
 
 # Function: request()
 
-> **request**\<`T`\>(`url`, `options`?): `Promise`\<`T`\>
+> **request**\<`T`\>(`url`, `options?`): `Promise`\<`T`\>
 
-Defined in: [request.ts:74](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/request.ts#L74)
+Defined in: [request.ts:74](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/request.ts#L74)
 
 通用的API请求方法
 

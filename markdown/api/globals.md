@@ -46,6 +46,7 @@ title: API索引
 - [formatPercent](functions/formatPercent.md)
 - [getCookie](functions/getCookie.md)
 - [getIdCardLastChar](functions/getIdCardLastChar.md)
+- [getImageSize](functions/getImageSize.md)
 - [getMonthDays](functions/getMonthDays.md)
 - [getParam](functions/getParam.md)
 - [getParamInt](functions/getParamInt.md)

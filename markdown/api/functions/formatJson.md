@@ -10,9 +10,9 @@ title: formatJson
 
 # Function: formatJson()
 
-> **formatJson**(`json`, `indent`?, `leftBracesInSameLine`?): `string`
+> **formatJson**(`json`, `indent?`, `leftBracesInSameLine?`): `string`
 
-Defined in: [format.ts:9](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/format.ts#L9)
+Defined in: [format.ts:9](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/format.ts#L9)
 
 格式化一段JSON字符串，支持解析非标准JSON
 不同于绝大多数格式化工具，本方法支持设置缩进方式以及左大括号是否换行

@@ -10,15 +10,15 @@ title: ISelectFileOption
 
 # Interface: ISelectFileOption
 
-Defined in: [web.ts:72](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L72)
+Defined in: [web.ts:72](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L72)
 
 ## Properties
 
 ### accept?
 
-> `optional` **accept**: `string`
+> `optional` **accept?**: `string`
 
-Defined in: [web.ts:76](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L76)
+Defined in: [web.ts:76](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L76)
 
 支持的文件格式，默认全部，格式类似 'image/*,video/mp4' 这种
 
@@ -26,9 +26,9 @@ Defined in: [web.ts:76](https://github.com/sxei/youtil/blob/219118a9936c982e04ba
 
 ### acceptDescription?
 
-> `optional` **acceptDescription**: `string`
+> `optional` **acceptDescription?**: `string`
 
-Defined in: [web.ts:78](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L78)
+Defined in: [web.ts:78](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L78)
 
 picker模式时自定义文件格式中文描述，默认“自定义文件”
 
@@ -36,9 +36,9 @@ picker模式时自定义文件格式中文描述，默认“自定义文件”
 
 ### forceInputMode?
 
-> `optional` **forceInputMode**: `boolean`
+> `optional` **forceInputMode?**: `boolean`
 
-Defined in: [web.ts:80](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L80)
+Defined in: [web.ts:80](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L80)
 
 是否强制 input[file] 模式，默认为自动
 
@@ -46,8 +46,8 @@ Defined in: [web.ts:80](https://github.com/sxei/youtil/blob/219118a9936c982e04ba
 
 ### multiple?
 
-> `optional` **multiple**: `boolean`
+> `optional` **multiple?**: `boolean`
 
-Defined in: [web.ts:74](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L74)
+Defined in: [web.ts:74](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L74)
 
 是否允许多选，默认否，注意无论是否多选，返回结果都是数组

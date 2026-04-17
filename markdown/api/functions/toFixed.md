@@ -10,9 +10,9 @@ title: toFixed
 
 # Function: toFixed()
 
-> **toFixed**(`num`, `toFixedDigits`?): `any`
+> **toFixed**(`num`, `toFixedDigits?`): `any`
 
-Defined in: [number.ts:131](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L131)
+Defined in: [number.ts:131](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/number.ts#L131)
 
 替代浏览器自带toFixed，会进行正确的四舍五入
 
@@ -20,9 +20,9 @@ Defined in: [number.ts:131](https://github.com/sxei/youtil/blob/219118a9936c982e
 
 ### num
 
-要加工的数字
+`string` \| `number`
 
-`string` | `number`
+要加工的数字
 
 ### toFixedDigits?
 

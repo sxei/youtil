@@ -10,7 +10,7 @@ title: IShowLoadingConfig
 
 # Interface: IShowLoadingConfig
 
-Defined in: [loading.ts:2](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L2)
+Defined in: [loading.ts:2](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L2)
 
 showLoading配置
 
@@ -18,38 +18,38 @@ showLoading配置
 
 ### cancelInline?
 
-> `optional` **cancelInline**: `boolean`
+> `optional` **cancelInline?**: `boolean`
 
-Defined in: [loading.ts:5](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L5)
+Defined in: [loading.ts:5](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L5)
 
 ***
 
 ### hasMask?
 
-> `optional` **hasMask**: `boolean`
+> `optional` **hasMask?**: `boolean`
 
-Defined in: [loading.ts:3](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L3)
+Defined in: [loading.ts:3](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L3)
 
 ***
 
 ### id?
 
-> `optional` **id**: `string`
+> `optional` **id?**: `string`
 
-Defined in: [loading.ts:7](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L7)
+Defined in: [loading.ts:7](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L7)
 
 ***
 
 ### maskColor?
 
-> `optional` **maskColor**: `string`
+> `optional` **maskColor?**: `string`
 
-Defined in: [loading.ts:4](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L4)
+Defined in: [loading.ts:4](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L4)
 
 ***
 
 ### onCancel?
 
-> `optional` **onCancel**: `Function`
+> `optional` **onCancel?**: `Function`
 
-Defined in: [loading.ts:6](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/loading.ts#L6)
+Defined in: [loading.ts:6](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/loading.ts#L6)

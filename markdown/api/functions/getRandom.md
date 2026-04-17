@@ -10,9 +10,9 @@ title: getRandom
 
 # Function: getRandom()
 
-> **getRandom**(`start`?, `end`?): `any`
+> **getRandom**(`start?`, `end?`): `any`
 
-Defined in: [string.ts:12](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/string.ts#L12)
+Defined in: [string.ts:12](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/string.ts#L12)
 
 获取各种随机数，支持如下几种调用方式：
 getRandom() 返回0-1的随机小数，等同于Math.random()，0 <= result < 1

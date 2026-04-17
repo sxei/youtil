@@ -132,47 +132,38 @@ export const selectFile = async (options: ISelectFileOption = {}) => {
  * @description 支持通过图片URL或Blob对象获取图片尺寸，自动处理跨域问题
  * @param srcOrFile 图片URL地址或Blob对象
  * @returns Promise<{width: number, height: number}> 返回图片的宽度和高度
- * @example
- * // 使用图片URL
- * const { width, height } = await getImageSize('https://example.com/image.jpg');
- * 
- * // 使用Blob对象
- * const file = await fetch('image.jpg').then(r => r.blob());
- * const { width, height } = await getImageSize(file);
  */
 export function getImageSize(srcOrFile: string | Blob): Promise<{ width: number; height: number }> {
-    /**
-     * 清理创建的blob URL，避免内存泄漏
-     * @param src 要清理的URL
-     */
-    const revoke = (src: string): void => {
-        if (src?.startsWith('blob:')) {
-            URL.revokeObjectURL(src);
-        }
-    };
+	/**
+	 * 清理创建的blob URL，避免内存泄漏
+	 * @param src 要清理的URL
+	 */
+	const revoke = (src: string): void => {
+		if (src?.startsWith('blob:')) {
+			URL.revokeObjectURL(src);
+		}
+	};
 
-    return new Promise((resolve, reject) => {
-        const image = new Image();
-        // 设置跨域属性，允许加载跨域图片
-        image.crossOrigin = 'anonymous';
-        
-        if (typeof srcOrFile === 'string') {
-            image.src = srcOrFile;
-        } else {
-            // 如果是Blob对象，创建临时URL
-            image.src = URL.createObjectURL(srcOrFile);
-        }
+	return new Promise((resolve, reject) => {
+		const image = new Image();
+		// 设置跨域属性，允许加载跨域图片
+		image.crossOrigin = 'anonymous';
 
-        image.onload = () => {
-            // 图片加载成功，清理资源并返回尺寸
-            revoke(image.src);
-            resolve({ width: image.width, height: image.height });
-        };
+		if (typeof srcOrFile === 'string') {
+			image.src = srcOrFile;
+		} else {
+			// 如果是Blob对象，创建临时URL
+			image.src = URL.createObjectURL(srcOrFile);
+		}
 
-        image.onerror = (error) => {
-            // 图片加载失败，清理资源并返回错误
-            revoke(image.src);
-            reject(error);
-        };
-    });
+		image.onload = () => {
+			revoke(image.src);
+			resolve({ width: image.width, height: image.height });
+		};
+
+		image.onerror = (error) => {
+			revoke(image.src);
+			reject(error);
+		};
+	});
 }

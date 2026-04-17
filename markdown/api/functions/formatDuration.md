@@ -10,9 +10,9 @@ title: formatDuration
 
 # Function: formatDuration()
 
-> **formatDuration**(`duration`, `fmt`): `string`
+> **formatDuration**(`duration`, `fmt?`): `string`
 
-Defined in: [time.ts:147](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/time.ts#L147)
+Defined in: [time.ts:147](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/time.ts#L147)
 
 将一段单位为秒的时长格式化成时间格式，例如：
 formatDuration(100) // 01:40
@@ -27,7 +27,7 @@ formatDuration(10000) // 02:46:40
 
 要格式化的时长，单位秒
 
-### fmt
+### fmt?
 
 `string` = `'d:hh:mm:ss'`
 

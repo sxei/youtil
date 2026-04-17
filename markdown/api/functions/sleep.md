@@ -10,9 +10,9 @@ title: sleep
 
 # Function: sleep()
 
-> **sleep**(`ms`?): `Promise`\<`unknown`\>
+> **sleep**(`ms?`): `Promise`\<`unknown`\>
 
-Defined in: [time.ts:136](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/time.ts#L136)
+Defined in: [time.ts:136](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/time.ts#L136)
 
 休息一段时间，单位毫秒
 示例：await sleep(200); // 休息200毫秒

@@ -15,7 +15,7 @@ export const deepCopy = (obj: any) => {
  * @param {*} html 待编码的原始字符串，如果传入对象会遍历处理
  * @returns
  */
-export const encodeHtml = (html: string|any) => {
+export const encodeHtml = (html: string | any) => {
 	if (typeof html === 'string') {
 		const div = document.createElement('div');
 		div.innerText = html;
@@ -33,7 +33,7 @@ export const encodeHtml = (html: string|any) => {
  * @param {*} html 已经被HTML编码过的字符串，如果传入对象会遍历处理
  * @returns
  */
-export const decodeHtml = (html: string|any) => {
+export const decodeHtml = (html: string | any) => {
 	if (typeof html === 'string') {
 		const div = document.createElement('div');
 		div.innerHTML = html;
@@ -59,11 +59,11 @@ export const copyToClipboard = (text: string, onFailure: (message: string) => vo
 	if (!text) {
 		throw new Error('text can not be empty.');
 	}
-	onFailure = onFailure || (msg => console.error(`复制到剪贴板失败：${msg || ''}`));
+	onFailure = onFailure || ((msg) => console.error(`复制到剪贴板失败：${msg || ''}`));
 	// 优先采用现代化API
 	if (navigator.clipboard && !supportSilent) {
 		// 注意 writeText API 要求：文档被激活 & 页面已启用HTTPS
-		return navigator.clipboard.writeText(text).catch(e => {
+		return navigator.clipboard.writeText(text).catch((e) => {
 			onFailure(e.message);
 			throw e;
 		});

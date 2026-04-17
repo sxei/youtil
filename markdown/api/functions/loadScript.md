@@ -10,9 +10,9 @@ title: loadScript
 
 # Function: loadScript()
 
-> **loadScript**(`scriptUrl`, `options`): `Promise`\<`unknown`\>
+> **loadScript**(`scriptUrl`, `options?`): `Promise`\<`unknown`\>
 
-Defined in: [web.ts:48](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/web.ts#L48)
+Defined in: [web.ts:48](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/web.ts#L48)
 
 异步加载某个脚本，如果失败会抛出异常
 
@@ -24,7 +24,7 @@ Defined in: [web.ts:48](https://github.com/sxei/youtil/blob/219118a9936c982e04ba
 
 脚本地址
 
-### options
+### options?
 
 [`ILoadScriptOption`](../interfaces/ILoadScriptOption.md) = `{}`
 

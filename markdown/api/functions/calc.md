@@ -10,9 +10,9 @@ title: calc
 
 # Function: calc()
 
-> **calc**(`exp`, `toFixedDigits`?): `string` \| `number`
+> **calc**(`exp`, `toFixedDigits?`): `string` \| `number`
 
-Defined in: [number.ts:94](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/number.ts#L94)
+Defined in: [number.ts:94](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/number.ts#L94)
 
 支持【加、减、乘、除、求余、括号】运算、不丢失精度、支持运算优先级的万能通用数学表达式计算函数
 

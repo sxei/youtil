@@ -10,9 +10,9 @@ title: parseDate
 
 # Function: parseDate()
 
-> **parseDate**(`str`, `fmt`?): `Date`
+> **parseDate**(`str`, `fmt?`): `Date`
 
-Defined in: [time.ts:9](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/time.ts#L9)
+Defined in: [time.ts:9](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/time.ts#L9)
 
 将字符串或数字解析成日期
 
@@ -20,9 +20,9 @@ Defined in: [time.ts:9](https://github.com/sxei/youtil/blob/219118a9936c982e04ba
 
 ### str
 
-输入的日期字符串，如'2014-09-13'，也可以是一个时间戳
+`string` \| `number` \| `Date`
 
-`string` | `number` | `Date`
+输入的日期字符串，如'2014-09-13'，也可以是一个时间戳
 
 ### fmt?
 

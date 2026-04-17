@@ -10,9 +10,9 @@ title: setParam
 
 # Function: setParam()
 
-> **setParam**(`name`, `value`, `url`?): `string`
+> **setParam**(`name`, `value`, `url?`): `string`
 
-Defined in: [param.ts:46](https://github.com/sxei/youtil/blob/219118a9936c982e04baae7ef49de50bd83b27a7/src/param.ts#L46)
+Defined in: [param.ts:46](https://github.com/sxei/youtil/blob/cdf086a3320f6f7142b4bcac73a2aebe78c926d2/src/param.ts#L46)
 
 给URL设置参数，如果已经存在，替换之，兼容hash存在的情况
 setParam('a', '123', '?a=1&b=2&a=3#d') // '?a=123&b=2&a=123#d'
@@ -28,9 +28,9 @@ setParam('d', '444', '?a=1&b=2&a=3#d') // '?a=1&b=2&a=3&d=444#d'
 
 ### value
 
-参数值
+`string` \| `number`
 
-`string` | `number`
+参数值
 
 ### url?
 
